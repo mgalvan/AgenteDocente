@@ -272,7 +272,7 @@ def save_history(entries: list[dict[str, object]]) -> None:
         json.dump(entries, file, ensure_ascii=False, indent=2)
 
 
-def save_prompt_history(prompt: str, chatbot: str, response: str, artifacts: list[dict[str, object]], validation_problems: list[str], game_parameters=None) -> dict[str, object]:
+def save_prompt_history(prompt: str, chatbot: str, response: str, artifacts: list[dict[str, object]], validation_problems: list[str], game_parameters=None, request_data=None) -> dict[str, object]:
     entries = load_history()
     entry = {
         "id": uuid.uuid4().hex,
@@ -283,6 +283,8 @@ def save_prompt_history(prompt: str, chatbot: str, response: str, artifacts: lis
         "artifacts": artifacts,
         "validation_problems": validation_problems,
     }
+    if request_data is not None:
+        entry["request_data"] = request_data
     if game_parameters is not None:
         entry.update(game_type="DGM01", game_parameters=dict(game_parameters))
     entries.append(entry)
@@ -467,7 +469,7 @@ class WebAppHandler(SimpleHTTPRequestHandler):
                         composed["validation_problems"].extend(image_messages)
                     if local_artifact:
                         composed["artifacts"].insert(0, local_artifact)
-                    entry = save_prompt_history(composed["prompt"], load_chatbot(), composed["response"], composed["artifacts"], composed["validation_problems"], game_parameters=body.get("game_parameters") if local_artifact else None)
+                    entry = save_prompt_history(composed["prompt"], load_chatbot(), composed["response"], composed["artifacts"], composed["validation_problems"], game_parameters=body.get("game_parameters") if local_artifact else None, request_data=body)
                     composed["history_id"] = entry["id"]
                 self.send_json({"ok": True, **composed})
             elif urlparse(self.path).path == "/api/artifact":

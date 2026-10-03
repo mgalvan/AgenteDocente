@@ -81,8 +81,31 @@ def compile_test(artifact):
                     scores[n]=int(value)
             else:blocks.append(block)
         container['blocks']=blocks
-    if not scores or sorted(scores)!=list(range(1,len(scores)+1)) or sum(scores.values())!=100:
-        raise ValueError('Per il modello Word serve una tabella Esercizio / Punteggio massimo, con numerazione consecutiva e totale 100. Esportazione standard PDF disponibile.')
+    if not found:
+        # Scores can be in section headings or at the start of text paragraphs.
+        # Only explicit exercise scores count; never infer or redistribute them.
+        headings=[]
+        for container in containers:
+            headings.append(container.get('title',''))
+            for block in container.get('blocks',[]):
+                if block.get('block_type')=='text':
+                    headings.extend((text(block) or block.get('content','')).splitlines())
+        for heading in headings:
+            title=heading.strip()
+            if not re.match(r'^Esercizio\s+\d+',title,re.I):continue
+            match=re.match(r'^Esercizio\s+(\d+)\s*\(\s*(?:Punti\s*:\s*(\d+)|(\d+)\s+punti)\s*\)(?=\s|:|$)',title,re.I)
+            if not match:
+                raise ValueError('Punteggio mancante o non valido nell\'intestazione: '+title)
+            n=int(match[1]);value=int(match[2] or match[3])
+            if n in scores or not 1<=n<=10 or value<=0:
+                raise ValueError('Punteggi non validi: massimo 10 esercizi, punti interi positivi.')
+            scores[n]=value
+    if not scores:
+        raise ValueError('Nessun punteggio riconosciuto: usare una tabella Esercizio / Punteggio massimo oppure intestazioni come Esercizio 1 (Punti: 10) o Esercizio 1 (10 punti), nei titoli o nel testo. Esportazione standard PDF disponibile.')
+    if sorted(scores)!=list(range(1,len(scores)+1)):
+        raise ValueError('Numerazione dei punteggi non consecutiva: esercizi rilevati '+', '.join(map(str,sorted(scores)))+'.')
+    if sum(scores.values())!=100:
+        raise ValueError(f'Il totale dei punteggi rilevati è {sum(scores.values())}, ma il modello Word richiede 100 punti.')
     content=FILE.read_bytes();validate(content);document=Document(io.BytesIO(content));body=document._element.body
     starts=[p for p in document.paragraphs if p.text.strip() in ('{{INIZIO ESERCIZI}}','{{INIZIO_ESERCIZI}}')]
     ends=[p for p in document.paragraphs if p.text.strip() in ('{{FINE ESERCIZI}}','{{FINE_ESERCIZI}}')]

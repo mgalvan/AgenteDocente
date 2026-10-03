@@ -194,6 +194,7 @@
     matrixDialog.addEventListener('close', () => document.getElementById('matrixInfoPdf').removeAttribute('src'));
   </script>
   <script src="/DGM01_procedure.js?v=5"></script>
+  <script src="/history-reload.js"></script>
   <script>
     let catalogs = {};
     let games = [];
@@ -271,7 +272,7 @@
       $('prepare').disabled = !enabled;
       $('sendGemini').disabled = !enabled;
     }
-    function requestPayload(prompt) { return { artifact: artifact.value, game_type: $('gameType').value, game_parameters: gameValues(), lesson_type: $('lessonType').value, school_type: schoolType.value, school_address: schoolAddress.value, ai_role: $('aiRole').value.trim(), bes_dsa: $('besDsa').checked, use_cache: $('useCache').checked, cache_minutes: Number($('cacheMinutes').value), generate_images: $('generateImages').checked, image_limit: Number($('imageLimit').value), prompt, rows: artifact.value === 'Giochi' ? ($('gameType').value === 'DGM01' ? DGM01Procedure.rows() : []) : [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(row => Object.values(row).some(Boolean)) }; }
+    function requestPayload(prompt) { return { artifact: artifact.value, classe: $('classe').value, lesson_topic: $('lessonTopic').value, game_type: $('gameType').value, game_parameters: gameValues(), lesson_type: $('lessonType').value, school_type: schoolType.value, school_address: schoolAddress.value, ai_role: $('aiRole').value.trim(), bes_dsa: $('besDsa').checked, use_cache: $('useCache').checked, cache_minutes: Number($('cacheMinutes').value), generate_images: $('generateImages').checked, image_limit: Number($('imageLimit').value), prompt, rows: artifact.value === 'Giochi' ? ($('gameType').value === 'DGM01' ? DGM01Procedure.rows() : []) : [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(row => Object.values(row).some(Boolean)) }; }
     function updateSchoolAddresses() {
       const addresses = schools.filter(school => school.TipoScuola === schoolType.value).map(school => school.Indirizzo);
       schoolAddress.innerHTML = '<option value="">Seleziona indirizzo</option>' + addresses.map(address => `<option value="${address}">${address}</option>`).join('');
@@ -404,6 +405,7 @@
           }
         });
         $('copyPrompt').addEventListener('click', async () => { await navigator.clipboard.writeText($('promptText').value); $('copied').classList.add('show'); setTimeout(() => $('copied').classList.remove('show'), 1600); });
+        await restoreHistoryPrompt();
         $('exit').addEventListener('click', async () => {
           if (!confirm('Vuoi uscire dal programma?')) return;
           await fetch('/api/shutdown', { method: 'POST' });

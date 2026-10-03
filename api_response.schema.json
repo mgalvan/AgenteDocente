@@ -91,6 +91,7 @@
       "additionalProperties": false,
       "properties": {
         "id": {
+          "description": "Globally unique block identifier across the entire response, including resources, artifacts and containers. Use a block_ prefix. Must differ from ref; for example id=block_ex1_q, ref=text_ex1_q.",
           "title": "Id",
           "type": "string"
         },
@@ -108,6 +109,7 @@
           "type": "string"
         },
         "ref": {
+          "description": "Identifier of the existing resource referenced by this block, selected by kind. This is the resource ID, not the block ID. Multiple blocks may reference the same resource, but must have distinct block IDs.",
           "title": "Ref",
           "type": "string"
         }
@@ -300,6 +302,7 @@
           "type": "string"
         },
         "kind": {
+          "description": "geometry_2d is only for closed polygons with at least three vertices. Real-line intervals use function_2d with pieces: expression '0', explicit x_start/x_end and open/closed endpoints. Never encode intervals as geometry_2d or infer endpoint inclusion from alt_text.",
           "enum": [
             "function_2d",
             "scatter",
@@ -350,7 +353,7 @@
           "type": "string"
         },
         "pieces": {
-          "description": "Function pieces with explicit domains, endpoint markers and excluded x coordinates. When used, expression is empty. points are additional filled points.",
+          "description": "Function pieces with explicit domains, endpoint markers and excluded x coordinates. When used, expression is empty. points are additional filled points. For a real-line interval [a,b), use expression '0', x_start=a, x_end=b, start='closed', end='open', holes=[]; leave graph expression, points, labels, values and polygons empty. Endpoint inclusion must be encoded here, not only in alt_text.",
           "items": {
             "$ref": "#/$defs/CurvePiece"
           },
@@ -577,6 +580,23 @@
       "title": "Summary",
       "type": "object"
     },
+    "TableCell": {
+      "additionalProperties": false,
+      "properties": {
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/CellSegment"
+          },
+          "title": "Segments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "segments"
+      ],
+      "title": "TableCell",
+      "type": "object"
+    },
     "Text": {
       "additionalProperties": false,
       "properties": {
@@ -638,7 +658,7 @@
         "rows": {
           "items": {
             "items": {
-              "$ref": "#/$defs/Cell"
+              "$ref": "#/$defs/TableCell"
             },
             "type": "array"
           },

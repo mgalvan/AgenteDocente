@@ -17,6 +17,18 @@ def sample():
 
 
 class FlatTests(unittest.TestCase):
+    def test_blank_table_body_cells_allowed_but_headers_and_lists_required(self):
+        cell={"segments":[{"kind":"text","value":"Punteggio Realizzato"}]}
+        for blank in ({"segments":[]}, {"segments":[{"kind":"text","value":""}]}):
+            data=sample()
+            data["tables"]=[{"id":"scores","headers":[cell],"rows":[[blank]]}]
+            FlatResponse.model_validate(data)
+            data["tables"][0]["headers"]=[blank]
+            with self.assertRaises(ValidationError): FlatResponse.model_validate(data)
+            data["tables"]=[]
+            data["lists"]=[{"id":"list1","items":[blank]}]
+            with self.assertRaises(ValidationError): FlatResponse.model_validate(data)
+
     def test_example(self):
         FlatResponse.model_validate(sample())
 

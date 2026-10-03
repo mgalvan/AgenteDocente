@@ -10,6 +10,12 @@ import DGM01_template
 
 
 class GameHistoryTests(unittest.TestCase):
+    def test_request_data_survives_history_round_trip(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(webapp, "HISTORY_FILE", Path(tmp) / "history.json"):
+            data = {"artifact": "Lezione", "classe": "3", "lesson_topic": "Derivate", "bes_dsa": True}
+            webapp.save_prompt_history("prompt", "Gemini", "", [], [], request_data=data)
+            self.assertEqual(webapp.load_history()[0]["request_data"], data)
+
     def test_legacy_history_regenerates_rules_and_survives_save(self):
         prompt = "Tipo di gioco: G01 - Test\nPAR01 (argomento matematico): Equazioni\nPAR02 (numero esercizi): 3"
         entries = [{"id": "old", "prompt": prompt, "response": "", "artifacts": []},

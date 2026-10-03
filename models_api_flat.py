@@ -92,7 +92,7 @@ class CurvePiece(Model):
 
 class Graph(Model):
     id: str
-    kind: Literal["function_2d", "scatter", "bar_chart", "geometry_2d"]
+    kind: Literal["function_2d", "scatter", "bar_chart", "geometry_2d"] = Field(description="geometry_2d is only for closed polygons with at least three vertices. Real-line intervals use function_2d with pieces: expression '0', explicit x_start/x_end and open/closed endpoints. Never encode intervals as geometry_2d or infer endpoint inclusion from alt_text.")
     expression: str
     points: list[Point]
     labels: list[str]
@@ -101,7 +101,7 @@ class Graph(Model):
     x_label: str
     y_label: str
     alt_text: str
-    pieces: list[CurvePiece] = Field(default_factory=list, description="Function pieces with explicit domains, endpoint markers and excluded x coordinates. When used, expression is empty. points are additional filled points.")
+    pieces: list[CurvePiece] = Field(default_factory=list, description="Function pieces with explicit domains, endpoint markers and excluded x coordinates. When used, expression is empty. points are additional filled points. For a real-line interval [a,b), use expression '0', x_start=a, x_end=b, start='closed', end='open', holes=[]; leave graph expression, points, labels, values and polygons empty. Endpoint inclusion must be encoded here, not only in alt_text.")
     polygons: list[Polygon] = Field(default_factory=list, description="geometry_2d only: ordered polygon vertices and label; closing edge is automatic.")
     areas: list[Area] = Field(default_factory=list, description="Filled regions between expression and baseline on [x_start,x_end]. Use explicit data, not alt_text.")
     rectangles: list[Rectangles] = Field(default_factory=list, description="Equal-width Riemann rectangles on [x_start,x_end], with explicit count and left/right/midpoint sampling.")
@@ -146,9 +146,12 @@ class CellSegment(Model):
     value: str  # Literal text or literal LaTeX, never an ID.
 
 
-class Cell(Model):
+class TableCell(Model):
+    # Blank body cells are intentional in worksheets and grading tables.
     segments: list[CellSegment]
 
+
+class Cell(TableCell):
     @model_validator(mode="after")
     def nonempty(self):
         if not self.segments or not any(s.value.strip() for s in self.segments):
@@ -164,7 +167,7 @@ class TextList(Model):
 class TextTable(Model):
     id: str
     headers: list[Cell]
-    rows: list[list[Cell]]
+    rows: list[list[TableCell]]
 
     @model_validator(mode="after")
     def rectangular(self):
