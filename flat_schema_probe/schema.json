@@ -1,0 +1,477 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "teacher_guide",
+            "student_presentation",
+            "exercise_sheet",
+            "student_test",
+            "teacher_solution"
+          ],
+          "type": "string"
+        },
+        "audience": {
+          "enum": [
+            "teacher",
+            "students"
+          ],
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "pdf",
+            "pptx",
+            "docx"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "containers": {
+          "items": {
+            "$ref": "#/$defs/Container"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "audience",
+        "format",
+        "title",
+        "containers"
+      ],
+      "type": "object"
+    },
+    "BlockRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "text",
+            "formula",
+            "graph",
+            "image",
+            "list",
+            "table",
+            "speaker_note"
+          ],
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "ref"
+      ],
+      "type": "object"
+    },
+    "Container": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/BlockRef"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "blocks"
+      ],
+      "type": "object"
+    },
+    "Formula": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "latex": {
+          "type": "string"
+        },
+        "alt_text": {
+          "type": "string"
+        },
+        "expression": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "latex",
+        "alt_text",
+        "expression"
+      ],
+      "type": "object"
+    },
+    "Graph": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "function_2d",
+            "scatter",
+            "bar_chart"
+          ],
+          "type": "string"
+        },
+        "expression": {
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/Point"
+          },
+          "type": "array"
+        },
+        "labels": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "values": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "viewport": {
+          "$ref": "#/$defs/Viewport"
+        },
+        "x_label": {
+          "type": "string"
+        },
+        "y_label": {
+          "type": "string"
+        },
+        "alt_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "expression",
+        "points",
+        "labels",
+        "values",
+        "viewport",
+        "x_label",
+        "y_label",
+        "alt_text"
+      ],
+      "type": "object"
+    },
+    "Image": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "generated",
+            "provided"
+          ],
+          "type": "string"
+        },
+        "generation_prompt": {
+          "type": "string"
+        },
+        "resource_id": {
+          "type": "string"
+        },
+        "alt_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "generation_prompt",
+        "resource_id",
+        "alt_text"
+      ],
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "type": "object"
+    },
+    "Question": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "question",
+        "required"
+      ],
+      "type": "object"
+    },
+    "Segment": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "text",
+            "formula"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "type": "object"
+    },
+    "Summary": {
+      "additionalProperties": false,
+      "properties": {
+        "complete": {
+          "type": "boolean"
+        },
+        "audience_checked": {
+          "type": "boolean"
+        },
+        "math_checked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "complete",
+        "audience_checked",
+        "math_checked"
+      ],
+      "type": "object"
+    },
+    "Text": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/Segment"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "segments"
+      ],
+      "type": "object"
+    },
+    "TextList": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "items"
+      ],
+      "type": "object"
+    },
+    "TextTable": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "headers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "headers",
+        "rows"
+      ],
+      "type": "object"
+    },
+    "Viewport": {
+      "additionalProperties": false,
+      "properties": {
+        "x_min": {
+          "type": "number"
+        },
+        "x_max": {
+          "type": "number"
+        },
+        "y_min": {
+          "type": "number"
+        },
+        "y_max": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x_min",
+        "x_max",
+        "y_min",
+        "y_max"
+      ],
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "enum": [
+        "setupgemma_flat_0.1"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "needs_clarification"
+      ],
+      "type": "string"
+    },
+    "request_type": {
+      "type": "string"
+    },
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "type": "array"
+    },
+    "texts": {
+      "items": {
+        "$ref": "#/$defs/Text"
+      },
+      "type": "array"
+    },
+    "formulas": {
+      "items": {
+        "$ref": "#/$defs/Formula"
+      },
+      "type": "array"
+    },
+    "graphs": {
+      "items": {
+        "$ref": "#/$defs/Graph"
+      },
+      "type": "array"
+    },
+    "images": {
+      "items": {
+        "$ref": "#/$defs/Image"
+      },
+      "type": "array"
+    },
+    "lists": {
+      "items": {
+        "$ref": "#/$defs/TextList"
+      },
+      "type": "array"
+    },
+    "tables": {
+      "items": {
+        "$ref": "#/$defs/TextTable"
+      },
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "$ref": "#/$defs/Question"
+      },
+      "type": "array"
+    },
+    "validation_summary": {
+      "$ref": "#/$defs/Summary"
+    }
+  },
+  "required": [
+    "contract_version",
+    "status",
+    "request_type",
+    "artifacts",
+    "texts",
+    "formulas",
+    "graphs",
+    "images",
+    "lists",
+    "tables",
+    "questions",
+    "validation_summary"
+  ],
+  "type": "object"
+}

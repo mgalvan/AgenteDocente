@@ -1,0 +1,19 @@
+﻿{
+    "contents":  [
+                     {
+                         "role":  "user",
+                         "parts":  [
+                                       {
+                                           "text":  "Rispondi OK"
+                                       }
+                                   ]
+                     }
+                 ],
+    "system_instruction":  {
+                               "parts":  [
+                                             {
+                                                 "text":  "Rispondi OK"
+                                             }
+                                         ]
+                           }
+}

@@ -1,0 +1,790 @@
+{
+  "$defs": {
+    "Area": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        },
+        "x_start": {
+          "title": "X Start",
+          "type": "number"
+        },
+        "x_end": {
+          "title": "X End",
+          "type": "number"
+        },
+        "baseline": {
+          "title": "Baseline",
+          "type": "number"
+        }
+      },
+      "required": [
+        "expression",
+        "x_start",
+        "x_end",
+        "baseline"
+      ],
+      "title": "Area",
+      "type": "object"
+    },
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "teacher_guide",
+            "student_presentation",
+            "exercise_sheet",
+            "student_test",
+            "teacher_solution"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "audience": {
+          "enum": [
+            "teacher",
+            "students"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "pdf",
+            "pptx",
+            "docx"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "containers": {
+          "items": {
+            "$ref": "#/$defs/Container"
+          },
+          "title": "Containers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "audience",
+        "format",
+        "title",
+        "containers"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "BlockRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "text",
+            "formula",
+            "graph",
+            "image",
+            "list",
+            "table",
+            "speaker_note"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "ref"
+      ],
+      "title": "BlockRef",
+      "type": "object"
+    },
+    "Cell": {
+      "additionalProperties": false,
+      "properties": {
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/CellSegment"
+          },
+          "title": "Segments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "segments"
+      ],
+      "title": "Cell",
+      "type": "object"
+    },
+    "CellSegment": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "text",
+            "formula"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "title": "CellSegment",
+      "type": "object"
+    },
+    "Container": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/BlockRef"
+          },
+          "title": "Blocks",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "blocks"
+      ],
+      "title": "Container",
+      "type": "object"
+    },
+    "CurvePiece": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        },
+        "x_start": {
+          "title": "X Start",
+          "type": "number"
+        },
+        "x_end": {
+          "title": "X End",
+          "type": "number"
+        },
+        "start": {
+          "enum": [
+            "open",
+            "closed",
+            "none"
+          ],
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "enum": [
+            "open",
+            "closed",
+            "none"
+          ],
+          "title": "End",
+          "type": "string"
+        },
+        "holes": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Holes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "expression",
+        "x_start",
+        "x_end",
+        "start",
+        "end",
+        "holes"
+      ],
+      "title": "CurvePiece",
+      "type": "object"
+    },
+    "Formula": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "latex": {
+          "title": "Latex",
+          "type": "string"
+        },
+        "alt_text": {
+          "title": "Alt Text",
+          "type": "string"
+        },
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "latex",
+        "alt_text",
+        "expression"
+      ],
+      "title": "Formula",
+      "type": "object"
+    },
+    "GeneratedImage": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "generation_prompt": {
+          "title": "Generation Prompt",
+          "type": "string"
+        },
+        "alt_text": {
+          "title": "Alt Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "generation_prompt",
+        "alt_text"
+      ],
+      "title": "GeneratedImage",
+      "type": "object"
+    },
+    "Graph": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "function_2d",
+            "scatter",
+            "bar_chart",
+            "geometry_2d"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/Point"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Labels",
+          "type": "array"
+        },
+        "values": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Values",
+          "type": "array"
+        },
+        "viewport": {
+          "$ref": "#/$defs/Viewport"
+        },
+        "x_label": {
+          "title": "X Label",
+          "type": "string"
+        },
+        "y_label": {
+          "title": "Y Label",
+          "type": "string"
+        },
+        "alt_text": {
+          "title": "Alt Text",
+          "type": "string"
+        },
+        "pieces": {
+          "description": "Function pieces with explicit domains, endpoint markers and excluded x coordinates. When used, expression is empty. points are additional filled points.",
+          "items": {
+            "$ref": "#/$defs/CurvePiece"
+          },
+          "title": "Pieces",
+          "type": "array"
+        },
+        "polygons": {
+          "description": "geometry_2d only: ordered polygon vertices and label; closing edge is automatic.",
+          "items": {
+            "$ref": "#/$defs/Polygon"
+          },
+          "title": "Polygons",
+          "type": "array"
+        },
+        "areas": {
+          "description": "Filled regions between expression and baseline on [x_start,x_end]. Use explicit data, not alt_text.",
+          "items": {
+            "$ref": "#/$defs/Area"
+          },
+          "title": "Areas",
+          "type": "array"
+        },
+        "rectangles": {
+          "description": "Equal-width Riemann rectangles on [x_start,x_end], with explicit count and left/right/midpoint sampling.",
+          "items": {
+            "$ref": "#/$defs/Rectangles"
+          },
+          "title": "Rectangles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "expression",
+        "points",
+        "labels",
+        "values",
+        "viewport",
+        "x_label",
+        "y_label",
+        "alt_text"
+      ],
+      "title": "Graph",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
+    "Polygon": {
+      "additionalProperties": false,
+      "properties": {
+        "vertices": {
+          "items": {
+            "$ref": "#/$defs/Point"
+          },
+          "title": "Vertices",
+          "type": "array"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "vertices",
+        "label"
+      ],
+      "title": "Polygon",
+      "type": "object"
+    },
+    "ProvidedImage": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "resource_id": {
+          "title": "Resource Id",
+          "type": "string"
+        },
+        "alt_text": {
+          "title": "Alt Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "resource_id",
+        "alt_text"
+      ],
+      "title": "ProvidedImage",
+      "type": "object"
+    },
+    "Question": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "question",
+        "required"
+      ],
+      "title": "Question",
+      "type": "object"
+    },
+    "Rectangles": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        },
+        "x_start": {
+          "title": "X Start",
+          "type": "number"
+        },
+        "x_end": {
+          "title": "X End",
+          "type": "number"
+        },
+        "baseline": {
+          "title": "Baseline",
+          "type": "number"
+        },
+        "count": {
+          "title": "Count",
+          "type": "integer"
+        },
+        "sample": {
+          "enum": [
+            "left",
+            "right",
+            "midpoint"
+          ],
+          "title": "Sample",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression",
+        "x_start",
+        "x_end",
+        "baseline",
+        "count",
+        "sample"
+      ],
+      "title": "Rectangles",
+      "type": "object"
+    },
+    "Segment": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "text",
+            "formula"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "title": "Segment",
+      "type": "object"
+    },
+    "Summary": {
+      "additionalProperties": false,
+      "properties": {
+        "complete": {
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "audience_checked": {
+          "title": "Audience Checked",
+          "type": "boolean"
+        },
+        "math_checked": {
+          "title": "Math Checked",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "complete",
+        "audience_checked",
+        "math_checked"
+      ],
+      "title": "Summary",
+      "type": "object"
+    },
+    "Text": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/Segment"
+          },
+          "title": "Segments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "segments"
+      ],
+      "title": "Text",
+      "type": "object"
+    },
+    "TextList": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/Cell"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "items"
+      ],
+      "title": "TextList",
+      "type": "object"
+    },
+    "TextTable": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "headers": {
+          "items": {
+            "$ref": "#/$defs/Cell"
+          },
+          "title": "Headers",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/Cell"
+            },
+            "type": "array"
+          },
+          "title": "Rows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "headers",
+        "rows"
+      ],
+      "title": "TextTable",
+      "type": "object"
+    },
+    "Viewport": {
+      "additionalProperties": false,
+      "properties": {
+        "x_min": {
+          "title": "X Min",
+          "type": "number"
+        },
+        "x_max": {
+          "title": "X Max",
+          "type": "number"
+        },
+        "y_min": {
+          "title": "Y Min",
+          "type": "number"
+        },
+        "y_max": {
+          "title": "Y Max",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x_min",
+        "x_max",
+        "y_min",
+        "y_max"
+      ],
+      "title": "Viewport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "setupgemma_flat_2.1",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "needs_clarification"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "request_type": {
+      "title": "Request Type",
+      "type": "string"
+    },
+    "artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Artifacts",
+      "type": "array"
+    },
+    "texts": {
+      "items": {
+        "$ref": "#/$defs/Text"
+      },
+      "title": "Texts",
+      "type": "array"
+    },
+    "formulas": {
+      "items": {
+        "$ref": "#/$defs/Formula"
+      },
+      "title": "Formulas",
+      "type": "array"
+    },
+    "graphs": {
+      "items": {
+        "$ref": "#/$defs/Graph"
+      },
+      "title": "Graphs",
+      "type": "array"
+    },
+    "generated_images": {
+      "items": {
+        "$ref": "#/$defs/GeneratedImage"
+      },
+      "title": "Generated Images",
+      "type": "array"
+    },
+    "provided_images": {
+      "items": {
+        "$ref": "#/$defs/ProvidedImage"
+      },
+      "title": "Provided Images",
+      "type": "array"
+    },
+    "lists": {
+      "items": {
+        "$ref": "#/$defs/TextList"
+      },
+      "title": "Lists",
+      "type": "array"
+    },
+    "tables": {
+      "items": {
+        "$ref": "#/$defs/TextTable"
+      },
+      "title": "Tables",
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "$ref": "#/$defs/Question"
+      },
+      "title": "Questions",
+      "type": "array"
+    },
+    "validation_summary": {
+      "$ref": "#/$defs/Summary"
+    }
+  },
+  "required": [
+    "contract_version",
+    "status",
+    "request_type",
+    "artifacts",
+    "texts",
+    "formulas",
+    "graphs",
+    "generated_images",
+    "provided_images",
+    "lists",
+    "tables",
+    "questions",
+    "validation_summary"
+  ],
+  "title": "FlatResponse",
+  "type": "object"
+}

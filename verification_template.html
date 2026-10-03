@@ -1,0 +1,14 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modello verifica</title>
+<style>body{font:16px system-ui;background:#f5faf9;color:#1d2939;margin:32px auto;max-width:900px;padding:20px}main{background:white;padding:24px;border-radius:12px}button,a{margin:8px;padding:10px}button:disabled{opacity:.5}#status{white-space:pre-wrap}</style>
+<link rel="stylesheet" href="/theme.css?v=2">
+<main><a href="/">Torna al compositore</a><h1>Modello Word per verifica sommativa</h1>
+<p>Carica un DOCX (massimo 10 MB). Il nuovo file sostituisce il modello precedente solo dopo la verifica dei marcatori. Il documento viene conservato senza modifiche.</p>
+<p>Marcatori: {{INIZIO_ESERCIZI}} e {{FINE_ESERCIZI}} su paragrafi separati (accettati anche con spazio), {{PUNTI_1}} ... {{PUNTI_10}} e {{PUNTI_TOTALE}}. Inserisci nel modello l?interruzione di pagina prima della tabella punteggi.</p>
+<p>Il modello viene utilizzato automaticamente da Render DOCX per la verifica studenti. Le soluzioni docente e i PDF mantengono la propria impaginazione. Sono richiesti punteggi consecutivi con totale 100.</p>
+<input id="file" type="file" accept=".docx"><button id="upload" disabled>Carica e sostituisci modello</button><a id="download" href="/api/verification-template/download" hidden>Scarica modello attivo</a><p id="status" role="status"></p></main>
+<script>
+const file=document.getElementById('file'),button=document.getElementById('upload'),status=document.getElementById('status'),download=document.getElementById('download');
+async function load(){try{const r=await fetch('/api/verification-template',{cache:'no-store'});if(!r.ok)throw Error('Caricamento stato non riuscito');const d=await r.json();download.hidden=!d.configured;status.textContent=d.configured?'Modello attivo: '+(d.original_name || 'nome originale non registrato; ricarica il file per memorizzarlo')+'. 10 esercizi. Dimensione '+d.size+' byte.':'Nessun modello caricato.';}catch(e){status.textContent=e.message;}}
+file.onchange=()=>button.disabled=!file.files.length;
+button.onclick=async()=>{const f=file.files[0];if(!f)return;button.disabled=true;file.disabled=true;status.textContent='Caricamento e verifica in corso...';try{if(!f.name.toLowerCase().endsWith('.docx'))throw Error('Selezionare un file DOCX.');if(f.size>10*1024*1024)throw Error('Massimo 10 MB.');const r=await fetch('/api/verification-template',{method:'POST',headers:{'Content-Type':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','X-Template-Filename':encodeURIComponent(f.name)},body:f});const d=await r.json();if(!r.ok)throw Error(d.error);file.value='';await load();status.textContent+=' Caricamento completato.';}catch(e){status.textContent=e.message;}finally{file.disabled=false;button.disabled=!file.files.length;}};load();
+</script></html>

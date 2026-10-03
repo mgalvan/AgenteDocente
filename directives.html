@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Agente Docente | Gestione direttive</title>
+<style>
+body{margin:0;color:#1d2939;font-family:Segoe UI,sans-serif;background:#f5faf9}.shell{max-width:1500px;margin:auto;padding:36px 28px}.panel{background:white;border:1px solid #d9e2ea;border-radius:10px;padding:24px}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}button{border:0;border-radius:7px;padding:10px 13px;font-weight:700;cursor:pointer}.primary{background:#087f78;color:white}.secondary{background:#e6f5f2;color:#05645f}button:disabled{opacity:.5;cursor:wait}.scroll{overflow:auto;max-height:70vh;margin-top:20px}table{width:100%;border-collapse:collapse}th,td{padding:12px;text-align:left;border-bottom:1px solid #d9e2ea;vertical-align:top}th{background:#eef4f3;position:sticky;top:0}td{white-space:pre-wrap;overflow-wrap:anywhere}td:last-child{min-width:300px;width:55%}#status{color:#05645f}#status.error{color:#b42318}input[type=search]{padding:10px;border:1px solid #cdd8df;border-radius:6px;min-width:240px}p{line-height:1.5}
+</style>
+<link rel="stylesheet" href="/theme.css?v=2">
+</head>
+<body><main class="shell">
+<h1>Gestione direttive</h1>
+<p>Consulta le direttive utilizzate dal compositore. La tabella è in sola lettura.</p>
+<section class="panel">
+<p><button id="export" class="secondary">Esporta direttive JSON</button> Scarica tutte le direttive attive sul server, anche quelle escluse dalla ricerca.</p>
+<div class="toolbar"><button class="secondary" onclick="location.href='/'">Torna al compositore</button><label for="file">File JSON</label><input id="file" type="file" accept=".json,application/json"><button id="import" class="primary" disabled>Importa e sostituisci tabella</button></div>
+<p>L’importazione cancella tutti i record presenti e li sostituisce con quelli del file scelto. Il JSON deve contenere una lista di oggetti con i campi Gruppo, Codice, Ambito, Titolo e Direttiva completa, tutti testuali e non vuoti. Codice e Gruppo devono essere maiuscoli; i codici devono essere univoci. Una lista vuota svuota la tabella.</p>
+<label for="search">Cerca nelle direttive</label> <input id="search" type="search" placeholder="Codice, titolo o testo…">
+<p id="status" role="status" aria-live="polite">Caricamento…</p>
+<div class="scroll"><table><thead><tr><th>Gruppo</th><th>Codice</th><th>Ambito</th><th>Titolo</th><th>Direttiva completa</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section></main>
+<script>
+const fields=['Gruppo','Codice','Ambito','Titolo','Direttiva completa'];
+const file=document.getElementById('file'), importButton=document.getElementById('import'), status=document.getElementById('status'), search=document.getElementById('search');
+let data=[];
+document.getElementById('export').addEventListener('click',async()=>{
+  const button=document.getElementById('export');button.disabled=true;
+  try{
+    const response=await fetch('/api/directives/export',{cache:'no-store'});
+    if(!response.ok)throw new Error('Esportazione non riuscita.');
+    const blob=await response.blob(),url=URL.createObjectURL(blob),link=document.createElement('a');
+    link.href=url;link.download=response.headers.get('Content-Disposition')?.match(/filename="?([^";]+)"?/)?.[1]||'TabellaDirettive.json';
+    document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    message('File JSON esportato con tutte le direttive attive.');
+  }catch(error){message(error.message,true)}finally{button.disabled=false}
+});
+function message(text,error=false){status.textContent=text;status.classList.toggle('error',error)}
+function render(){
+  const query=search.value.toLocaleLowerCase('it');
+  const visible=data.filter(row=>fields.some(field=>row[field].toLocaleLowerCase('it').includes(query)));
+  const fragment=document.createDocumentFragment();
+  visible.forEach(row=>{const tr=document.createElement('tr');fields.forEach(field=>{const td=document.createElement('td');td.textContent=row[field];tr.appendChild(td)});fragment.appendChild(tr)});
+  document.getElementById('rows').replaceChildren(fragment);
+  message(`${visible.length} direttive visualizzate su ${data.length}.`);
+}
+async function load(){try{const response=await fetch('/api/directives',{cache:'no-store'});if(!response.ok)throw new Error('Impossibile caricare le direttive.');data=await response.json();render()}catch(error){message(error.message,true)}}
+file.addEventListener('change',()=>{importButton.disabled=!file.files.length});
+search.addEventListener('input',render);
+importButton.addEventListener('click',async()=>{
+  const selected=file.files[0];if(!selected)return;
+  importButton.disabled=true;file.disabled=true;
+  try{
+    if(!selected.name.toLowerCase().endsWith('.json'))throw new Error('Seleziona un file con estensione .json.');
+    let imported;try{imported=JSON.parse((await selected.text()).replace(/^\uFEFF/,''))}catch{throw new Error('Il file non contiene JSON valido.');}
+    if(!Array.isArray(imported))throw new Error('Il JSON deve contenere una lista di direttive.');
+    if(!confirm(`Sostituire tutte le direttive presenti con ${imported.length} record del file "${selected.name}"?`))return;
+    message('Importazione in corso…');
+    const response=await fetch('/api/directives/import',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(imported)});
+    const result=await response.json();if(!response.ok)throw new Error(result.error||'Importazione non riuscita.');
+    data=result.rows;search.value='';render();file.value='';message(`Importazione completata: ${data.length} direttive attive.`);
+  }catch(error){message(error.message,true)}finally{file.disabled=false;importButton.disabled=!file.files.length}
+});
+load();
+</script></body></html>

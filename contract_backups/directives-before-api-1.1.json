@@ -1,0 +1,1017 @@
+[
+  {
+    "Gruppo": "DBES",
+    "Codice": "DBES01",
+    "Ambito": "GENERALE",
+    "Titolo": "BES/DSA",
+    "Direttiva completa": "Adottare le seguenti  misure generali  :\n-riduzione della durata delle spiegazioni continuative;\n-utilizzo di consegne brevi e linguisticamente semplici;\n-presentazione dei concetti attraverso più modalità, ad esempio linguaggio verbale, formule, tabelle, schemi, grafici ed esempi concreti;\n-anticipazione degli obiettivi della lezione;\n-segmentazione dei compiti complessi in passaggi successivi;\n-utilizzo di domande guidate e progressive;\n-valorizzazione della risposta orale e del ragionamento, oltre alla sola produzione scritta;\n-frequenti momenti di verifica formativa non valutativa;\n-possibilità di correggere immediatamente l'errore;\n-utilizzo dell'errore stesso come strumento di apprendimento;\n-costruzione di esercizi con difficoltà progressiva, in modo da consentire anche agli studenti più fragili una prima esperienza di successo."
+  },
+  {
+    "Gruppo": "DP",
+    "Codice": "DP01",
+    "Ambito": "PROGETTAZIONE TEMPLATE LEZIONI",
+    "Titolo": "Caratteristiche Classe",
+    "Direttiva completa": "La classe è eterogenea e in numerosi casi caratterizzata da condizioni di significativa fragilità scolastica, motivazionale e sociale.\nUna parte consistente degli studenti manifesta un rapporto debole con l'istituzione scolastica e con lo studio. Sono frequenti atteggiamenti di disaffezione, scarsa motivazione, ridotta percezione dell'utilità delle discipline curricolari e difficoltà nel riconoscere obiettivi personali, formativi o professionali di medio e lungo periodo.\nTale situazione può tradursi, durante le attività didattiche, in comportamenti quali scarsa attenzione, passività, sonnolenza, difficoltà a mantenere la concentrazione per tempi prolungati, mancata esecuzione delle attività assegnate e limitata partecipazione spontanea alla lezione. Non è inoltre raro che alcuni studenti si presentino a scuola privi del materiale scolastico essenziale, come quaderno, fogli o strumenti per scrivere.\nIl contesto familiare risulta in diversi casi poco presente rispetto al percorso scolastico. Il supporto domestico allo studio è spesso limitato e non sempre è possibile fare affidamento sul lavoro individuale svolto a casa. Di conseguenza, una parte significativa dell'apprendimento deve necessariamente essere costruita e consolidata durante il tempo scolastico."
+  },
+  {
+    "Gruppo": "DP",
+    "Codice": "DP02",
+    "Ambito": "PROGETTAZIONE TEMPLATE LEZIONI",
+    "Titolo": "Setting d’aula",
+    "Direttiva completa": "Il contesto operativo pone alcuni vincoli concreti. Le attività si svolgono prevalentemente nell'aula tradizionale, dotata di banchi, lavagna o LIM, mentre il laboratorio informatico, pur disponibile, non rappresenta lo spazio ordinario per l'insegnamento della materia. L'utilizzo degli smartphone personali da parte degli studenti non può inoltre essere considerato uno strumento didattico ordinario.\nOccorre quindi individuare metodologie che non dipendano necessariamente dalla disponibilità di dispositivi digitali individuali, materiali complessi o ambienti laboratoriali dedicati."
+  },
+  {
+    "Gruppo": "DP",
+    "Codice": "DP03",
+    "Ambito": "PROGETTAZIONE TEMPLATE LEZIONI",
+    "Titolo": "Vincolo risorse docente",
+    "Direttiva completa": "Applicare DID00: privilegiare strutture semplici, ricorrenti e riutilizzabili; evitare preparazione eccessiva di schede, giochi, materiali o strumenti quando non necessari."
+  },
+  {
+    "Gruppo": "DP",
+    "Codice": "DP05",
+    "Ambito": "PROGETTAZIONE TEMPLATE LEZIONI",
+    "Titolo": "Caratteristiche lezione",
+    "Direttiva completa": "La lezione  deve essere sostenibile, attiva e inclusiva"
+  },
+  {
+    "Gruppo": "DID",
+    "Codice": "DID00",
+    "Ambito": "GENERALE",
+    "Titolo": "Principi didattici trasversali",
+    "Direttiva completa": "Progettare lezioni ed esercizi sostenibili, attivi, graduali e inclusivi. Usare consegne brevi e chiare; segmentare spiegazioni e compiti; alternare spiegazione e partecipazione; usare più canali rappresentativi quando utili; consentire risposte orali o parziali; fornire feedback immediato e usare l'errore come risorsa. Applicare le misure individuali del PDP e, in loro assenza, DC06. Evitare materiali o tecnologie non necessari."
+  },
+  {
+    "Gruppo": "DR",
+    "Codice": "DR01",
+    "Ambito": "GENERALE",
+    "Titolo": "Tipologie di richieste elaborabili da AI",
+    "Direttiva completa": "Saranno ricevibili dall’utente solo queste richieste che prevedono\n1-Progettazione di lezioni  codificate come indicato nella direttiva DR02\n2-Come punto 1 + Esercizi codificati come indicato nella direttiva DR03\n3-Esercizi codificati come indicato nella direttiva DR03\n4-Progettazione di una verifica sommativa  codificata come indicato nella direttiva DR05\nSe l’utente invia richieste  ti tipo diverso, rispondi” prompt non in linea con le direttive, riformula il prompt”"
+  },
+  {
+    "Gruppo": "DR",
+    "Codice": "DR02",
+    "Ambito": "GENERALE",
+    "Titolo": "Lezioni progettabili",
+    "Direttiva completa": "Richieste ammesse: lezioni L1-L9 + argomento. Applicare template relativo, DID00, DVL00/DVL04/DVL06; le visualizzazioni necessarie sono contenuti effettivi della lezione."
+  },
+  {
+    "Gruppo": "DR",
+    "Codice": "DR03",
+    "Ambito": "GENERALE",
+    "Titolo": "Esercizi progettabili",
+    "Direttiva completa": "La richiesta può specificare: DETxx (tipo), numero 1-20, argomento, DEDxx (difficoltà), DBLxx (livello cognitivo), DESxx (soluzione), DGTxx (grafico). I parametri possono essere combinati in richieste autonome o nei template; applicare DEG e DEG07. Ogni grafico segue DGR00 e le direttive DGR specialistiche applicabili."
+  },
+  {
+    "Gruppo": "DR",
+    "Codice": "DR04",
+    "Ambito": "GENERALE",
+    "Titolo": "Verifiche sommative",
+    "Direttiva completa": "Per le verifiche sommative usare la sezione DVE-DIRETTIVE PER VERIFICHE SOMMATIVE.."
+  },
+  {
+    "Gruppo": "DLEG",
+    "Codice": "DLEG",
+    "Ambito": "PROGETTAZIONE TEMPLATE LEZIONI",
+    "Titolo": "Driver legislativi",
+    "Direttiva completa": "Usare le fonti seguenti come driver per progettare i template, non come sostituti dell'analisi normativa. In base a scuola, indirizzo, classe, disciplina, argomento, attività e caratteristiche della classe: verificarne vigenza/applicabilità; selezionare articoli, commi, allegati, risultati di apprendimento, competenze e indicazioni pertinenti; escludere ciò che non si applica; tradurre le disposizioni pertinenti in vincoli operativi; distinguere obblighi, indicazioni ministeriali e cornici pedagogiche; evitare citazioni prive di effetti progettuali.\nFONTI: D.P.R. 275/1999 art.4; D.Lgs.61/2017; D.M.92/2018; D.M.766/2019 Linee guida professionali; D.Lgs.66/2017 s.m.i.; L.170/2010 + D.M.5669/2011 + Linee guida DSA; Direttiva 27/12/2012 + C.M.8/2013; Raccomandazione UE 22/05/2018; UDL-CAST; disposizioni MIM sull'uso degli smartphone nel secondo ciclo."
+  },
+  {
+    "Gruppo": "DMF",
+    "Codice": "DMF00",
+    "Ambito": "GENERALE",
+    "Titolo": "Rappresentazione matematica professionale",
+    "Direttiva completa": "Usare LaTeX semanticamente corretto per ogni contenuto matematico: inline per espressioni brevi, block per formule centrali/multilinea. Usare strutture appropriate (frazioni, radicali, limiti, derivate, integrali, sommatorie, matrici, sistemi, cases, aligned), evitando ASCII/Unicode sostitutivi. Prima dell'output verificare correttezza matematica e sintassi bilanciata. Mostrare notazione renderizzata, non LaTeX grezzo, salvo richiesta."
+  },
+  {
+    "Gruppo": "DVL",
+    "Codice": "DVL00",
+    "Ambito": "LEZIONI",
+    "Titolo": "Necessità, materializzazione e uso delle visualizzazioni",
+    "Direttiva completa": "Per ogni lezione decidere se servono grafici, figure, schemi, tabelle o immagini. Renderli obbligatori quando la comprensione dipende da forma, andamento, variazione, posizione, confronto, dipendenze, dominio, segno, monotonia, estremi, asintoti, intersezioni o trasformazioni. Produrre solo le visualizzazioni necessarie, in numero sufficiente, nella fase d'uso e richiamate dal testo; verificarne presenza, correttezza e funzione. Via API, un grafico da renderizzare richiede un blocco graph."
+  },
+  {
+    "Gruppo": "DVL",
+    "Codice": "DVL04",
+    "Ambito": "LEZIONI",
+    "Titolo": "Distribuzione nelle fasi della lezione",
+    "Direttiva completa": "I grafici non devono essere raccolti in una sezione separata salvo necessità redazionali. Devono comparire nella fase della lezione nella quale svolgono una funzione didattica: aggancio, spiegazione, costruzione guidata, confronto, formalizzazione, esercitazione o sintesi."
+  },
+  {
+    "Gruppo": "DVL",
+    "Codice": "DVL06",
+    "Ambito": "LEZIONI",
+    "Titolo": "Progressione visuale",
+    "Direttiva completa": "Quando didatticamente utile, preferire una sequenza visuale progressiva: fenomeno o esempio iniziale, grafico essenziale, evidenziazione delle proprietà, confronto tra casi, formalizzazione matematica e sintesi finale."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT101",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Struttura generale lezione",
+    "Direttiva completa": "Tempo | Durata | Fase | Funzione principale\n0-5 min | 5 | 1. Ingresso e aggancio | Attivare attenzione e conoscenze pregresse\n5-12 min | 6 | 2. Prima microlezione | Introdurre il concetto essenziale\n12-18 min | 6 | 3. Prima attivazione | Verificare comprensione e coinvolgere\n18-28 min | 10 | 4. Costruzione guidata | Sviluppare il concetto attraverso dialogo ed esempio\n28-35 min | 7 | 5. Seconda microlezione | Formalizzare e sistematizzare\n35-45 min | 10 | 6. Applicazione guidata | Passare dalla comprensione all'uso\n45-53 min | 8 | 7. Consolidamento e errore | Rafforzare il concetto e correggere misconcezioni\n53-58 min | 5 | 8. Sintesi | Fissare gli elementi essenziali\n58-60 min | 2 | 9. Verifica finale rapida | Rilevare immediatamente la comprensione"
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT102",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Ingresso e aggancio",
+    "Direttiva completa": "Durata indicativa: 0-5 minuti\nObiettivo:Portare rapidamente gli studenti dentro l'attività senza iniziare immediatamente con una spiegazione teorica.\nAzione del docente:Il docente propone alla lavagna o oralmente 2 situazioni molto semplici collegate all'argomento, della seguente tipologia:\nuna domanda;\nun dato;\nun grafico\nun'immagine;\nun problema concreto;\nuna previsione;\nun'affermazione vero/falso;\nuna situazione professionale;\nun errore da individuare.\nL'aggancio deve essere preferibilmente visuale. Quando l'argomento lo consente, partire da un'immagine, grafico, disegno, schema o situazione rappresentata visivamente sulla quale formulare una domanda a bassa soglia.\nLa richiesta iniziale deve essere a bassa soglia di accesso, in modo che anche lo studente debole possa tentare una risposta.\nEsempi:\n“Che cosa notate dal grafico?” “Quale delle due situazioni cresce più rapidamente?”\n«Secondo voi questo valore aumenta o diminuisce?»\n«Quale delle tre risposte vi sembra possibile: A, B o C?»\n«Cosa succederebbe se raddoppiassimo questa quantità?»\n«Dove pensate che sia l'errore?»\nPartecipazione degli studenti:Risposta orale, alzata di mano, indicazione A-B-C con le dita, breve intervento individuale.\nBES/DSA:Non richiedere immediatamente produzioni scritte complesse. Utilizzare linguaggio semplice e rendere visibile alla lavagna la domanda centrale."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT103",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Prima microlezione",
+    "Direttiva completa": "Durata indicativa: 5-12 minuti\nObiettivo:Fornire gli elementi indispensabili per iniziare a comprendere il nuovo contenuto.\nAzione del docente:Spiegazione frontale breve, possibilmente non superiore a 7-8 minuti consecutivi.\nLa prima microlezione deve contenere almeno una rappresentazione visuale significativa, salvo argomenti per i quali essa risulti artificiosa.\nLa spiegazione dovrebbe partire dalla rappresentazione e successivamente associare ad essa linguaggio verbale e simbolico.\nSequenza preferenziale:\nrappresentazione → osservazione → significato → simbolo/formula.\nLa spiegazione deve privilegiare:\nun solo concetto principale;\npochi simboli;\nun esempio;\nuna rappresentazione visiva;\ncollegamenti con conoscenze già possedute.\nÈ utile rendere esplicito l'obiettivo:\n«Alla fine di questa ora dovreste essere in grado di...»\nNota:Non anticipare in questa fase tutte le eccezioni, i casi particolari o le formalizzazioni più complesse.\nBES/DSA:Presentare, quando possibile, lo stesso concetto attraverso almeno due canali:\nparola + simbolo\noppure:\nformula + grafico\noppure:\nsituazione concreta + rappresentazione matematica."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT104",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Prima attivazione",
+    "Direttiva completa": "Durata indicativa: 12-18 minuti\nQuando pertinente, il docente mostr un grafico, figura, schema o immagine e pone una domanda che richieda di ricavare un'informazione dalla rappresentazione.\nPossibili modalità\nDomanda diretta\n«Paolo, cosa rappresenta questo numero?»\nCompletamento\n«Se x aumenta, y ________.»\nVero/falso\n«Questa affermazione è vera o falsa?»\nScelta A-B-C\n«Quale procedimento usereste?»\nPrevisione\n«Prima di calcolare: secondo voi il risultato sarà maggiore o minore di 10?»\nRichiamo alla lavagna\nUno studente completa soltanto un passaggio.\nRegola importante\nPrima di chiamare uno studente può essere utile dire:\n«Pensate tutti per dieci secondi; poi chiamo qualcuno.»\nIn questo modo non lavora cognitivamente soltanto lo studente interrogato."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT105",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Costruzione guidata",
+    "Direttiva completa": "Durata indicativa: 18-28 minuti\nIl docente costruisce insieme alla classe un esempio o un problema più significativo.\nQuando possibile il problema deve essere costruito anche attraverso una rappresentazione visuale progressiva.\nIl docente può costruire o modificare progressivamente grafico, disegno o schema mentre interroga la classe.\nNon presentare necessariamente la rappresentazione completa fin dall'inizio: possono essere aggiunti progressivamente punti, linee, valori, vettori, frecce, etichette o relazioni.\nLa sequenza può essere:\ndomanda → risposta → passaggio alla lavagna → nuova domanda → completamento.\nIl docente evita, per quanto possibile, di eseguire interamente il procedimento senza coinvolgere la classe.\nEsempio di dialogo\n«Qual è il primo dato che ci serve?»\n«Quale formula potrebbe essere utile?»\n«Cosa devo sostituire qui?»\n«Secondo voi questo passaggio è corretto?»\n«Perché?»\nRuolo dello studente\nNon è necessario che lo studente risolva tutto il problema.\nPuò:\nindividuare un dato;\nscegliere un'operazione;\ncompletare una formula;\nprevedere un risultato;\ncorreggere un errore;\nspiegare un singolo passaggio.\nQuesto abbassa notevolmente la soglia di partecipazione.\nPossibile microconfronto\nPer una domanda leggermente più complessa:\n«Parlatene per 30-60 secondi con il compagno.»\nPoi il docente raccoglie due o tre risposte.\nNon è necessario organizzare un vero lavoro di gruppo."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT106",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Seconda microlezione e formalizzazione",
+    "Direttiva completa": "Durata indicativa: 28-35 minuti\nDopo aver fatto emergere il concetto attraverso esempi e dialogo, il docente formalizza.\nÈ il momento di fissare:\ndefinizione;\nformula;\nregola;\nproprietà;\nprocedimento standard;\neventuale schema.\nLa formalizzazione arriva quindi dopo una prima esperienza del concetto.\nStruttura consigliata alla lavagna\nRAPPRESENTAZIONE ↓ IDEA / SIGNIFICATO ↓ REGOLA / FORMULA ↓ COME SI LEGGE NELLA RAPPRESENTAZIONE ↓ COME SI USA ↓ ATTENZIONE A...\nQuesta organizzazione è particolarmente utile per gli studenti che hanno difficoltà a distinguere le informazioni principali da quelle secondarie."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT107",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Applicazione guidata",
+    "Direttiva completa": "Durata indicativa: 35-45 minuti\nSi propone un esercizio o problema molto simile a quello appena affrontato.\nLa difficoltà deve essere calibrata in modo che una parte consistente della classe possa iniziare.\nPossibili modalità\nModalità A — individuale\n2-3 minuti di lavoro, poi correzione.\nModalità B — coppia\nDue studenti cercano insieme il primo passaggio.\nModalità C — collettiva\nIl docente chiede successivamente i diversi passaggi a studenti differenti.\nProgressione consigliata\nGradino 0: Lettura della rappresentazione,lo studente identifica informazioni direttamente da grafico, figura, schema o immagine.\nGradino 1: riconoscimento.\nGradino 2: applicazione guidata.\nGradino 3: applicazione relativamente autonoma.\nNon è necessario arrivare sempre al Gradino 3 nella prima lezione su un argomento.\nBES/DSA: Lo studente fragile può ricevere una domanda più circoscritta senza essere escluso dall'attività comune.\nPer esempio, anziché:\n«Risolvi tutto l'esercizio.»\nsi può chiedere:\n«Quale formula dobbiamo utilizzare?»\noppure:\n«Qual è il primo valore da sostituire?»"
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT108",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Consolidamento attraverso l'errore o la scelta",
+    "Direttiva completa": "Durata indicativa: 45-53 minuti\nIn questa fase è particolarmente efficace proporre un esercizio del tipo:\nPrivilegiare, quando possibile, anche errori visuali, ad esempio:\ngrafico incompatibile con la formula;\npunto collocato erroneamente;\nscala degli assi scorretta;\nschema con collegamento errato;\ndisegno geometrico incompatibile con i dati;\ntre grafici tra cui individuare quello corretto.\nTROVA L'ERRORE\nAlla lavagna viene mostrato un procedimento contenente un errore.\nGli studenti devono individuare:\ndove si trova;\nperché è sbagliato;\ncome correggerlo.\nIn alternativa:\nQUALE DELLE TRE?\nVengono presentate tre possibili soluzioni:\nA – B – C\ne gli studenti devono scegliere quella corretta.\nOppure:\nVERO O FALSO?\nTre affermazioni rapide.\nRichiede meno carico esecutivo rispetto alla produzione completa di un esercizio ma può richiedere un buon livello di ragionamento.\nÈ quindi particolarmente utile per coinvolgere studenti:\npoco motivati;\ncon difficoltà nella scrittura;\ncon DSA;\ncon scarsa autonomia esecutiva."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT109",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Sintesi finale",
+    "Direttiva completa": "Durata indicativa: 53-58 minuti\nIl docente ricostruisce in pochi minuti ciò che deve rimanere della lezione.\nUna possibile struttura:\nOGGI ABBIAMO IMPARATO CHE...\n1. Concetto principale\n2. Regola/formula\n3. Procedimento / come riconoscerla nel grafico/schema\n4. Errore da evitare\nNon è necessario riassumere tutto.\nÈ preferibile individuare 2-4 elementi essenziali.\nLa sintesi deve includere, quando pertinente, una rappresentazione visuale-sintesi che permetta di recuperare rapidamente il concetto.\nCoinvolgimento della classe\nIl docente può chiedere:\n«Qual è la cosa più importante che abbiamo visto?»\n«Quale errore non dobbiamo fare?»\n«Chi riesce a spiegare questa formula con parole proprie?»\nPreferire una sola rappresentazione chiara rispetto a più immagini."
+  },
+  {
+    "Gruppo": "DT1",
+    "Codice": "DT110",
+    "Ambito": "LEZIONE_L1",
+    "Titolo": "Verifica formativa finale",
+    "Direttiva completa": "Durata indicativa: 58-60 minuti\nLa verifica finale deve essere estremamente breve.\nNon deve necessariamente essere scritta.\nPuò essere:\nModalità A – Interpretazione visuale grafico / immagine / schema / figura.\nModalità B – Scelta A-B-C\nModalità C – Vero/falso\nModalità D – Completamento orale\nModalità E – Mini esercizio\nInterpretazione visuale\nMostrare grafico, immagine, schema o figura e chiedere una singola interpretazione:\nindividuare un punto;\nscegliere tra A/B/C;\nriconoscere andamento o relazione;\nidentificare un errore;\nassociare rappresentazione e formula.\nA/B/C\n«Qual è la risposta corretta?»\nVero/falso\n«Se succede X, allora Y: vero o falso?»\nCompletamento orale\n«La formula è...»\nDomanda concettuale\n«In una frase: cosa abbiamo imparato oggi?»\nMini esercizio\nUn unico passaggio.\nQuesta fase non ha necessariamente funzione valutativa.\nServe soprattutto al docente per stabilire:\nse il concetto fondamentale è stato compreso;\nse deve essere ripreso nella lezione successiva;\nquali errori sono maggiormente diffusi."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT201",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Struttura generale lezione 120m",
+    "Direttiva completa": "Tempo | Fase | Funzione principale\n0-8 min | 1. Ingresso e aggancio | Riattivare attenzione e prerequisiti\n8-18 min | 2. Prima microlezione | Introdurre il concetto centrale\n18-28 min | 3. Prima attivazione | Verificare comprensione iniziale\n28-40 min | 4. Costruzione guidata | Sviluppare il concetto attraverso dialogo ed esempio\n40-50 min | 5. Formalizzazione | Organizzare e fissare conoscenze\n50-60 min | 6. Prima applicazione | Applicare in modo guidato\n60-65 min | 7. Pausa cognitiva | Interrompere il carico attentivo\n65-80 min | 8. Ripresa e consolidamento | Recuperare e rinforzare il concetto\n80-98 min | 9. Applicazione autonoma/guidata | Lavorare su esercizi o problemi\n98-108 min | 10. Errore, confronto e discussione | Rafforzare comprensione e metacognizione\n108-116 min | 11. Sintesi finale | Organizzare quanto appreso\n116-120 min | 12. Verifica formativa finale | Controllare rapidamente la comprensione"
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT202",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Ingresso e aggancio",
+    "Direttiva completa": "Durata indicativa: 0-8 minuti\nObiettivo\nRiportare rapidamente la classe dentro il lavoro scolastico e collegare la nuova attività a conoscenze già possedute.\nAzione del docente\nLa lezione può iniziare con:\nuna domanda;\nun breve problema;\nuna situazione concreta;\nun errore;\nuna previsione;\nun'immagine;\nuna formula già conosciuta;\nuna domanda di richiamo alla lezione precedente.\nÈ particolarmente utile iniziare con qualcosa che richieda una risposta immediata.\nEsempio di sequenza\n«Ieri abbiamo visto questa relazione. Chi ricorda cosa significa?»\n«Se modifico questo valore, cosa vi aspettate che succeda?»\n«A, B o C?»\nFunzione\nQuesta fase consente contemporaneamente di:\nrecuperare prerequisiti;\nriattivare studenti poco presenti;\ndiagnosticare eventuali lacune;\nintrodurre il nuovo obiettivo."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT203",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Prima microlezione",
+    "Direttiva completa": "Durata indicativa: 8-18 minuti\nIl docente introduce il concetto principale attraverso una spiegazione breve e fortemente guidata.\nLa microlezione dovrebbe privilegiare:\nun obiettivo;\nun concetto;\nun esempio;\npochi elementi formali;\nuna rappresentazione grafica o schematica.\nÈ opportuno dichiarare esplicitamente:\n«Oggi dobbiamo arrivare a capire...»\noppure:\n«Alla fine delle due ore dovreste essere in grado di...»\nQuesto aiuta soprattutto gli studenti con difficoltà attentive a riconoscere ciò che è essenziale."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT204",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Prima attivazione",
+    "Direttiva completa": "Durata indicativa: 18-28 minuti\nDopo circa dieci minuti di spiegazione, la classe deve essere chiamata a fare qualcosa.\nPossibili modalità:\nvero/falso;\nA/B/C;\ncompletamento;\nprevisione;\nlettura di un grafico;\ninterpretazione di una formula;\nsingolo passaggio alla lavagna.\nUna tecnica particolarmente efficace è:\n«Pensate tutti per 15 secondi. Poi chiamo qualcuno.»\nIn questo modo l'intera classe viene sollecitata cognitivamente."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT205",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Costruzione guidata",
+    "Direttiva completa": "Durata indicativa: 28-40 minuti\nIl docente sviluppa un esempio completo insieme alla classe.\nLa soluzione viene costruita attraverso una sequenza di domande:\n«Qual è il primo passaggio?»\n«Quale dato dobbiamo utilizzare?»\n«Quale regola ci serve?»\n«Cosa succede se facciamo così?»\n«Questo risultato è plausibile?»\nIl docente mantiene il controllo del procedimento ma distribuisce i passaggi tra diversi studenti.\nPossibile microconfronto\nPer una domanda non immediata:\n«Confrontatevi per un minuto con il compagno.»\nPoi vengono raccolte alcune risposte."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT206",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Formalizzazione",
+    "Direttiva completa": "Durata indicativa: 40-50 minuti\nIl docente raccoglie quanto emerso e lo trasforma in una struttura disciplinare ordinata.\nAlla lavagna può comparire:\nCONCETTO\n↓\nREGOLA\n↓\nPROCEDIMENTO\n↓\nESEMPIO\n↓\nERRORE DA EVITARE\nQuesta fase è importante perché evita che una didattica molto dialogata rimanga frammentaria.\nLa formalizzazione restituisce una struttura chiara e riconoscibile."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT207",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Prima applicazione",
+    "Direttiva completa": "Durata indicativa: 50-60 minuti\nSi propone un'attività molto vicina all'esempio svolto.\nPuò essere:\nun esercizio;\nun breve problema;\nun completamento;\nuna tabella;\nuna domanda interpretativa.\nLa prima applicazione deve essere sufficientemente accessibile.\nIl docente può utilizzare una progressione:\nriconosci → completa → applica.\nBES/DSA: Lo studente che incontra difficoltà può essere invitato a svolgere soltanto una parte del procedimento:\n«Dimmi quale formula useresti.»\noppure:\n«Individua il primo passaggio.»"
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT208",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Pausa cognitiva",
+    "Direttiva completa": "Durata indicativa: 60-65 minuti\nIn una lezione di due ore è opportuno prevedere un breve cambio di ritmo.\nNon deve necessariamente essere una vera ricreazione.\nPuò consistere in:\nalzarsi per qualche minuto;\ncancellare e riorganizzare la lavagna;\nbreve cambio di attività;\ndomanda informale;\npiccolo momento di decompressione.\nLa funzione è interrompere la continuità attentiva.\nPer studenti scarsamente motivati, due ore senza una discontinuità rischiano di produrre un forte calo dell'attenzione nella seconda parte."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT209",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Ripresa e consolidamento",
+    "Direttiva completa": "Durata indicativa: 65-80 minuti\nLa ripresa non dovrebbe iniziare con una nuova lunga spiegazione.\nÈ preferibile partire con una domanda:\n«Qual era la regola che avevamo trovato?»\n«Chi ricorda il primo passaggio?»\n«Qual era l'errore che dovevamo evitare?»\nQuesto consente di verificare quanto è rimasto dopo la prima ora.\nSuccessivamente il docente può introdurre:\nuna variante;\nun caso leggermente diverso;\nun secondo esempio;\nun'applicazione più concreta."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT210",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Applicazione autonoma o guidata",
+    "Direttiva completa": "Durata indicativa: 80-98 minuti\nQuesta è la principale differenza rispetto alla lezione da 60 minuti.\nLe due ore consentono di dedicare circa 15-20 minuti a un'attività più significativa.\nLe modalità possono variare.\nModalità A – individuale\nUno o due esercizi graduati.\nModalità B – a coppie\nGli studenti lavorano in coppia su un problema.\nModalità C – collettiva guidata\nIl docente propone un problema più complesso e distribuisce i passaggi tra diversi studenti.\nModalità D – doppio livello\nPercorso base: esercizio essenziale.\nPercorso avanzato: variante o problema.\nIn questo modo gli studenti non devono necessariamente svolgere tutti la stessa quantità di lavoro nello stesso tempo.\nEvitare di assegnare:\n«Fate gli esercizi dal 15 al 25.»\nMeglio proporre micro-obiettivi:\n«Per i prossimi quattro minuti fate soltanto il primo passaggio.»\npoi controllo;\n«Ora completate il secondo.»\nQuesto è particolarmente efficace con studenti disaffezionati o con difficoltà attentive."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT211",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Errore, confronto e discussione",
+    "Direttiva completa": "Durata indicativa: 98-108 minuti\nNella parte finale è utile interrompere nuovamente l'attività esecutiva.\nPossibili tecniche:\nTROVA L'ERRORE\nIl docente mostra un procedimento errato.\nCONFRONTA DUE SOLUZIONI\n«Quale delle due vi convince di più?»\nA-B-C\nTre risposte plausibili.\nVERO/FALSO MOTIVATO\nNon basta dire vero o falso: uno studente deve motivare.\ntrasforma l'errore da semplice fallimento a oggetto di analisi.\nBES/DSA: Individuare un errore può essere cognitivamente significativo pur richiedendo meno produzione scritta rispetto a una soluzione completa."
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT212",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Sintesi finale",
+    "Direttiva completa": "Durata indicativa: 108-116 minuti\nLa sintesi deve essere più strutturata rispetto alla lezione da un'ora, perché gli studenti hanno affrontato una quantità maggiore di attività.\nAlla lavagna:\nOGGI DOBBIAMO PORTARE VIA QUESTE 4 COSE\n1. Concetto\n2. Regola\n3. Procedimento\n4. Errore da evitare\nIl docente può ricostruire i quattro punti con la classe.\nPossibili domande\n«Chi prova a spiegare il concetto senza usare la formula?»\n«Qual è la formula?»\n«Qual è il primo passaggio?»\n«Qual è l'errore che abbiamo incontrato più spesso?»"
+  },
+  {
+    "Gruppo": "DT2",
+    "Codice": "DT213",
+    "Ambito": "LEZIONE_L2",
+    "Titolo": "Verifica formativa finale",
+    "Direttiva completa": "Durata indicativa: 116-120 minuti\nLa verifica deve essere molto breve e possibilmente individuale.\nPuò prevedere tre richieste:\n1. Comprensione\n«Che cosa significa...?»\n2. Applicazione\nUn singolo passaggio di calcolo.\n3. Controllo concettuale\nVero/falso oppure A/B/C.\nSe non è possibile utilizzare carta e penna, può essere effettuata oralmente.\nLa finalità è capire:\ncosa è stato realmente acquisito;\nquale errore è ancora presente;\nda dove partire nella lezione successiva."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT301",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Struttura generale esercitazione guidata 60m",
+    "Direttiva completa": "Tempo | Durata | Fase | Funzione principale\n0-5 min | 5 | 1. Riattivazione iniziale | Recuperare regole, prerequisiti e attenzione\n5-12 min | 7 | 2. Esercizio modello del docente | Richiamare e verbalizzare il procedimento corretto\n12-18 min | 6 | 3. Esercizio collettivo guidato | Trasferire progressivamente i passaggi alla classe\n18-30 min | 12 | 4. Prima sequenza alla lavagna | Applicare e coinvolgere anche chi non è alla lavagna\n30-35 min | 5 | 5. Cambio di ritmo | Riattivare attenzione attraverso errore, scelta o previsione\n35-45 min | 10 | 6. Applicazione breve individuale/a coppie | Estendere il coinvolgimento operativo a tutta la classe\n45-54 min | 9 | 7. Seconda sequenza alla lavagna | Consolidare, verbalizzare e aumentare l'autonomia\n54-58 min | 4 | 8. Sintesi errori e strategie | Organizzare gli apprendimenti emersi\n58-60 min | 2 | 9. Verifica formativa finale | Rilevare rapidamente il livello di acquisizione"
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT302",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Riattivazione iniziale",
+    "Direttiva completa": "Durata indicativa: 0-5 minuti Obiettivo: riportare rapidamente gli studenti dentro l'attività e verificare i prerequisiti necessari per affrontare gli esercizi. Azione del docente: proporre 2-4 richieste molto brevi su regole, formule, proprietà o passaggi già affrontati. Le domande sono rivolte inizialmente a tutta la classe, lasciando un breve tempo di pensiero prima di chiamare un singolo studente. Esempi: • «Quale regola dobbiamo utilizzare?» • «Qual è il primo passaggio?» • «Il risultato sarà positivo o negativo?» • «A, B o C?» Regola utile: «Pensate tutti per dieci secondi; poi chiamo qualcuno.» In questo modo la chiamata individuale diventa uno strumento di attenzione diffusa e non coinvolge cognitivamente soltanto lo studente scelto. BES/DSA: iniziare con richieste a bassa soglia di accesso, formulate in modo semplice e con possibilità di risposta orale."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT303",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Esercizio modello del docente",
+    "Direttiva completa": "Durata indicativa: 5-12 minuti Obiettivo: richiamare il procedimento corretto attraverso un esempio rappresentativo svolto e verbalizzato dal docente. Azione del docente: svolgere un solo esercizio modello, rendendo esplicite le decisioni che guidano ciascun passaggio. Non limitarsi al calcolo, ma verbalizzare il ragionamento: «prima individuo...», «qui applico questa regola perché...», «questo è il passaggio dove è facile sbagliare». Nota: è preferibile un esempio ben scelto e commentato rispetto a una successione di più esercizi eseguiti interamente dal docente. BES/DSA: mantenere visibili i passaggi alla lavagna, evitare salti procedurali e associare, quando utile, formula, schema e verbalizzazione."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT304",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Esercizio collettivo guidato",
+    "Direttiva completa": "Durata indicativa: 12-18 minuti Obiettivo: ridurre progressivamente il supporto del docente e trasferire alla classe la responsabilità dei singoli passaggi. Azione del docente: proporre un secondo esercizio simile al modello e costruirne la soluzione attraverso domande successive: • «Da dove cominciamo?» • «Quale operazione dobbiamo fare?» • «Chi propone il passaggio successivo?» • «Siete d'accordo? Perché?» Il docente può scrivere materialmente alla lavagna, ma il procedimento deve essere determinato, per quanto possibile, dalle risposte della classe. Funzione didattica: realizzare il passaggio esempio completamente guidato → esercizio parzialmente guidato. BES/DSA: proporre domande progressive e consentire contributi brevi, anche limitati all'individuazione della regola o del primo passaggio."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT305",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Prima sequenza di esercizi alla lavagna",
+    "Direttiva completa": "Durata indicativa: 18-30 minuti Obiettivo: far applicare direttamente il procedimento agli studenti mantenendo contemporaneamente attivo il resto della classe. Azione del docente: chiamare indicativamente due studenti, uno alla volta, a svolgere esercizi alla lavagna. L'esercizio non deve diventare attività esclusiva dello studente chiamato: durante lo svolgimento il docente coinvolge gli altri con microdomande. Esempi: • «Tutti: è corretto questo passaggio?» • «Qual è il prossimo passaggio?» • «Chi avrebbe fatto diversamente?» • «Controllate il segno.» • «Prima che continui: prevedete il risultato.» Differenziazione della chiamata: • Gradino 1 – accesso: individuare formula, regola o operazione; • Gradino 2 – esecuzione parziale: svolgere uno o due passaggi; • Gradino 3 – esecuzione completa: risolvere autonomamente l'esercizio. BES/DSA: graduare la richiesta senza escludere lo studente dall'attività comune e valorizzare anche risposte orali e parziali corrette."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT306",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Cambio di ritmo",
+    "Direttiva completa": "Durata indicativa: 30-35 minuti Obiettivo: interrompere la ripetitività della sequenza di esercizi e recuperare l'attenzione. Possibili modalità, da realizzare direttamente alla lavagna/LIM senza materiale aggiuntivo: • TROVA L'ERRORE: individuare dove compare l'errore, perché è sbagliato e come correggerlo; • A-B-C: scegliere fra tre possibili passaggi o risultati; • VERO/FALSO: valutare rapidamente una o più affermazioni; • PREVISIONE: anticipare segno, ordine di grandezza o tipo di risultato prima del calcolo. Funzione inclusiva: queste attività richiedono un carico esecutivo ridotto ma possono mobilitare un ragionamento significativo, favorendo anche studenti con difficoltà di scrittura o scarsa autonomia."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT307",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Applicazione breve individuale o a coppie",
+    "Direttiva completa": "Durata indicativa: 35-45 minuti Obiettivo: fare in modo che l'esercitazione coinvolga operativamente anche gli studenti che non sono stati chiamati alla lavagna. Azione del docente: proporre un esercizio breve da svolgere sul quaderno, se disponibile, oppure attraverso un confronto guidato con il compagno. Lavoro per micro-obiettivi: evitare consegne ampie come «svolgete l'esercizio per dieci minuti». Preferire: • «Avete due minuti: trovate soltanto il primo passaggio.» • breve controllo collettivo; • «Adesso completate il procedimento.» Modalità a coppie: confronto breve e strutturato, ad esempio «decidete insieme quale deve essere il primo passaggio». BES/DSA: la segmentazione riduce il carico cognitivo e permette di concentrarsi prima sulla strategia e poi sull'esecuzione."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT308",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Seconda sequenza di esercizi alla lavagna",
+    "Direttiva completa": "Durata indicativa: 45-54 minuti Obiettivo: consolidare quanto esercitato coinvolgendo altri studenti e aumentando progressivamente il livello di autonomia. Azione del docente: chiamare uno o due ulteriori studenti. Nell'intera ora possono quindi intervenire direttamente alla lavagna tre o quattro studenti, mantenendo la pratica della chiamata individuale ma rendendola parte di un'attività collettiva. Verbalizzazione: chiedere in alcuni passaggi non soltanto di scrivere ma anche di spiegare: • «Cosa stai facendo?» • «Perché hai scelto questa operazione?» • «Quale regola stai applicando?» Possibile controllo tra pari: uno studente esegue e un secondo viene chiamato a verificare o commentare un passaggio. BES/DSA: la verbalizzazione e il controllo di un passaggio possono costituire modalità alternative di partecipazione rispetto alla soluzione completa scritta."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT309",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Sintesi degli errori e delle strategie",
+    "Direttiva completa": "Durata indicativa: 54-58 minuti Obiettivo: trasformare gli esercizi svolti nell'ora in conoscenza organizzata e richiamabile. Azione del docente: non ripercorrere tutti gli esercizi, ma evidenziare ciò che è realmente emerso. Alla lavagna può essere costruita una sintesi del tipo: OGGI DOBBIAMO RICORDARE 1. primo passaggio; 2. regola fondamentale; 3. errore frequente; 4. controllo finale. In alternativa: «I TRE ERRORI DA NON FARE» ricavati dagli errori osservati durante l'esercitazione. BES/DSA: rendere la sintesi breve, visibile e centrata su pochi elementi essenziali."
+  },
+  {
+    "Gruppo": "DT3",
+    "Codice": "DT310",
+    "Ambito": "LEZIONE_L3",
+    "Titolo": "Verifica formativa finale",
+    "Direttiva completa": "Durata indicativa: 58-60 minuti Obiettivo: verificare rapidamente se il procedimento fondamentale è stato acquisito e orientare la lezione successiva. La verifica non deve necessariamente avere funzione valutativa e può essere svolta anche oralmente. Possibili modalità: • domanda procedurale: «Qual è il primo passaggio?»; • A-B-C: scegliere l'operazione corretta; • vero/falso: valutare un passaggio; • mini-esercizio: completare un unico passaggio; • domanda metacognitiva: «Qual è l'errore che devi controllare maggiormente?» Funzione: decidere se procedere, riprendere una procedura, affrontare un errore specifico o aumentare il livello di difficoltà."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT401",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Struttura generale esercitazione cooperativa a squadre 60m",
+    "Direttiva completa": "Tempo | Durata | Fase | Funzione principale\n0-5 min | 5 | 1. Riattivazione e briefing | Richiamare prerequisiti, obiettivo e regole della gara\n5-10 min | 5 | 2. Formazione squadre e ruoli | Organizzare cooperazione e responsabilità individuale\n10-20 min | 10 | 3. Manche 1 - accesso | Consentire a tutti di entrare nell'attività\n20-32 min | 12 | 4. Manche 2 - consolidamento | Consolidare procedure e collaborazione\n32-44 min | 12 | 5. Manche 3 - problema/sfida | Aumentare ragionamento, strategia e cooperazione\n44-51 min | 7 | 6. Sfida finale | Massimizzare coinvolgimento e responsabilità\n51-57 min | 6 | 7. Restituzione | Confrontare strategie, errori e procedimenti\n57-60 min | 3 | 8. Valutazione e chiusura | Attribuire punteggio e sintetizzare gli apprendimenti"
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT402",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Finalità e organizzazione dei gruppi",
+    "Direttiva completa": "Finalità: consolidare un argomento già introdotto attraverso una gara a squadre nella quale la competizione abbia funzione motivazionale e sia subordinata a cooperazione interna e responsabilità individuale. Dimensione consigliata: gruppi eterogenei di 4 studenti, formati dal docente; ammessi gruppi da 3 o 5 se necessario. Principio fondamentale: la squadra può ottenere il punteggio completo solo se tutti i componenti sono in grado di contribuire e spiegare almeno una parte del lavoro svolto. Materiali: lavagna/LIM, esercizi del docente o del libro, eventualmente un solo foglio per gruppo, strumenti compensativi previsti dai PDP. Non sono necessari smartphone personali."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT403",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Ruoli obbligatori e rotazione",
+    "Direttiva completa": "Ruoli per gruppi di 4: • RISOLUTORE: esegue il procedimento principale; • CONTROLLORE: verifica passaggi, calcoli, segni, formule e risultato; • STRATEGA: individua regola, formula, primo passaggio e strategia; • RELATORE: deve essere in grado di spiegare il procedimento del gruppo. Con gruppi da 5 può essere aggiunto l'ORGANIZZATORE, che gestisce il tempo e controlla che tutti abbiano compreso. Rotazione obbligatoria dopo ogni manche: A → B → C → D → A. Nessuno mantiene stabilmente lo stesso ruolo. Regola anti-dominanza: è consentito aiutare spiegando come procedere, non svolgere stabilmente il compito al posto del compagno. BES/DSA: non assegnare stabilmente ruoli passivi agli studenti fragili; modulare la complessità della richiesta."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT404",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Riattivazione e briefing",
+    "Direttiva completa": "Durata indicativa: 0-5 minuti Obiettivo: richiamare rapidamente i prerequisiti e spiegare il funzionamento della gara. Azione del docente: proporre 2-3 domande flash sull'argomento e poi comunicare regole, tempi, ruoli e criteri di punteggio. Esempi: «Qual è la regola fondamentale che ci servirà?», «Qual è il primo passaggio?», «Quale formula usereste?». Messaggio chiave: «Vince la squadra che lavora meglio insieme; il punteggio dipenderà anche dalla capacità di tutti i componenti di spiegare il lavoro svolto.»"
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT405",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Formazione squadre e assegnazione dei ruoli",
+    "Direttiva completa": "Durata indicativa: 5-10 minuti Il docente forma le squadre, preferibilmente eterogenee, e assegna i ruoli iniziali. Ogni gruppo deve sapere chi svolge ciascuna funzione e che i ruoli ruoteranno dopo ogni manche. Responsabilità individuale: il docente può chiedere, dopo il lavoro del gruppo, a QUALSIASI componente di spiegare un passaggio. La scelta avviene dopo la conclusione della prova. Conseguenza metodologica: lo studente più competente ha interesse ad aiutare gli altri a capire, non a fare tutto da solo."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT406",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Manche 1 - livello base",
+    "Direttiva completa": "Durata indicativa: 10-20 minuti Obiettivo: permettere a tutti di entrare nell'attività attraverso esercizi relativamente accessibili. Sequenza: 1. lo Stratega propone come iniziare; 2. il Risolutore sviluppa il procedimento; 3. il Controllore verifica; 4. il Relatore si prepara a spiegare. Al termine il docente sceglie casualmente uno qualsiasi dei componenti e pone una domanda breve sul procedimento. La squadra mantiene l'intero punteggio se il componente scelto sa spiegare il passaggio richiesto. Fine manche: rotazione obbligatoria dei ruoli. BES/DSA: privilegiare domande a bassa soglia e un primo successo possibile."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT407",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Manche 2 - livello intermedio",
+    "Direttiva completa": "Durata indicativa: 20-32 minuti Obiettivo: consolidare il procedimento con un esercizio leggermente più complesso e una nuova distribuzione dei ruoli. Punteggio per la prova: • soluzione corretta: 4 punti; • procedimento corretto con errore di calcolo: 3 punti; • strategia corretta ma esercizio incompleto: 2 punti; • tentativo coerente: 1 punto; • nessuna attività significativa: 0 punti. Bonus cooperazione: +1 punto se lo studente scelto casualmente dal docente spiega correttamente un passaggio. Fine manche: nuova rotazione dei ruoli."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT408",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Manche 3 - problema o sfida",
+    "Direttiva completa": "Durata indicativa: 32-44 minuti Obiettivo: superare la sola esecuzione meccanica e richiedere scelta strategica, controllo e argomentazione. Possibili prove: esercizio con variante; problema contestualizzato; situazione professionale; procedimento incompleto; soluzione contenente un errore; scelta motivata fra due strategie. Può essere assegnato +1 punto bonus per una strategia particolarmente chiara, efficiente o ben motivata. La velocità, da sola, non costituisce criterio di merito. Fine manche: rotazione dei ruoli."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT409",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Sfida finale",
+    "Direttiva completa": "Durata indicativa: 44-51 minuti Obiettivo: coinvolgere contemporaneamente tutte le squadre con una prova breve e ad alta intensità attentiva. Modalità possibili: A-B-C; Trova l'errore; Primo passaggio corretto; Previsione del segno, ordine di grandezza o tipo di risultato. Le squadre discutono brevemente e comunicano la risposta contemporaneamente, per evitare che una squadra copi dalle altre. Il docente può chiedere a un componente scelto casualmente di motivare la risposta."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT410",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Restituzione finale",
+    "Direttiva completa": "Durata indicativa: 51-57 minuti La restituzione è obbligatoria e non coincide con la sola proclamazione della squadra vincitrice. Il docente seleziona uno o due esercizi, errori o strategie significative emerse. Ogni squadra può essere chiamata a restituire una strategia, un passaggio, un errore, una soluzione o una difficoltà incontrata. Il docente sceglie il componente che interviene, non necessariamente il Relatore, mantenendo la responsabilità individuale. Domande possibili: «Come avete iniziato?», «Dove avete avuto difficoltà?», «Quale errore avete corretto?», «Perché questa soluzione funziona?», «Avete trovato un metodo diverso?»."
+  },
+  {
+    "Gruppo": "DT4",
+    "Codice": "DT411",
+    "Ambito": "LEZIONE_L4",
+    "Titolo": "Valutazione, criteri e chiusura",
+    "Direttiva completa": "Durata indicativa: 57-60 minuti La valutazione considera sia la qualità matematica sia il funzionamento cooperativo e non si basa esclusivamente sulla velocità. Rubrica della squadra (totale 10 punti): • Correttezza matematica delle soluzioni: 0-4; • Metodo e qualità del ragionamento: 0-2; • Partecipazione effettiva di tutti: 0-2; • Capacità di spiegare e restituire il lavoro: 0-1; • Rispetto dei ruoli e collaborazione: 0-1. Interpretazione: 9-10 ottimo; 7-8 buono; 6 adeguato; 4-5 parziale; 0-3 da consolidare. Valutazione individuale osservativa: A partecipazione attiva e consapevole; B adeguata; C parziale; D insufficiente. Se l'attività viene trasformata in voto individuale, criterio consigliato: 70% punteggio della squadra + 30% contributo individuale. In attività puramente formative, usare il punteggio come feedback e registrare osservazioni individuali."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG00",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Finalità generale",
+    "Direttiva completa": "Finalità generale. Gli esercizi generati devono essere coerenti con il tipo di scuola, l’indirizzo di studi, il livello della classe, gli obiettivi disciplinari, l’eventuale presenza di studenti BES/DSA, il livello di difficoltà operativa DED, il livello cognitivo DBL richiesto e il tipo di attività didattica nella quale verranno utilizzati. La difficoltà non deve essere aumentata attraverso calcoli inutilmente lunghi o dati artificialmente complicati. Deve essere privilegiata la comprensione del procedimento, la capacità di scegliere la strategia corretta e il controllo dell’errore."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG01",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Coerenza con il livello scolastico",
+    "Direttiva completa": "Gli esercizi devono essere calibrati per una scuola secondaria di secondo grado e, quando richiesto, per un istituto professionale. Evitare formalismi non necessari, complessità algebriche gratuite, passaggi troppo lunghi, dati poco realistici e richieste non coerenti con il programma affrontato."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Progressione della difficoltà",
+    "Direttiva completa": "Nelle serie di esercizi graduare DED in base a elementi da gestire, quantità/interdipendenza dei passaggi, complessità dei dati, trasformazioni preliminari, autonomia e informazioni da coordinare. Non usare solo numeri maggiori o calcoli più lunghi. Valutare DBL separatamente secondo DBLA00."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Gradualità e accessibilità",
+    "Direttiva completa": "Applicare DID00. La sequenza deve consentire un accesso iniziale anche agli studenti fragili e aumentare progressivamente il carico operativo senza salti non motivati."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Coerenza con istituto professionale MAT",
+    "Direttiva completa": "Quando il livello richiesto è professionale o MAT, privilegiare coefficienti semplici, numeri interi o razionali facilmente gestibili, procedure chiare, esempi concreti e applicazioni tecniche quando significative. Non forzare il contesto professionale se rende il problema artificiale."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Inclusione BES/DSA",
+    "Direttiva completa": "Applicare DC06 e DID00; adattare consegna e carico esecutivo senza ridurre automaticamente il livello cognitivo richiesto."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG06",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Errori tipici e feedback",
+    "Direttiva completa": "Quando utile, includere errori plausibili da riconoscere/correggere e feedback immediato secondo DID00, senza trasformare l'errore in semplice penalizzazione."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG07",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Risoluzione dei parametri degli esercizi",
+    "Direttiva completa": "DET, DED, DBL, DES e DGT possono essere globali, usati nei template L1-L4, o specificati per singolo esercizio ES1, ES2, … . I valori individuali prevalgono sui globali. I parametri omessi sono scelti automaticamente in coerenza con classe, argomento, template, contesto, BES/DSA e setup; DGT solo se il grafico è utile o necessario."
+  },
+  {
+    "Gruppo": "DEG",
+    "Codice": "DEG10",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Controllo qualità degli esercizi",
+    "Direttiva completa": "Prima dell’output verificare: correttezza matematica; assenza di ambiguità; coerenza tra testo e soluzione; difficoltà reale rispetto al codice della difficoltà dell’esercizio; plausibilità dei dati; presenza di una soluzione quando richiesta; compatibilità con le direttive del setup, coerenza del processo cognitivo effettivamente richiesto con il codice DBL assegnato. Se è presente un grafico, verificare inoltre conformità a DGR00 e DGR05/DGR07-DGR10, corrispondenza al codice del tipo grafico scelto, leggibilità editoriale e controllo incrociato testo -> proprietà matematica -> grafico -> risposta."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET01",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Recupero",
+    "Direttiva completa": "Un solo obiettivo per esercizio, pochi passaggi, numeri semplici, nessuna difficoltà accessoria, consegna breve. Adatto a recupero, avvio e prima esperienza di successo."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Standard",
+    "Direttiva completa": "Proporre un esercizio relativo all'argomento richiesto che richieda allo studente di individuare autonomamente dati, proprietà, formule, regole e procedure necessarie e di sviluppare la soluzione prevalentemente per via analitica. La consegna deve indicare chiaramente ciò che deve essere determinato, senza suggerire la procedura risolutiva né suddividerla automaticamente in passaggi guidati. L'esercizio può richiedere uno o più passaggi logicamente concatenati e deve essere coerente con il livello di difficoltà richiesto. Eventuali rappresentazioni grafiche, geometriche o tabellari possono integrare la risoluzione quando pertinenti all'argomento."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Problema contestualizzato",
+    "Direttiva completa": "Collegare la matematica a una situazione concreta o professionale quando il collegamento è autentico. Possibili ambiti: manutenzione, elettricità, meccanica, misure, dimensionamento, consumi, costi, tempi di lavorazione, velocità, superfici e materiali. Struttura: situazione, dati, domanda, modello matematico, soluzione, interpretazione del risultato."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Trova l’errore",
+    "Direttiva completa": "Presentare un procedimento già svolto contenente uno o più errori realistici. Chiedere di individuare l’errore, spiegare perché è errato e correggerlo. Usare errori plausibili e coerenti con quelli tipici degli studenti."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Scelta multipla A-B-C",
+    "Direttiva completa": "Una domanda con tre alternative plausibili, una sola corretta. I distrattori devono derivare da errori tipici. Su richiesta fornire anche la spiegazione del perché le alternative errate sono sbagliate."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET06",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Vero/Falso motivato",
+    "Direttiva completa": "Proporre affermazioni su proprietà, interpretazioni, passaggi, errori frequenti o significato delle formule. Lo studente deve indicare vero/falso e motivare brevemente."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET07",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Esercizio guidato / scaffolding",
+    "Direttiva completa": "Scomporre l’esercizio in passi progressivi: individua i dati; scegli formula/regola; sostituisci; calcola; controlla. Particolarmente adatto a BES/DSA e recupero. Non fornire automaticamente le risposte ai singoli passi se non richiesto."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET08",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Completamento",
+    "Direttiva completa": "Richiedere il completamento di una formula, di un termine mancante, di un singolo passaggio, di una tabella, di un grafico o di una parte del procedimento, senza imporre sempre l’intera soluzione."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET09",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Previsione",
+    "Direttiva completa": "Prima del calcolo chiedere di prevedere segno, intervallo, ordine di grandezza, andamento, numero di soluzioni o comportamento della funzione; successivamente confrontare previsione e risultato."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET10",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Confronto tra due soluzioni",
+    "Direttiva completa": "Presentare due procedimenti e chiedere se sono corretti, quale è più semplice, quale contiene un errore o quale passaggio li differenzia. Favorire argomentazione e metacognizione."
+  },
+  {
+    "Gruppo": "DET",
+    "Codice": "DET11",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Esercizio per gara a squadre",
+    "Direttiva completa": "Destinato principalmente al template L4. Consegna breve, soluzione verificabile, difficoltà definita, punteggio assegnabile, possibilità di spiegazione orale e bonus per strategia/cooperazione. Organizzabile in manche base, intermedia, sfida e prova finale."
+  },
+  {
+    "Gruppo": "DED",
+    "Codice": "DED01",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Molto facile",
+    "Direttiva completa": "Un solo elemento essenziale da gestire, uno o pochissimi passaggi, dati immediatamente utilizzabili, calcolo elementare, struttura altamente trasparente."
+  },
+  {
+    "Gruppo": "DED",
+    "Codice": "DED02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Facile",
+    "Direttiva completa": "Pochi elementi e pochi passaggi, dati chiari, eventuale scelta operativa semplice, calcoli contenuti e assenza di trasformazioni significative."
+  },
+  {
+    "Gruppo": "DED",
+    "Codice": "DED03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Standard",
+    "Direttiva completa": "Più elementi coordinati, procedimento completo generalmente di 2–4 passaggi, scelta autonoma di alcuni passaggi operativi e calcoli ordinari per il livello scolastico"
+  },
+  {
+    "Gruppo": "DED",
+    "Codice": "DED04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Medio-alto",
+    "Direttiva completa": "Più passaggi interdipendenti, trasformazioni preliminari, maggiore quantità di informazioni da coordinare, minori indizi procedurali e maggiore autonomia esecutiva."
+  },
+  {
+    "Gruppo": "DED",
+    "Codice": "DED05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Potenziamento",
+    "Direttiva completa": "Elevato carico operativo per il livello della classe: più elementi interdipendenti, procedimento non immediato, trasformazioni o rappresentazioni multiple, elevata autonomia e controllo del risultato. Non introdurre contenuti non studiati."
+  },
+  {
+    "Gruppo": "DES",
+    "Codice": "DES01",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Nessuna soluzione",
+    "Direttiva completa": "Mostrare esclusivamente gli esercizi."
+  },
+  {
+    "Gruppo": "DES",
+    "Codice": "DES02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Solo risultato finale",
+    "Direttiva completa": "Per ogni esercizio fornire esclusivamente il risultato finale, senza sviluppo."
+  },
+  {
+    "Gruppo": "DES",
+    "Codice": "DES03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Soluzione sintetica",
+    "Direttiva completa": "Mostrare i passaggi principali senza commenti estesi."
+  },
+  {
+    "Gruppo": "DES",
+    "Codice": "DES04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Soluzione completa",
+    "Direttiva completa": "Mostrare tutti i passaggi algebrici o logici necessari."
+  },
+  {
+    "Gruppo": "DES",
+    "Codice": "DES05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Soluzione completa commentata",
+    "Direttiva completa": "Oltre ai passaggi, spiegare brevemente perché viene eseguita ogni operazione, quale regola viene utilizzata, quali errori sono frequenti e come controllare il risultato. Struttura consigliata: 1. cosa devo trovare; 2. quale regola utilizzo; 3. primo passaggio; 4. sviluppo; 5. risultato; 6. controllo; 7. errore da evitare. Per BES/DSA usare frasi brevi e passaggi chiaramente separati."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL01",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Funzione del livello cognitivo",
+    "Direttiva completa": "Il livello cognitivo indica il tipo di attività mentale richiesta allo studente ed è distinto dalla difficoltà operativa. L’AI deve trattare separatamente DET (tipologia), DED (difficoltà), DBL (livello cognitivo), DES (sviluppo della soluzione) e DGT (rappresentazione grafica), classificando l’esercizio in base a ciò che lo studente deve realmente pensare e fare."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Ricordare",
+    "Direttiva completa": "Richiede il recupero o il riconoscimento di conoscenze già acquisite: definizioni, formule, proprietà, simboli e procedure. L’AI deve privilegiare azioni come riconoscere, ricordare, indicare, identificare e completare; usare questo livello soprattutto per prerequisiti, riattivazione, consolidamento essenziale e verifiche formative rapide."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Comprendere",
+    "Direttiva completa": "Richiede di attribuire significato a concetti, rappresentazioni e relazioni matematiche. L’AI deve proporre attività di spiegazione, interpretazione, classificazione, confronto, descrizione e previsione qualitativa, favorendo quando utile il passaggio tra situazione concreta, linguaggio verbale, formula, tabella e grafico."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Applicare",
+    "Direttiva completa": "Richiede l’uso di conoscenze, formule, proprietà o procedure in situazioni note o riconoscibili. L’AI deve costruire esercizi in cui lo studente calcola, applica, risolve, determina o esegue una procedura appresa. La semplice presenza di calcoli non deve comportare automaticamente la classificazione DBL04."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Analizzare",
+    "Direttiva completa": "Richiede di scomporre una situazione e individuare relazioni, dati pertinenti, strutture, strategie o errori. L’AI deve costruire esercizi nei quali la procedura non sia immediatamente indicata e lo studente debba distinguere, confrontare, mettere in relazione, dedurre, scegliere informazioni rilevanti o individuare e spiegare errori."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL06",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Valutare",
+    "Direttiva completa": "Richiede di formulare un giudizio matematicamente motivato sulla base di criteri. L’AI deve proporre attività nelle quali lo studente verifica, giustifica, argomenta, critica, valida, controlla la plausibilità o sceglie motivatamente tra soluzioni o strategie. Il giudizio deve fondarsi su criteri matematici e non su opinioni."
+  },
+  {
+    "Gruppo": "DBL",
+    "Codice": "DBL07",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Creare",
+    "Direttiva completa": "Richiede la produzione autonoma di una struttura, strategia, modello o oggetto matematico sulla base di vincoli. L’AI può chiedere di progettare, formulare, costruire, modellizzare, produrre esempi o controesempi e proporre strategie. Usare DBL07 solo quando la produzione autonoma ha reale significato matematico, evitando attività creative artificiali."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA00",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Indipendenza DED/DBL",
+    "Direttiva completa": "DED misura il carico operativo/esecutivo; DBL il processo cognitivo richiesto. Le due dimensioni sono indipendenti: un esercizio può avere DED basso e DBL alto o viceversa. Progressioni, selezione automatica e punteggi devono valutarle separatamente."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA02",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Progressione cognitiva",
+    "Direttiva completa": "Se DBL non è specificato, costruire quando appropriato una progressione da ricordare/comprendere verso applicare, analizzare e valutare; usare creare solo se coerente con obiettivi, classe, autonomia e tempo. Non è necessario includere tutti i livelli. Applicare DBLA00."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA03",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Compatibilità con le tipologie DET",
+    "Direttiva completa": "I codici DET possono combinarsi con livelli DBL diversi in base alla reale richiesta cognitiva. Orientativamente: DET01→DBL02-04; DET02→DBL04-05; DET03→DBL04-07; DET04→DBL05-06; DET05→DBL02-06; DET06→DBL03/05/06; DET07→DBL02-05; DET08→DBL02-04; DET09→DBL03/05; DET10→DBL05-06; DET11→DBL02-06, con eventuale DBL07. Le associazioni sono orientative, non vincoli rigidi."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA04",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Scelta automatica del livello cognitivo",
+    "Direttiva completa": "Se DBL non è specificato, sceglierlo considerando obiettivo, fase L1-L4, contenuto, DET, DED, classe, BES/DSA, autonomia e funzione dell'esercizio. Applicare DBLA00."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA05",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Inclusione e livello cognitivo",
+    "Direttiva completa": "La presenza di BES/DSA o fragilità non deve determinare automaticamente un livello cognitivo inferiore. L’AI deve, quando necessario, ridurre il carico esecutivo mantenendo il ragionamento: consegne segmentate, scelta motivata, individuazione di errori, risposta orale, grafici, formule, schemi o domande progressive. Semplificare l’accesso non significa semplificare il pensiero."
+  },
+  {
+    "Gruppo": "DBLA",
+    "Codice": "DBLA06",
+    "Ambito": "ESERCIZI",
+    "Titolo": "Controllo qualità del livello cognitivo",
+    "Direttiva completa": "Prima dell’output l’AI deve verificare che il codice DBL corrisponda al processo cognitivo effettivamente richiesto, che non derivi dalla sola difficoltà numerica o lunghezza dell’esercizio, che consegna e verbi siano coerenti, che i prerequisiti siano disponibili e che lo scaffolding non elimini il processo da valutare. Nei livelli DBL05-07 deve esistere una reale richiesta di analisi, decisione, argomentazione o produzione autonoma."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR00",
+    "Ambito": "GRAFICI",
+    "Titolo": "Qualità e validazione generale dei grafici",
+    "Direttiva completa": "Ogni grafico deve derivare dai dati matematici dell'attività, essere corretto, leggibile e funzionale alle domande. Prima della generazione determinare dati e proprietà da rappresentare; mostrare tutte e sole le informazioni necessarie, con scala, assi, etichette e proporzioni coerenti. Evitare elementi decorativi o indicazioni che anticipino la soluzione. Prima dell'output verificare la coerenza testo → proprietà matematica → grafico → risposta/soluzione."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR05",
+    "Ambito": "GRAFICI",
+    "Titolo": "Studio di funzione da grafico",
+    "Direttiva completa": "Quando l’esercizio richiede di studiare o interpretare una funzione a partire dal grafico, costruire preventivamente una funzione o curva matematicamente coerente con le proprietà che si intendono analizzare. Il grafico deve consentire, secondo le richieste, di determinare senza ambiguità dominio, punti esclusi, intersezioni con gli assi, zeri, segno, continuità/discontinuità, comportamento agli estremi, limiti significativi, asintoti, crescita/decrescita, massimi/minimi, punti stazionari, concavità/convessità, flessi, simmetrie o periodicità. Utilizzare correttamente pallini pieni/vuoti e convenzioni grafiche diverse per gli asintoti. Se un valore deve essere trovato dallo studente, non etichettarlo in modo da anticipare la risposta. Scegliere la finestra grafica in modo da rendere chiaramente visibili tutti i fenomeni oggetto delle domande."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR07",
+    "Ambito": "GRAFICI",
+    "Titolo": "Grafici di geometria analitica",
+    "Direttiva completa": "Negli esercizi di geometria analitica la figura deve essere costruita utilizzando le coordinate matematiche effettive degli oggetti. Rappresentare correttamente, secondo il problema, punti, rette, segmenti, semirette, vettori, circonferenze, parabole, ellissi, iperboli, distanze, proiezioni, intersezioni, tangenti, assi di simmetria e altri luoghi geometrici richiesti. I punti significativi devono essere indicati con lettere coerenti con il testo. Le coordinate possono essere mostrate se costituiscono dati; se devono essere determinate dallo studente, non visualizzarle direttamente. Non alterare le coordinate per ottenere una figura esteticamente più gradevole."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR08",
+    "Ambito": "GRAFICI",
+    "Titolo": "Scala e proporzioni in geometria analitica",
+    "Direttiva completa": "Quando la comprensione geometrica dipende da pendenza, parallelismo, perpendicolarità, distanza, angoli, forma di circonferenze o simmetrie, utilizzare salvo ragioni didattiche contrarie la stessa unità grafica sui due assi. Una circonferenza deve apparire come una circonferenza e non come un’ellisse dovuta a scale differenti. Se sono utilizzate scale differenti, dichiararlo esplicitamente."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR09",
+    "Ambito": "GRAFICI",
+    "Titolo": "Figure geometriche non cartesiane",
+    "Direttiva completa": "Per figure di geometria piana o solida rispettare le relazioni geometriche dichiarate. Non rappresentare come perpendicolari segmenti che non lo sono, né come uguali lunghezze diverse salvo figura esplicitamente non in scala. Utilizzare simboli convenzionali per angoli retti, uguaglianza di segmenti, parallelismo e altre proprietà; indicare chiaramente vertici e grandezze necessarie. Quando opportuno inserire l’indicazione “Figura non in scala”."
+  },
+  {
+    "Gruppo": "DGR",
+    "Codice": "DGR10",
+    "Ambito": "GRAFICI",
+    "Titolo": "Separazione tra grafico dell’esercizio e grafico della soluzione",
+    "Direttiva completa": "Quando il grafico costituisce parte dell’esercizio, distinguere il grafico fornito allo studente dal grafico commentato della soluzione. Nel grafico destinato allo studente non devono comparire annotazioni che anticipino le risposte. Nel grafico della soluzione, se DES03-DES05 lo richiede, possono essere evidenziati punti notevoli, intervalli, asintoti, estremi, intersezioni e altri elementi utili alla spiegazione. Con DES01 non produrre grafici risolutivi contenenti informazioni aggiuntive rispetto alla traccia."
+  },
+  {
+    "Gruppo": "DGT",
+    "Codice": "DGT01",
+    "Ambito": "GRAFICI",
+    "Titolo": "Nessun grafico",
+    "Direttiva completa": "Non inserire rappresentazioni grafiche. Usare DGT01 quando il grafico non è necessario o quando la richiesta deve essere risolta esclusivamente in forma numerica, algebrica, simbolica o testuale."
+  },
+  {
+    "Gruppo": "DGT",
+    "Codice": "DGT02",
+    "Ambito": "GRAFICI",
+    "Titolo": "Grafico essenziale di supporto",
+    "Direttiva completa": "Inserire un grafico semplice con i soli elementi necessari a sostenere comprensione o spiegazione. Il grafico non costituisce il principale oggetto dell’esercizio. Deve rispettare DGR00 e DGR05/DGR07-DGR10 senza aggiungere informazioni didatticamente superflue."
+  },
+  {
+    "Gruppo": "DGT",
+    "Codice": "DGT03",
+    "Ambito": "GRAFICI",
+    "Titolo": "Grafico didattico completo",
+    "Direttiva completa": "Inserire un grafico completo e annotato con le informazioni che costituiscono dati o supporto esplicativo: assi, scala, etichette, punti o elementi notevoli necessari. È adatto a spiegazioni, esempi svolti, soluzioni e attività guidate. Le annotazioni non devono comunque anticipare ciò che lo studente deve determinare autonomamente."
+  },
+  {
+    "Gruppo": "DGT",
+    "Codice": "DGT04",
+    "Ambito": "GRAFICI",
+    "Titolo": "Grafico da interpretare",
+    "Direttiva completa": "Il grafico è parte centrale della consegna e deve permettere allo studente di ricavare informazioni, proprietà o relazioni. Mostrare solo i dati necessari e non le risposte. È la modalità preferenziale per studio di funzione da grafico, lettura di diagrammi e interpretazione di configurazioni di geometria analitica. Il grafico deve essere progettato affinché ogni domanda abbia risposta non ambigua."
+  },
+  {
+    "Gruppo": "DGT",
+    "Codice": "DGT05",
+    "Ambito": "GRAFICI",
+    "Titolo": "Grafico da completare o costruire",
+    "Direttiva completa": "Fornire una rappresentazione parziale, un sistema di assi, punti, segmenti, curve incomplete, dati tabellari o altri elementi di partenza e chiedere allo studente di completare o costruire il grafico. Specificare chiaramente ciò che è già fornito e ciò che deve essere aggiunto. Nella soluzione DES03-DES05 può essere mostrata la figura completa; con DES01 deve rimanere solo la traccia incompleta."
+  },
+  {
+    "Gruppo": "DVE",
+    "Codice": "DVE01",
+    "Ambito": "VERIFICHE",
+    "Titolo": "Verifica sommativa",
+    "Direttiva completa": "Quando l'utente richiede una verifica sommativa, generare un insieme coerente di esercizi sugli argomenti indicati utilizzando le direttive DET, DED, DES , DGT, DBL richieste. La verifica deve essere considerata un unico oggetto valutativo e non una semplice raccolta indipendente di esercizi."
+  },
+  {
+    "Gruppo": "DVE",
+    "Codice": "DVE02",
+    "Ambito": "VERIFICHE",
+    "Titolo": "Uso del template DOCX",
+    "Direttiva completa": "Se è fornito un template DOCX, usarlo come base preservando layout e componenti statici. Sostituire solo i segnaposto esistenti {{...}}; {{ESERCIZI}} contiene esercizi numerati con formule, grafici e punteggi. La tabella punteggi contiene solo gli esercizi presenti più TOTALE; compilare PUNTEGGIO MASSIMO, lasciare vuoto PUNTEGGIO REALIZZATO e non modificare altri elementi salvo richiesta esplicita."
+  },
+  {
+    "Gruppo": "DVE",
+    "Codice": "DVE03",
+    "Ambito": "VERIFICHE",
+    "Titolo": "Regole di punteggio",
+    "Direttiva completa": "La verifica vale esattamente 100 punti. Ogni esercizio ha punteggio massimo intero positivo; eventuali sottopunti sono interi e sommano al punteggio dell'esercizio. La somma degli esercizi è 100. Prima dell'output verificare tutte le somme e correggere ogni incoerenza."
+  },
+  {
+    "Gruppo": "DVE",
+    "Codice": "DVE04",
+    "Ambito": "VERIFICHE",
+    "Titolo": "Ponderazione relativa",
+    "Direttiva completa": "Distribuire i punti in base al peso valutativo effettivo considerando DED e DBL come dimensioni indipendenti (DBLA00), numero/interdipendenza dei passaggi, autonomia, quantità di richieste e necessità di interpretazione, argomentazione o modellizzazione. Esercizi comparabili ricevono punteggi comparabili."
+  },
+  {
+    "Gruppo": "DVE",
+    "Codice": "DVE05",
+    "Ambito": "VERIFICHE",
+    "Titolo": "Visibilità e corrispondenza",
+    "Direttiva completa": "Mostrare il punteggio massimo accanto a ogni esercizio e, se previsto dal template, il totale 100/100. Numero dell'esercizio, punteggio nella consegna e valore nella tabella riepilogativa devono coincidere."
+  },
+  {
+    "Gruppo": "DAPI_API",
+    "Codice": "DAPI01",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Finalità del profilo API",
+    "Direttiva completa": "Il profilo API applica le direttive didattiche e disciplinari del setup, separando progettazione dei contenuti e produzione materiale dei file. L'AI restituisce dati strutturati; SetupGemmaWeb produce e valida gli artefatti."
+  },
+  {
+    "Gruppo": "DAPI_API",
+    "Codice": "DAPI03",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Prevalenza delle direttive didattiche",
+    "Direttiva completa": "Il formato strutturato non modifica gli obiettivi didattici. In caso di conflitto, le direttive di contesto, le direttive dei template, DET, DED, DBL, DES, DGT, DGR, DVE e le regole matematiche continuano a determinare contenuto, difficoltà, destinatari e qualità disciplinare."
+  },
+  {
+    "Gruppo": "DAPI_API",
+    "Codice": "DAPI05",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Responsabilità di SetupGemmaWeb",
+    "Direttiva completa": "SetupGemmaWeb produce i file finali e gestisce impaginazione, font, dimensioni, margini, overflow, formule, grafici, immagini, tabelle, liste, formati di esportazione, template_population e artefatti. Valida schema, LaTeX, calcoli, proprietà grafiche e riferimenti alle risorse con strumenti locali e rifiuta contenuti invalidi o incoerenti. L'AI restituisce solo dati/metalinguaggi dichiarativi e non dichiara file creati o salvati."
+  },
+  {
+    "Gruppo": "DAR_API",
+    "Codice": "DAR00",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Contratto minimo della risposta API",
+    "Direttiva completa": "Restituire un solo oggetto JSON UTF-8 conforme allo schema e a contract_version=\"setupgemma_api_1.0\", senza Markdown o testo esterno. La radice deve contenere direttamente i campi previsti dallo schema, inclusi status, request_type, artifacts, questions e validation_summary. artifacts deve essere un array direttamente nella radice e non deve essere annidato in lesson, lesson_plan, data, result o altri contenitori intermedi. Non creare campi root non previsti dallo schema. Includere tutti i campi obbligatori previsti dallo schema; usare solo i block_type ammessi e identificatori univoci/stabili. Con status=\"complete\" tutti gli artefatti richiesti devono essere presenti e completi."
+  },
+  {
+    "Gruppo": "DAR_API",
+    "Codice": "DAR07",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Richiesta di chiarimento",
+    "Direttiva completa": "Se mancano informazioni indispensabili, restituire status needs_clarification e compilare questions. Non generare artefatti definitivi basati su assunzioni che possono modificare sostanzialmente la richiesta."
+  },
+  {
+    "Gruppo": "DAR_API",
+    "Codice": "DAR08",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Nessun percorso inventato",
+    "Direttiva completa": "Non inventare percorsi locali, URL di download, nomi di file già esistenti o identificatori di upload. È consentito proporre filename sicuri; il percorso finale è assegnato dal backend."
+  },
+  {
+    "Gruppo": "DAR_API",
+    "Codice": "DAR09",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Nessun codice eseguibile",
+    "Direttiva completa": "Non restituire Python, JavaScript, shell, macro Office o altro codice destinato all'esecuzione. Formule e grafici devono usare esclusivamente i metalinguaggi dichiarativi previsti dal contratto."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF06",
+    "Ambito": "API_CORE",
+    "Titolo": "Manifest dell'artefatto",
+    "Direttiva completa": "Ogni artefatto deve dichiarare artifact_id, artifact_type, audience, format, filename_hint, title, sections oppure slides, e references. references è sempre un array di identificatori e vale [] quando non esistono riferimenti. filename_hint deve contenere solo caratteri sicuri e non deve includere directory."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF07",
+    "Ambito": "API_CORE",
+    "Titolo": "Collocazione dei blocchi",
+    "Direttiva completa": "Ogni blocco deve dichiarare block_id e appartenere a un artefatto, sezione o slide. L'ordine dei blocchi nell'array blocks costituisce l'ordine logico di presentazione. Un blocco non può essere collocato contemporaneamente in artefatti con destinatari incompatibili, salvo varianti esplicite."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF08",
+    "Ambito": "API_CORE",
+    "Titolo": "Tipi di blocco ammessi",
+    "Direttiva completa": "I block_type ammessi per i contenuti degli artefatti sono esclusivamente: text, formula, graph, image, list, table e speaker_note. Ogni tipo usa esclusivamente i campi previsti dallo schema. Non inventare nuovi block_type e non usare un block_type per contenuti appartenenti a un altro tipo."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF09",
+    "Ambito": "API_CORE",
+    "Titolo": "Blocco testo e formule inline",
+    "Direttiva completa": "Un blocco text contiene testo ordinario e usa content quando non contiene formule inline. Se contiene formule inline usa segments al posto di content. segments è una sequenza ordinata di elementi con type=\"text\" e content, oppure type=\"formula\" con display=\"inline\", latex e alt_text. content e segments sono alternativi. I campi testuali non contengono Markdown, delimitatori matematici o comandi LaTeX."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF10",
+    "Ambito": "API_CORE",
+    "Titolo": "Blocchi lista e tabella",
+    "Direttiva completa": "Un blocco list contiene block_id, block_type=\"list\", audience e items come array ordinato. Un blocco table contiene block_id, block_type=\"table\", audience, headers e rows; headers è un array ordinato di intestazioni e rows è un array di righe con lo stesso numero di celle di headers. Liste e tabelle non incorporano Markdown o LaTeX grezzo; eventuale matematica segue DMA00 e la struttura prevista dallo schema."
+  },
+  {
+    "Gruppo": "DAF_API_CORE",
+    "Codice": "DAF11",
+    "Ambito": "API_CORE",
+    "Titolo": "Struttura di sezioni e slide",
+    "Direttiva completa": "Gli artefatti PDF/DOCX organizzati per sezioni usano sections; ogni sezione dichiara almeno section_id, title e blocks. Gli artefatti PPTX usano slides; ogni slide dichiara almeno slide_id, title e blocks. L'ordine di sections, slides e blocks è l'ordine logico del documento o della presentazione. Non specificare coordinate, font, dimensioni o impaginazione salvo campi espressamente previsti dallo schema."
+  },
+  {
+    "Gruppo": "DIMG_API",
+    "Codice": "DIMG00",
+    "Ambito": "API_IMMAGINI",
+    "Titolo": "Contratto API delle immagini",
+    "Direttiva completa": "Quando un artefatto richiede un'immagine, usare un blocco image dichiarativo con block_id, block_type=\"image\", audience, source_type, purpose, description e alt_text. source_type può essere generated, provided oppure external_reference, secondo le risorse effettivamente disponibili e lo schema. Per source_type=\"generated\" fornire generation_prompt; per provided o external_reference usare esclusivamente riferimenti realmente forniti dal backend o presenti nella richiesta. Non inventare percorsi locali, URL, file, ID o risorse. L'immagine deve essere funzionale al contenuto e coerente con testo, formule, grafici e destinatario."
+  },
+  {
+    "Gruppo": "DAF_API_LE",
+    "Codice": "DAF01",
+    "Ambito": "API_LEZIONI",
+    "Titolo": "Artefatti della lezione",
+    "Direttiva completa": "Per una lezione generare due descrizioni di artefatto obbligatorie: teacher_guide con audience teacher e format pdf; student_presentation con audience students e format pptx."
+  },
+  {
+    "Gruppo": "DAF_API_LE",
+    "Codice": "DAF02",
+    "Ambito": "API_LEZIONI",
+    "Titolo": "Guida docente",
+    "Direttiva completa": "teacher_guide deve contenere istruzioni operative dettagliate per ciascuna fase: durata, obiettivo, azioni del docente, partecipazione degli studenti, domande, risposte attese, esempi, indicazioni BES/DSA, materiali, errori prevedibili, verifica formativa e riferimenti alle slide."
+  },
+  {
+    "Gruppo": "DAF_API_LE",
+    "Codice": "DAF03",
+    "Ambito": "API_LEZIONI",
+    "Titolo": "Presentazione studenti",
+    "Direttiva completa": "student_presentation deve contenere esclusivamente contenuti visibili o utilizzabili dagli studenti. Deve organizzare slide leggibili da LIM, con titoli, spiegazioni essenziali, formule, esempi, domande, esercizi, grafici, immagini e tabelle quando utili, escludendo istruzioni riservate al docente e soluzioni non previste."
+  },
+  {
+    "Gruppo": "DAF_API_EX",
+    "Codice": "DAF04",
+    "Ambito": "API_ESERCIZI",
+    "Titolo": "Artefatti degli esercizi",
+    "Direttiva completa": "Per una richiesta di esercizi, dichiarare almeno un artefatto exercise_sheet. Audience e formato devono essere quelli richiesti dall'utente o dal profilo applicativo. Tracce e soluzioni devono rimanere blocchi separati e collegati tramite exercise_id."
+  },
+  {
+    "Gruppo": "DAF_API_VE",
+    "Codice": "DAF05",
+    "Ambito": "API_VERIFICHE",
+    "Titolo": "Artefatti della verifica",
+    "Direttiva completa": "Per una verifica sommativa generare student_test (audience students, format docx) e, solo se richiesto, teacher_solution (audience teacher, format docx). Applicare DVE02-DVE05 e DAU00."
+  },
+  {
+    "Gruppo": "DAU_API",
+    "Codice": "DAU00",
+    "Ambito": "API_DESTINATARI",
+    "Titolo": "Destinatari e coerenza delle varianti",
+    "Direttiva completa": "Ogni artefatto e blocco sensibile dichiara audience=teacher|students. I contenuti students non includono soluzioni non richieste, risposte attese, criteri riservati, note operative o indicazioni metodologiche per il docente. Le varianti teacher e students dello stesso contenuto condividono dati matematici, identificatori, numerazione e punteggi; la variante teacher può aggiungere soluzioni, criteri e annotazioni senza modificare la traccia. Le note di presentazione sono speaker_note con audience teacher."
+  },
+  {
+    "Gruppo": "DMA_API",
+    "Codice": "DMA00",
+    "Ambito": "API_MATEMATICHE",
+    "Titolo": "Formula nel contratto API",
+    "Direttiva completa": "In API ogni formula è un elemento tipizzato con block_id, block_type=\"formula\", display=\"inline\"|\"block\", latex e alt_text; aggiungere expression solo se necessaria a calcolo o grafico. latex contiene solo sorgente matematica, senza testo né delimitatori $, $$, \\( \\), \\[ \\], ed è una stringa JSON correttamente escapata. I campi testuali non contengono comandi LaTeX. Le formule inline possono essere segmenti nella sequenza testuale; le formule autonome sono blocchi formula. latex, expression e alt_text devono descrivere lo stesso oggetto matematico. Prima dell'output verificare sintassi LaTeX, bilanciamento, campi obbligatori e coerenza delle rappresentazioni."
+  },
+  {
+    "Gruppo": "DGS_API",
+    "Codice": "DGS00",
+    "Ambito": "API_GRAFICHE",
+    "Titolo": "Contratto API dei grafici",
+    "Direttiva completa": "In API ogni grafico è un blocco graph dichiarativo con graph_spec_version=\"setupgemma_graph_v1\", renderer consentito, viewport/assi e layer tipizzati con ID. Renderer ammessi: function_2d, parametric_2d, piecewise_function, analytic_geometry, plane_geometry, scatter, bar_chart, data_table, number_line. Le funzioni calcolabili usano expression nel sottoinsieme SetupGemma-SymPy e, se visualizzate, latex. Includere validation_expectations per le proprietà verificabili. Non restituire codice Python, JavaScript, TikZ, SVG arbitrario o chiamate eseguibili. Il backend ricalcola le proprietà e rifiuta grafici incoerenti."
+  },
+  {
+    "Gruppo": "DVT_API",
+    "Codice": "DVT01",
+    "Ambito": "API_VERIFICHE",
+    "Titolo": "Popolamento API del template",
+    "Direttiva completa": "Con un template DOCX, l'AI restituisce template_population come mappa dei segnaposto esistenti verso block_id/content_type; non modifica il file, non inventa segnaposto e non ricostruisce componenti statici. Il backend applica la mappa secondo DAPI05."
+  },
+  {
+    "Gruppo": "DVT_API",
+    "Codice": "DVT03",
+    "Ambito": "API_VERIFICHE",
+    "Titolo": "Esercizi e punteggi",
+    "Direttiva completa": "Ogni esercizio espone exercise_id, numero, traccia, punteggio massimo ed eventuali sottopunteggi. validation_summary verifica DVE03-DVE05. Le varianti applicano DAU00."
+  },
+  {
+    "Gruppo": "DCL_API",
+    "Codice": "DCL01",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Domande strutturate",
+    "Direttiva completa": "Con status needs_clarification, questions deve contenere question_id, question, required e expected_answer_type. Le domande devono essere limitate alle informazioni realmente necessarie."
+  },
+  {
+    "Gruppo": "DCL_API",
+    "Codice": "DCL02",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Continuazione del dialogo",
+    "Direttiva completa": "Le risposte dell'utente devono essere associate ai question_id. L'AI deve usare il contesto precedente e restituire una nuova risposta completa conforme al contratto."
+  },
+  {
+    "Gruppo": "DCL_API",
+    "Codice": "DCL00",
+    "Ambito": "API_GENERALE",
+    "Titolo": "Validazione e riparazione",
+    "Direttiva completa": "validation_summary dichiara i controlli richiesti dallo schema. Sono bloccanti almeno: JSON o contract_version invalidi, campi/artefatti obbligatori mancanti, ID duplicati o riferimenti inesistenti, audience incompatibile, LaTeX invalido, renderer non ammesso e incoerenza matematica. Se il backend restituisce errori, l'AI li corregge tutti e restituisce l'intero JSON, senza patch o spiegazioni. Il backend limita i tentativi e, se falliscono, non produce file."
+  }
+]

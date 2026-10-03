@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente Docente v1.0.8 | Compositore prompt</title>
+  <style>
+    .exercise-heading { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    #matrixInfo { width: min(1100px, 94vw); max-width:94vw; height:90vh; max-height:90vh; padding:16px; border:1px solid #d9e2ea; border-radius:12px; }
+    #matrixInfo::backdrop { background: #10203099; }
+    #matrixInfo[open] { display:flex; flex-direction:column; gap:12px; }
+    #matrixInfo .info-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    #matrixInfo h2, #matrixInfo p { margin:0; }
+    #matrixInfo iframe { width:100%; flex:1; min-height:0; border:1px solid #d9e2ea; }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+    :root {
+      --ink: #1d2939;
+      --muted: #667085;
+      --line: #d9e2ea;
+      --paper: #fbfcfd;
+      --panel: #ffffff;
+      --teal: #087f78;
+      --teal-dark: #05645f;
+      --teal-soft: #e6f5f2;
+      --coral: #e87957;
+      --yellow: #fff1c7;
+      --shadow: 0 18px 45px rgba(40, 63, 76, .11);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: 'DM Sans', sans-serif;
+      background-image: radial-gradient(#dfece9 1px, transparent 1px), linear-gradient(135deg, #f5fbfa 0%, #fffdf8 58%, #fff7f1 100%);
+      background-size: 22px 22px, auto;
+    }
+    .shell { max-width: none; margin: auto; padding: 42px 34px 64px; }
+    header { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 30px; }
+    .eyebrow { color: var(--coral); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; letter-spacing: 0; }
+    h1 { font-size: clamp(30px, 4vw, 54px); line-height: .98; max-width: 700px; margin-top: 9px; }
+    .intro { color: var(--muted); margin: 13px 0 0; max-width: 650px; line-height: 1.5; }
+    .status { display: flex; align-items: center; gap: 9px; color: var(--teal-dark); font-size: 13px; font-weight: 700; white-space: nowrap; }
+    .status span { width: 9px; height: 9px; border-radius: 50%; background: #44b99f; box-shadow: 0 0 0 5px #d7f3ec; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+    .panel { background: rgba(255,255,255,.91); border: 1px solid rgba(214,226,230,.9); border-radius: 14px; box-shadow: var(--shadow); }
+    .form-panel { padding: 28px; }
+    .section-head { display: flex; justify-content: space-between; gap: 15px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .section-head h2 { font-size: 20px; }
+    .section-head p { color: var(--muted); font-size: 13px; margin: 0; }
+    .fields { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; margin: 24px 0; }
+    .field { grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+    .role-field { grid-column: 1 / -1; }
+    .school-field { grid-column: span 3; }
+    .option-row { display:flex; align-items:center; gap:24px; flex-wrap:wrap; margin:14px 0; }
+    .check-option { display:flex; align-items:center; gap:10px; cursor:pointer; }
+    .check-option input[type="checkbox"] { width:18px; height:18px; margin:0; accent-color:var(--teal); flex:0 0 18px; }
+    .compact-option { display:flex; align-items:center; gap:10px; }
+    #imageLimit { width:76px; padding:8px; }
+    #cacheMinutes { width:140px; }
+    label { font-size: 12px; font-weight: 700; color: #475467; }
+    input, select { width: 100%; border: 1px solid #cdd8df; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; padding: 11px 12px; outline: none; transition: border .18s, box-shadow .18s; }
+    input:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8,127,120,.13); }
+    .conditional { display: none; padding: 20px; border: 1px solid #cfe5e0; border-radius: 10px; background: var(--teal-soft); animation: rise .25s ease-out; }
+    .conditional.visible { display: block; }
+    .conditional h3 { font-size: 16px; margin-bottom: 16px; }
+    .lesson-fields { display: grid; grid-template-columns: 170px 1fr; gap: 15px; }
+    .lesson-fields .field { grid-column: auto; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+    table { width: 100%; min-width: 970px; border-collapse: collapse; font-size: 12px; }
+    th { background: #f2f6f6; color: #475467; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; text-align: left; padding: 10px 7px; white-space: nowrap; }
+    td { padding: 5px 6px; border-top: 1px solid #edf1f3; vertical-align: middle; }
+    td:first-child { color: var(--teal-dark); font-family: 'Space Grotesk', sans-serif; font-weight: 700; text-align: center; width: 34px; }
+    td input, td select { padding: 8px 7px; min-width: 105px; border-radius: 6px; font-size: 12px; }
+    td input[type="number"] { min-width: 62px; width: 68px; }
+    td input.topic { min-width: 140px; }
+    .helper { color: var(--muted); font-size: 11px; margin: 10px 0 0; }
+    .actions { display: flex; justify-content: flex-end; align-items: center; gap: 15px; margin-top: 25px; }
+    .action-note { color: var(--muted); font-size: 12px; margin-right: auto; }
+    button { border: 0; border-radius: 8px; padding: 12px 17px; font: 700 13px 'DM Sans', sans-serif; cursor: pointer; transition: transform .18s, background .18s; }
+    button:hover { transform: translateY(-1px); }
+    button:disabled { cursor: not-allowed; opacity: .5; transform: none; }
+    .primary { color: white; background: var(--teal); box-shadow: 0 8px 18px rgba(8,127,120,.23); }
+    .primary:hover { background: var(--teal-dark); }
+    .secondary { color: var(--teal-dark); background: var(--teal-soft); }
+    .exit-button { color: #b54732; background: #fff0ed; padding: 8px 12px; }
+    .utility { position: relative; display: inline-block; }
+    .utility-menu { display: none; position: absolute; right: 0; top: calc(100% + 6px); z-index: 5; min-width: 190px; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
+    .utility.open .utility-menu { display: grid; gap: 3px; }
+    .utility-menu button { width: 100%; color: var(--ink); background: #fff; text-align: left; font-size: 12px; }
+    .utility-menu button:hover { background: var(--teal-soft); }
+    .prompt-output { display: none; margin-top: 20px; }
+    .prompt-output.visible { display: block; animation: rise .25s ease-out; }
+    .artifact-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .artifact-list:empty { display: none; }
+    .artifact-list button { font-size: 12px; padding: 9px 11px; }
+    .validation-problems { display: none; margin: 12px 0; padding: 12px; border-left: 3px solid #b54732; background: #fff4f1; color: #7a271a; font-size: 12px; white-space: pre-wrap; }
+    .validation-problems.visible { display: block; }
+    .artifact-card { width: 100%; padding: 10px; border-top: 1px solid var(--line); }
+    .prompt-output h3 { font-size: 15px; margin-bottom: 9px; }
+    textarea { width: 100%; min-height: 310px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; padding: 13px; color: #344054; background: #f8fafb; font: 12px/1.5 'DM Sans', sans-serif; }
+    .copied { color: var(--teal-dark); font-size: 12px; font-weight: 700; opacity: 0; transition: opacity .2s; }
+    .copied.show { opacity: 1; }
+    @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } .summary { position: static; } }
+    @media (max-width: 640px) { .shell { padding: 26px 16px 45px; } header { display: block; } .status { margin-top: 20px; } .form-panel { padding: 20px 15px; } .fields, .lesson-fields { grid-template-columns: 1fr; } .field { grid-column: 1 / -1; } .section-head { display: block; } .section-head p { margin-top: 6px; } .actions { align-items: stretch; flex-direction: column; } .action-note { margin-right: 0; } button { width: 100%; } }
+  button:disabled{opacity:.5;cursor:wait}
+</style>
+<link rel="stylesheet" href="/theme.css?v=2">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <div class="eyebrow">Agente Docente · v1.0.8 · Direttive 2.0</div>
+        <h1>Costruisci la richiesta didattica.</h1>
+        <p class="intro">Definisci il contesto, scegli l'elaborato e prepara un prompt strutturato per l'intelligenza artificiale.</p>
+      </div>
+      <div class="status"><span></span>Catalogo direttive attivo <div class="utility"><button class="secondary" type="button" id="utilityButton">Utility</button><div class="utility-menu" id="utilityMenu"><button type="button" onclick="location.href='/contract.html'">Contratto della risposta</button><button type="button" onclick="location.href='/verification_template.html'">Modello verifica</button><button type="button" onclick="location.href='/directives'">Gestione direttive</button><button type="button" onclick="location.href='/schools'">Tabella scuola</button><button type="button" onclick="location.href='/request-types'">Tabella tipi richiesta</button><button type="button" onclick="location.href='/routing'">Tabella routing</button><button type="button" onclick="location.href='/history'">Cronologia prompt</button></div></div> <button class="exit-button" type="button" id="exit">Esci</button></div>
+    </header>
+
+    <div class="layout">
+      <section class="panel form-panel">
+        <div class="section-head">
+          <h2>Parametri della richiesta</h2>
+          <p>I campi con * sono obbligatori</p>
+        </div>
+        <div class="fields">
+          <div class="field role-field"><label for="aiRole">Ruolo AI</label><input id="aiRole" type="text" value="Agisci come docente di matematica."></div>
+          <div class="field school-field"><label for="schoolType">Tipo scuola</label><select id="schoolType" disabled><option>Caricamento...</option></select></div>
+          <div class="field school-field"><label for="schoolAddress">Indirizzo</label><select id="schoolAddress" disabled><option>Seleziona il tipo scuola</option></select></div>
+          <div class="field"><label for="classe">Classe *</label><select id="classe"><option value="">Seleziona la classe</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+          <div class="field"><label for="artifact">Tipo di elaborato *</label><select id="artifact"><option value="">Seleziona il tipo</option><option value="Lezione">Lezione</option><option value="Giochi">Giochi</option><option value="Esercizi">Esercizi</option><option value="Verifica sommativa">Verifica sommativa</option></select></div>
+          <div class="field"><label for="chatbot">Chatbot da utilizzare *</label><select id="chatbot" disabled><option>Caricamento...</option></select></div>
+        </div>
+
+        <div class="option-row">
+          <label class="check-option" for="besDsa"><input id="besDsa" type="checkbox">Sono presenti studenti BES/DSA</label>
+          <label class="check-option" for="generateImages"><input id="generateImages" type="checkbox">Attivare generazione immagini</label>
+          <label class="compact-option" for="imageLimit">Massimo immagini <input id="imageLimit" type="number" min="1" max="10" step="1" value="3"></label>
+        </div>
+        <p class="helper">Immagini: chiamate API aggiuntive a pagamento, una per immagine nuova e senza retry. I file salvati vengono riutilizzati nelle esportazioni.</p>
+        <div class="option-row">
+          <label class="check-option" for="useCache"><input id="useCache" type="checkbox">Riutilizza direttive con cache Gemini (opzionale)</label>
+          <label class="compact-option" for="cacheMinutes">Durata nuova cache <select id="cacheMinutes"><option value="5">5 minuti</option><option value="15" selected>15 minuti</option><option value="30">30 minuti</option><option value="60">60 minuti</option></select></label>
+        </div>
+        <p class="helper">La cache ha costi di conservazione e utilizzo. Non si rinnova a ogni richiesta; disattivarla interrompe il riuso, ma le cache create restano fino alla scadenza.</p>
+        <p id="cacheStatus" role="status">Cache opzionale disattivata.</p>
+
+        <div id="lessonPanel" class="conditional">
+          <h3>Impostazioni della lezione</h3>
+          <div class="lesson-fields">
+            <div class="field"><label for="lessonType">Tipo di lezione *</label><select id="lessonType" disabled><option value="">Caricamento...</option></select></div>
+            <div class="field"><label for="lessonTopic">Argomento della lezione *</label><input id="lessonTopic" type="text" placeholder="Es. Equazioni di primo grado"></div>
+          </div>
+        </div>
+
+        <div id="gamePanel" class="conditional">
+          <h3>Impostazioni del gioco</h3>
+          <div class="field"><label for="gameType">Tipo di gioco *</label><select id="gameType" disabled><option value="">Caricamento...</option></select></div>
+          <label for="gameDescription">Descrizione del gioco</label><textarea id="gameDescription" readonly rows="8" style="width:100%"></textarea>
+          <div id="gameParameters" class="fields"></div><div id="gameExercises"></div><div id="gameTemplatePanel" hidden><h3>Modello Word del gioco</h3><p>Marcatori: TITOLO_GIOCO, Regolamento, PAR02, PAR01 (anche tra doppie parentesi graffe).</p><input id="gameTemplateFile" type="file" accept=".docx"><button id="gameTemplateUpload" type="button">Carica modello</button><p id="gameTemplateStatus" role="status"></p></div>
+        </div>
+        <div id="exercisePanel" class="conditional">
+          <div class="exercise-heading"><h3 id="tableTitle">Configurazione degli esercizi</h3><button type="button" class="secondary" data-matrix-info aria-haspopup="dialog" aria-controls="matrixInfo">INFO</button></div>
+          <div class="table-wrap"><table><thead><tr><th>#</th><th>Tipo esercizio</th><th>N.</th><th>Argomento</th><th>Difficoltà</th><th>Livello cognitivo</th><th>Soluzione</th><th>Grafico</th></tr></thead><tbody id="exerciseRows"></tbody></table></div>
+          <p class="helper">Compila solo le righe necessarie. Il prompt includerà le righe con almeno un argomento o un tipo selezionato.</p>
+        </div>
+
+        <div class="actions"><span class="action-note">La richiesta verrà composta nel riquadro di riepilogo.</span><button id="prepare" class="primary" type="button" disabled>✦ Prepara prompt AI</button></div>
+        <div id="promptOutput" class="prompt-output"><div style="display:flex; justify-content:space-between; align-items:center; gap:12px"><h3>Richiesta pronta</h3><span id="copied" class="copied">Copiato</span><button id="copyPrompt" class="secondary" type="button">Copia prompt</button><button id="sendGemini" class="primary" type="button" disabled>Invia a Gemini</button></div><label for="systemText">System instruction generata dalle direttive selezionate</label><textarea id="systemText" readonly></textarea><label for="promptText">Prompt composto dalle scelte</label><textarea id="promptText" readonly></textarea><div id="validationProblems" class="validation-problems"></div><p class="helper">Ogni invio esegue una sola chiamata a Gemini. Nessuna correzione o ripetizione automatica; la validazione avviene sul server.</p><label for="geminiResponse">Risposta tecnica Gemini</label><textarea id="geminiResponse" readonly placeholder="La risposta apparirà qui dopo l'invio."></textarea><div id="artifacts" class="artifact-list"></div></div>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="matrixInfo" aria-labelledby="matrixInfoTitle">
+    <div class="info-header"><h2 id="matrixInfoTitle">Matrice di compatibilità Difficoltà / Livello cognitivo</h2><button type="button" class="secondary" id="closeMatrixInfo" autofocus>Chiudi (Esc)</button></div>
+    <p>Consulta la matrice DED × DBL. Premi Esc per chiudere.</p>
+    <iframe id="matrixInfoPdf" title="Matrice di compatibilità DED per DBL"></iframe>
+    <a href="/InfoPopup/MatriceDEDxDBL/MatriceCompatibilitaDEDxDBL-14-09-26.pdf" target="_blank" rel="noopener">Apri il PDF in una nuova scheda</a>
+  </dialog>
+  <script>
+    const matrixDialog = document.getElementById('matrixInfo');
+    document.addEventListener('click', event => {
+      if (!event.target.closest('[data-matrix-info]')) return;
+      document.getElementById('matrixInfoPdf').src = '/InfoPopup/MatriceDEDxDBL/MatriceCompatibilitaDEDxDBL-14-09-26.pdf';
+      matrixDialog.showModal();
+    });
+    document.getElementById('closeMatrixInfo').addEventListener('click', () => matrixDialog.close());
+    matrixDialog.addEventListener('cancel', event => { event.preventDefault(); matrixDialog.close(); });
+    matrixDialog.addEventListener('close', () => document.getElementById('matrixInfoPdf').removeAttribute('src'));
+  </script>
+  <script src="/DGM01_procedure.js?v=5"></script>
+  <script>
+    let catalogs = {};
+    let games = [];
+    async function loadGameTemplate() {
+      try { const r=await fetch('/api/game-template',{cache:'no-store'}); const d=await r.json(); $('gameTemplateStatus').textContent=d.configured ? 'Modello attivo: '+d.name : 'Carica un modello DOCX per produrre il regolamento.'; }
+      catch(e) { $('gameTemplateStatus').textContent=e.message; }
+    }
+    async function uploadGameTemplate() {
+      const f=$('gameTemplateFile').files[0]; if(!f) return;
+      const b=$('gameTemplateUpload'); b.disabled=true;
+      try { const r=await fetch('/api/game-template',{method:'POST',headers:{'X-Template-Filename':encodeURIComponent(f.name)},body:f}); const d=await r.json(); if(!r.ok) throw Error(d.error); await loadGameTemplate(); }
+      catch(e) { $('gameTemplateStatus').textContent=e.message; } finally { b.disabled=false; }
+    }
+    function gameValues() { return Object.fromEntries([...document.querySelectorAll('#gameParameters [data-parameter]')].map(e => [e.dataset.parameter, e.value.trim()])); }
+    function showGame() {
+      const game = games.find(g => g.code === $('gameType').value);
+      $('gameExercises').replaceChildren();
+      $('gameTemplatePanel').hidden = game?.code !== 'DGM01';
+      if (game?.code === 'DGM01') loadGameTemplate();
+      $('gameDescription').value = game?.description || '';
+      $('gameParameters').replaceChildren();
+      for (const p of game?.parameters || []) {
+        const field = document.createElement('div'); field.className = 'field';
+        const label = document.createElement('label'); label.textContent = p.code+' - '+p.label+' *';
+        const control = document.createElement(p.options.length ? 'select' : 'input');
+        control.id = 'game-'+p.code; control.dataset.parameter = p.code; control.required = true; label.htmlFor = control.id;
+        if (p.options.length) { control.add(new Option('Seleziona', '')); p.options.forEach(o => control.add(new Option(o.code+' - '+o.title, o.code))); }
+        else if (p.input_type === 'number') { control.type = 'number'; control.min = '1'; control.step = '1'; control.value = '1'; }
+        else control.type = 'text';
+        control.addEventListener('input', updateActionState); control.addEventListener('change', updateActionState);
+        field.append(label, control); $('gameParameters').append(field);
+      }
+      if (game?.code === 'DGM01') DGM01Procedure.mount($('gameExercises'), $('game-PAR02'), catalogs, updateActionState, $('game-PAR01'));
+      updateActionState();
+    }
+    const $ = id => document.getElementById(id);
+    const artifact = $('artifact');
+    const chatbot = $('chatbot');
+    const schoolType = $('schoolType');
+    const schoolAddress = $('schoolAddress');
+    let schools = [];
+    const utilityButton = $('utilityButton');
+    utilityButton.addEventListener('click', () => utilityButton.parentElement.classList.toggle('open'));
+
+    function escapeOption(value) { return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char])); }
+    function options(group) { return '<option value="">Seleziona</option>' + catalogs[group].map(item => `<option value="${escapeOption(item[0])}">${escapeOption(item[0])} · ${escapeOption(item[1])}</option>`).join(''); }
+    function buildRows() {
+      $('exerciseRows').innerHTML = Array.from({ length: 10 }, (_, index) => `<tr data-row="${index + 1}"><td>${index + 1}</td><td><select class="det">${options('DET')}</select></td><td><input class="count" type="number" min="1" max="9" placeholder="1-9"></td><td><input class="topic" type="text" placeholder="Argomento"></td><td><select class="ded">${options('DED')}</select></td><td><select class="dbl">${options('DBL')}</select></td><td><select class="des">${options('DES')}</select></td><td><select class="dgt">${options('DGT')}</select></td></tr>`).join('');
+    }
+    function updateVisibility() {
+      const value = artifact.value;
+      $('gamePanel').classList.toggle('visible', value === 'Giochi');
+      $('lessonPanel').classList.toggle('visible', value === 'Lezione');
+      $('exercisePanel').classList.toggle('visible', value === 'Esercizi' || value === 'Verifica sommativa');
+      $('tableTitle').textContent = value === 'Verifica sommativa' ? 'Configurazione della verifica' : 'Configurazione degli esercizi';
+      updateActionState();
+    }
+    function rowValues(row) { const value = selector => row.querySelector(selector).value.trim(); return { det: value('.det'), count: value('.count'), topic: value('.topic'), ded: value('.ded'), dbl: value('.dbl'), des: value('.des'), dgt: value('.dgt') }; }
+    function updateActionState() {
+      const type = artifact.value;
+      const commonFieldsReady = Boolean($('classe').value && type);
+      let requestReady = false;
+      if (type === 'Lezione') {
+        requestReady = Boolean($('lessonType').value && $('lessonTopic').value.trim());
+      } else if (type === 'Giochi') {
+        requestReady = ($('gameType').value !== 'DGM01' || DGM01Procedure.valid()) && Boolean($('gameType').value) && Object.values(gameValues()).every(Boolean) && [...document.querySelectorAll('#gameParameters input')].every(e => e.validity.valid);
+      } else if (type === 'Esercizi' || type === 'Verifica sommativa') {
+        const used = [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(v => Object.values(v).some(Boolean));
+        requestReady = used.length > 0 && used.every(v =>
+          ['det','count','topic','ded','dbl','des'].every(key => Boolean(v[key])) &&
+          Number.isInteger(Number(v.count)) && Number(v.count) >= 1 && Number(v.count) <= 9);
+
+      }
+      const enabled = commonFieldsReady && requestReady;
+      $('prepare').disabled = !enabled;
+      $('sendGemini').disabled = !enabled;
+    }
+    function requestPayload(prompt) { return { artifact: artifact.value, game_type: $('gameType').value, game_parameters: gameValues(), lesson_type: $('lessonType').value, school_type: schoolType.value, school_address: schoolAddress.value, ai_role: $('aiRole').value.trim(), bes_dsa: $('besDsa').checked, use_cache: $('useCache').checked, cache_minutes: Number($('cacheMinutes').value), generate_images: $('generateImages').checked, image_limit: Number($('imageLimit').value), prompt, rows: artifact.value === 'Giochi' ? ($('gameType').value === 'DGM01' ? DGM01Procedure.rows() : []) : [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(row => Object.values(row).some(Boolean)) }; }
+    function updateSchoolAddresses() {
+      const addresses = schools.filter(school => school.TipoScuola === schoolType.value).map(school => school.Indirizzo);
+      schoolAddress.innerHTML = '<option value="">Seleziona indirizzo</option>' + addresses.map(address => `<option value="${address}">${address}</option>`).join('');
+      schoolAddress.disabled = !addresses.length;
+    }
+    function parseGeminiJson(text) {
+      const cleaned = text.trim().replace(/^```json\s*/i, '').replace(/\s*```$/, '');
+      try { return JSON.parse(cleaned); } catch (error) {
+        const start = cleaned.indexOf('{');
+        if (start < 0) return null;
+        try { return JSON.parse(cleaned.slice(start)); } catch (ignored) { return null; }
+      }
+    }
+    function showArtifacts(responseText, serverArtifacts = null) {
+      const manifest = parseGeminiJson(responseText);
+      const artifacts = Array.isArray(serverArtifacts) ? serverArtifacts : (manifest && Array.isArray(manifest.artifacts) ? manifest.artifacts : []);
+      $('artifacts').innerHTML = '';
+      if (!artifacts.length) return;
+      const heading = document.createElement('strong');
+      heading.textContent = `Artefatti separati (${artifacts.length})`;
+      $('artifacts').appendChild(heading);
+      const engineLabel=document.createElement('div'); engineLabel.innerHTML='<label>Motore PDF <select id="pdfEngine"><option value="standard">Attuale (ReportLab/Matplotlib)</option><option value="typst">Typst/Lilaq (sperimentale)</option></select></label>'; $('artifacts').appendChild(engineLabel);
+      artifacts.forEach((artifact, index) => {
+        const card = document.createElement('div');
+        card.className = 'artifact-card';
+        card.innerHTML = `<strong>${artifact.title || artifact.artifact_type || `Artefatto ${index + 1}`}</strong>`;
+        (artifact.formats || ['pdf', 'pptx', 'docx']).forEach(format => {
+          const button = document.createElement('button'); button.className = 'secondary'; button.textContent = `Render ${format.toUpperCase()}`;
+          button.addEventListener('click', () => downloadArtifact(artifact, responseText, format, button));
+          card.appendChild(button);
+        });
+        $('artifacts').appendChild(card);
+      });
+    }
+    function buildPrompt() {
+      const type = artifact.value;
+      const lines = [$('aiRole').value.trim() || 'Agisci come docente di matematica.', `Classe: ${$('classe').value || '[da specificare]'}.`, `Artefatto richiesto: ${type || '[da specificare]'}.`];
+      if ($('besDsa').checked) lines.push('Sono presenti studenti BES/DSA.');
+      if (type === 'Lezione') { lines.push(`Tipo di lezione: ${$('lessonType').value || '[da specificare]'}.`, `Argomento: ${$('lessonTopic').value || '[da specificare]'}.`); }
+      if (type === 'Esercizi' || type === 'Verifica sommativa') { lines.push(type === 'Verifica sommativa' ? 'Genera una verifica sommativa coerente come unico oggetto valutativo.' : 'Genera gli esercizi richiesti come unità autonome.'); document.querySelectorAll('#exerciseRows tr').forEach(row => { const v = rowValues(row); if (v.topic || v.det || v.count) lines.push(`Esercizio ${row.dataset.row}: tipo ${v.det || '[da scegliere]'}; numero ${v.count || '[da scegliere]'}; argomento ${v.topic || '[da specificare]'}; difficoltà ${v.ded || '[da scegliere]'}; livello cognitivo ${v.dbl || '[da scegliere]'}; soluzione ${v.des || '[da scegliere]'}${v.dgt ? `; grafico ${v.dgt}` : ''}.`); }); }
+      lines.push('Rispetta le direttive che sono state inviate con il prompt');
+      return lines.join('\n');
+    }
+    async function init() {
+      $('gameTemplateUpload').addEventListener('click', uploadGameTemplate);
+      try {
+        const [catalogResponse, chatbotResponse, schoolResponse] = await Promise.all([fetch('/api/catalogs', { cache: 'no-store' }), fetch('/api/chatbot', { cache: 'no-store' }), fetch('/api/schools', { cache: 'no-store' })]);
+        if (!catalogResponse.ok || !chatbotResponse.ok || !schoolResponse.ok) throw new Error('impostazioni non disponibili');
+        const apiCatalogs = await catalogResponse.json();
+        games = apiCatalogs.games || [];
+        $('gameType').replaceChildren(new Option(games.length ? 'Seleziona' : 'Nessuna direttiva DGM disponibile', ''));
+        games.forEach(g => $('gameType').add(new Option(g.code+' - '+g.title, g.code)));
+        $('gameType').disabled = !games.length;
+        $('gameType').addEventListener('change', showGame);
+        const lessonTypes = apiCatalogs.lesson_types || [];
+        $('lessonType').replaceChildren(new Option(lessonTypes.length ? 'Seleziona' : 'Nessun gruppo DT disponibile', ''));
+        lessonTypes.forEach(item => $('lessonType').add(new Option(item.code, item.code)));
+        $('lessonType').disabled = !lessonTypes.length;
+        const chatbotSettings = await chatbotResponse.json();
+        schools = await schoolResponse.json();
+        const schoolTypes = [...new Set(schools.map(school => school.TipoScuola))];
+        schoolType.innerHTML = '<option value="">Seleziona tipo scuola</option>' + schoolTypes.map(type => `<option value="${type}">${type}</option>`).join('');
+        schoolType.disabled = !schoolTypes.length;
+        schoolType.addEventListener('change', updateSchoolAddresses);
+        chatbot.innerHTML = chatbotSettings.options.map(value => `<option value="${value}">${value}</option>`).join('');
+        chatbot.value = chatbotSettings.chatbot;
+        chatbot.disabled = false;
+        chatbot.addEventListener('change', async () => {
+          const previous = chatbotSettings.chatbot;
+          const selected = chatbot.value;
+          if (!confirm(`Confermi l'utilizzo di ${selected}?`)) { chatbot.value = previous; return; }
+          const response = await fetch('/api/chatbot', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ chatbot: selected }) });
+          if (!response.ok) { chatbot.value = previous; alert('Impossibile salvare il chatbot selezionato.'); return; }
+          chatbotSettings.chatbot = selected;
+        });
+        catalogs = Object.fromEntries(Object.entries(apiCatalogs).map(([group, items]) => [group, items.map(item => [item.code, item.title])]));
+        buildRows();
+        updateActionState();
+        artifact.addEventListener('change', updateVisibility);
+        document.querySelectorAll('input, select').forEach(element => {
+          element.addEventListener('input', updateActionState);
+          element.addEventListener('change', updateActionState);
+        });
+        $('besDsa').addEventListener('change', () => {
+          if (!$('promptText').value) return;
+          const lines = $('promptText').value.split('\n').filter(line => line !== 'Sono presenti studenti BES/DSA.');
+          if ($('besDsa').checked) lines.push('Sono presenti studenti BES/DSA.');
+          $('promptText').value = lines.join('\n');
+          $('prepare').click();
+        });
+        $('prepare').addEventListener('click', async () => {
+          const prompt = buildPrompt();
+          const response = await fetch('/api/compose', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(requestPayload(prompt)) });
+          if (!response.ok) { const error=await response.json(); alert(error.error || 'Impossibile preparare la richiesta.'); return; }
+          const composed = await response.json();
+          $('promptText').value = composed.prompt;
+          $('systemText').value = composed.system_instruction;
+          if (composed.artifacts) showArtifacts('', composed.artifacts);
+          $('promptOutput').classList.add('visible');
+          $('promptText').focus();
+        });
+        $('sendGemini').addEventListener('click', async () => {
+          $('sendGemini').disabled = true;
+          const prompt = buildPrompt();
+          $('cacheStatus').textContent=$('useCache').checked ? 'Preparazione o riuso cache in corso...' : 'Cache esplicita disattivata.';
+          $('geminiResponse').value = $('generateImages').checked ? 'Generazione lezione e immagini in corso; attendere...' : 'Invio in corso...';
+          $('validationProblems').classList.remove('visible');
+          $('validationProblems').textContent = '';
+          try {
+            const response = await fetch('/api/gemini', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(requestPayload(prompt)) });
+            const result = await response.json();
+            const cache=result.cache_info;
+            $('cacheStatus').textContent=cache?.state==='created'||cache?.state==='reused'
+              ? `Cache ${cache.state==='created'?'creata':'riutilizzata'}, scadenza ${new Date(cache.expires).toLocaleString('it-IT')}. Token da cache: ${cache.cached_tokens ?? 'non riportati'}.`
+              : ($('useCache').checked ? 'Cache/generazione non completata. Nessun tentativo automatico senza cache.' : 'Cache esplicita disattivata.');
+            $('geminiResponse').value = result.response || result.error || 'Nessuna risposta ricevuta.';
+            const problems = result.validation_problems || [];
+            if (problems.length || !response.ok) {
+              $('validationProblems').textContent = 'Avvisi: puoi comunque esportare gli artefatti disponibili.\n- ' + (problems.length ? problems.join('\n- ') : (result.error || 'Errore HTTP ' + response.status));
+              $('validationProblems').classList.add('visible');
+            }
+            if (result.response || result.artifacts) showArtifacts(result.response || '', result.artifacts || []);
+          } catch (error) {
+            $('cacheStatus').textContent='Richiesta non completata; verificare il messaggio di errore.';
+            $('geminiResponse').value = 'Risposta tecnica non disponibile: ' + error.message;
+            $('validationProblems').textContent = 'Problema di comunicazione con il server locale o Gemini:\n- ' + error.message;
+            $('validationProblems').classList.add('visible');
+          } finally {
+            $('sendGemini').disabled = false;
+          }
+        });
+        $('copyPrompt').addEventListener('click', async () => { await navigator.clipboard.writeText($('promptText').value); $('copied').classList.add('show'); setTimeout(() => $('copied').classList.remove('show'), 1600); });
+        $('exit').addEventListener('click', async () => {
+          if (!confirm('Vuoi uscire dal programma?')) return;
+          await fetch('/api/shutdown', { method: 'POST' });
+          window.close();
+          document.body.innerHTML = '<main class="shell"><h1>Programma chiuso</h1><p class="intro">Il server locale e stato arrestato.</p></main>';
+        });
+      } catch (error) {
+        document.querySelector('.status').textContent = 'Errore caricamento direttive';
+        console.error(error);
+      }
+    }
+    init();
+  </script>
+<script src="/render-ui.js"></script></body>
+</html>

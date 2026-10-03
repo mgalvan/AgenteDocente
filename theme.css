@@ -1,0 +1,34 @@
+/* Shared application theme: indigo, teal and warm amber. */
+:root{--ink:#182743;--muted:#586780;--line:#dce3f1;--paper:#f2f5fc;--panel:#fff;--teal:#4338ca;--teal-dark:#312e81;--teal-soft:#eeedff;--coral:#b45309;--yellow:#fff3cd;--shadow:0 12px 34px #253b7010}
+body{color:var(--ink);background:#f2f5fc;background-image:radial-gradient(ellipse at top left,#e2e6ff 0,transparent 48%),radial-gradient(ellipse at top right,#d9f3ef 0,transparent 45%);background-size:auto;background-attachment:fixed;font-family:'Segoe UI',sans-serif;line-height:1.5}
+.shell{padding-top:30px}
+h1,h2,h3{color:#202e58;line-height:1.2}h1{letter-spacing:-.035em}h2{letter-spacing:-.02em}
+header{background:linear-gradient(115deg,#25285b,#3f4095 65%,#176b79);padding:28px 30px;border-radius:18px;color:#fff;box-shadow:0 12px 30px #25285b20;align-items:center}
+header h1,header h2{color:#fff}header .intro{color:#e0e5ff}header .eyebrow{color:#fcd68b}header .status{color:#c9f5e8}header .secondary{background:#fff;color:#353479}
+.panel,body>main:not(.shell){border:1px solid #dce3f1;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+.section-head{border-bottom:2px solid #e9e8fb;padding-bottom:18px}.section-head h2:before{content:'';display:inline-block;width:5px;height:21px;background:#6554d9;border-radius:4px;margin-right:10px;vertical-align:middle}
+label{color:#394967}input,select,textarea{border:1px solid #c6d0e2;border-radius:8px;color:var(--ink);background:#fcfdff;font:inherit;padding:10px 12px;box-sizing:border-box}input[type=checkbox]{accent-color:#5144ca}input:focus,select:focus,textarea:focus{outline:2px solid #6554d9;outline-offset:2px;box-shadow:0 0 0 5px #eeedff}
+button{border:1px solid transparent;border-radius:9px;padding:11px 16px;font-weight:650;cursor:pointer;transition:background .15s,box-shadow .15s,transform .15s;background:#eeedff;color:#373083}
+.primary,#upload{background:linear-gradient(115deg,#5144ca,#3c369b);color:white;box-shadow:0 4px 10px #4338ca25}.primary:hover,#upload:hover{background:#37308e}.secondary{background:#eeedff;color:#373083;border-color:#ddd9fa}.secondary:hover{background:#e0dcfb}
+button:focus-visible,a:focus-visible{outline:3px solid #b97a16;outline-offset:3px}button:disabled{opacity:.48;cursor:not-allowed;transform:none;box-shadow:none}.danger,.exit-button{color:#a42b39;background:#fff0f1;border-color:#f4cbd1}
+a{color:#4338ad;text-underline-offset:3px}a:hover{color:#28216d}
+.conditional{background:#f0f7fb;border-color:#c9e0ec;border-left:4px solid #268599}.option-row{padding:14px 16px;background:#f7f7fe;border:1px solid #e3e3f5;border-radius:10px}
+.table-wrap,.scroll{border:1px solid #dde3ef;border-radius:10px}th{background:#eaeefa;color:#354571}tbody tr:nth-child(even){background:#f8faff}tbody tr:hover{background:#f0f2ff}td{border-color:#e5eaf3}
+.entry{border:1px solid #dce3f1;border-left:4px solid #7563d4;border-radius:12px}.artifact-card{background:#f5f9fb;border:1px solid #dbe8ee;border-left:4px solid #278c92;border-radius:10px;padding:14px;margin-top:10px}
+.preview,.response,textarea{background:#f8faff}.toolbar{gap:12px;flex-wrap:wrap}.utility-menu{border-color:#dce3f1;box-shadow:0 12px 35px #253b7026}.utility-menu button{background:#fff;color:#263657}.utility-menu button:hover{background:#eeedff}
+.validation-problems{border-left-color:#b75a21;background:#fff5eb;color:#843c17}.helper,.meta,.intro{color:var(--muted)}
+@media(max-width:680px){.shell{padding:18px 12px 40px}header{padding:22px 18px;flex-wrap:wrap;align-items:flex-start;gap:18px;border-radius:12px}.panel,.form-panel{padding:18px}.option-row{gap:16px}body>main:not(.shell){padding:18px}h1{font-size:30px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Clearly delineate data entry controls on white and tinted panels. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),select,textarea{
+  background:#edf2fc;
+  border:2px solid #7383a3;
+  color:#182743;
+  box-shadow:inset 0 1px 2px #253b7010;
+}
+input::placeholder,textarea::placeholder{color:#53627c;opacity:1}
+input:not(:disabled):hover,select:not(:disabled):hover,textarea:not(:disabled):hover{border-color:#495d85}
+input:focus,select:focus,textarea:focus{background:#fff;border-color:#5144ca;outline:2px solid #6554d9;outline-offset:2px;box-shadow:0 0 0 5px #eeedff}
+input:disabled,select:disabled,textarea:disabled{background:#e4e7ed;border-color:#a4adbd;color:#626d7e;box-shadow:none;cursor:not-allowed}
+label{color:#283957}

@@ -1,0 +1,7 @@
+[
+  "DGS_API",
+  "DGS00",
+  "API_GRAFICHE",
+  "Contratto API dei grafici",
+  "graphs contiene risorse id, kind (function_2d, scatter, bar_chart), expression, points, labels, values, viewport (x_min,x_max,y_min,y_max), x_label, y_label, alt_text. function_2d usa expression e gli array vuoti. scatter usa points con x/y, expression vuota e labels/values vuoti. bar_chart usa labels e values di uguale lunghezza, expression vuota e points vuoto. Le espressioni sono dichiarative, non codice. Non dichiarare renderer, layers o graph_spec_version nel contratto piatto. Altri tipi grafici richiedono estensione esplicita del contratto."
+]

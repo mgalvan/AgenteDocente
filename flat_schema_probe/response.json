@@ -1,0 +1,97 @@
+{
+  "contract_version": "setupgemma_flat_0.1",
+  "status": "complete",
+  "request_type": "esercizio",
+  "artifacts": [
+    {
+      "id": "artifact_1",
+      "kind": "exercise_sheet",
+      "audience": "teacher",
+      "format": "pdf",
+      "title": "Esercizio di esempio",
+      "containers": [
+        {
+          "id": "container_1",
+          "title": "Sezione 1",
+          "blocks": [
+            {
+              "id": "block_1",
+              "kind": "text",
+              "ref": "text_1"
+            },
+            {
+              "id": "block_2",
+              "kind": "formula",
+              "ref": "formula_1"
+            },
+            {
+              "id": "block_3",
+              "kind": "graph",
+              "ref": "graph_1"
+            },
+            {
+              "id": "block_4",
+              "kind": "image",
+              "ref": "image_1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": [
+    {
+      "id": "text_1",
+      "segments": [
+        {
+          "kind": "text",
+          "value": "Questo è un testo brevissimo."
+        }
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "formula_1",
+      "latex": "x+1",
+      "alt_text": "La formula x più uno",
+      "expression": "x+1"
+    }
+  ],
+  "graphs": [
+    {
+      "id": "graph_1",
+      "kind": "function_2d",
+      "expression": "x",
+      "points": [],
+      "labels": [],
+      "values": [],
+      "viewport": {
+        "x_min": -1,
+        "x_max": 1,
+        "y_min": -1,
+        "y_max": 1
+      },
+      "x_label": "",
+      "y_label": "",
+      "alt_text": "Grafico della funzione y uguale a x"
+    }
+  ],
+  "images": [
+    {
+      "id": "image_1",
+      "source": "generated",
+      "generation_prompt": "albero verde montagna",
+      "resource_id": "img_res_1",
+      "alt_text": "Un'immagine generata di un albero verde su una montagna."
+    }
+  ],
+  "lists": [],
+  "tables": [],
+  "questions": [],
+  "validation_summary": {
+    "complete": true,
+    "audience_checked": true,
+    "math_checked": true
+  }
+}

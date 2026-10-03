@@ -1,0 +1,14 @@
+.venv/
+.git/
+.codex/
+.agents/
+**/__pycache__/
+**/node_modules/
+.render_cache/
+render_qa/
+flat_schema_probe/
+contract_backups/
+*.log
+.env
+.env.*
+gemini_cache_index.json

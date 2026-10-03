@@ -1,0 +1,28 @@
+{
+  "model": "gemini-2.5-flash",
+  "max_output_tokens": 1400,
+  "attempts": 1,
+  "schema_accepted": true,
+  "usage": {
+    "candidates_token_count": 682,
+    "prompt_token_count": 135,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 135
+      }
+    ],
+    "total_token_count": 817
+  },
+  "valid": false,
+  "errors": [
+    {
+      "type": "value_error",
+      "loc": [
+        "images",
+        0
+      ],
+      "msg": "Value error, generated: generation_prompt obbligatorio, resource_id vuoto."
+    }
+  ]
+}

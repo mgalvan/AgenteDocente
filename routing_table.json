@@ -1,0 +1,46 @@
+[
+  {
+    "TipoRichiesta": "*",
+    "Direttive": "DR,DID,DMF,DGR,DAPI_API,DAR_API,DAF_API_CORE,DAU_API,DMA_API,DGS_API,DCL_API,DIMAGE"
+  },
+  {
+    "TipoRichiesta": "lezione",
+    "Direttive": "DAF_API_LE"
+  },
+  {
+    "TipoRichiesta": "esercizio",
+    "Direttive": "DEG,DBLA,DAF_API_EX"
+  },
+  {
+    "TipoRichiesta": "verifica",
+    "Direttive": "DVE,DAF_API_VE,DVT_API"
+  },
+  {
+    "TipoRichiesta": "lezione L1",
+    "Direttive": "DT1"
+  },
+  {
+    "TipoRichiesta": "lezione L2",
+    "Direttive": "DT2"
+  },
+  {
+    "TipoRichiesta": "lezione L3",
+    "Direttive": "DT3"
+  },
+  {
+    "TipoRichiesta": "lezione L4",
+    "Direttive": "DT4"
+  },
+  {
+    "TipoRichiesta": "progettazione lezione",
+    "Direttive": "DP,DLEG"
+  },
+  {
+    "TipoRichiesta": "BES/DSA",
+    "Direttive": "DBES"
+  },
+  {
+    "TipoRichiesta": "gioco G01",
+    "Direttive": "DAF_API_G01"
+  }
+]

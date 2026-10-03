@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ambienti virtuali
+.venv/
+venv/
+
+# Variabili ambiente / chiavi
+.env
+*.env
+
+# Log
+*.log
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+renderer_tools/node_modules/
+
+# File temporanei
+*.tmp
+*.bak
