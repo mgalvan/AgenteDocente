@@ -6485,5 +6485,1505 @@
         }
       ]
     }
+  },
+  {
+    "id": "15f16b80a28f44428d060a9515b0c7d3",
+    "requested_at": "2026-10-03T20:17:25.922666+00:00",
+    "chatbot": "Gemini",
+    "prompt": "Agisci come docente di elettrotecnica.\nScuola: Istituto professionale; indirizzo: Manutenzione e assistenza tecnica.\nClasse: 4.\nArtefatto richiesto: Verifica sommativa.\nGenera una verifica sommativa coerente come unico oggetto valutativo.\nEsercizio 1: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED03; livello cognitivo DBL02; soluzione DES04; grafico DGT02.\nEsercizio 2: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 3: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nEsercizio 4: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 5: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nEsercizio 6: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 7: tipo DET02; numero 1; argomento Filtro passivo RC; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nRispetta le direttive che sono state inviate con il prompt",
+    "response": "{\n  \"contract_version\": \"setupgemma_flat_2.1\",\n  \"status\": \"complete\",\n  \"request_type\": \"Verifica sommativa di elettrotecnica\",\n  \"artifacts\": [\n    {\n      \"id\": \"test_students\",\n      \"kind\": \"student_test\",\n      \"audience\": \"students\",\n      \"format\": \"docx\",\n      \"title\": \"Verifica Sommativa di Elettrotecnica\",\n      \"containers\": [\n        {\n          \"id\": \"section_test\",\n          \"title\": \"Circuiti RC e RL, Filtri Passivi\",\n          \"blocks\": [\n            {\n              \"id\": \"block_ex1_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex1_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex1_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex1_students\"\n            },\n            {\n              \"id\": \"block_ex2_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex2_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex2_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex2_students\"\n            },\n            {\n              \"id\": \"block_ex3_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex3_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex3_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex3_students\"\n            },\n            {\n              \"id\": \"block_ex4_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex4_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex4_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex4_students\"\n            },\n            {\n              \"id\": \"block_ex5_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex5_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex5_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex5_students\"\n            },\n            {\n              \"id\": \"block_ex6_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex6_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex6_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex6_students\"\n            },\n            {\n              \"id\": \"block_ex7_prompt\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex7_prompt_students\"\n            },\n            {\n              \"id\": \"block_ex7_graph\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex7_students\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"test_teacher\",\n      \"kind\": \"teacher_solution\",\n      \"audience\": \"teacher\",\n      \"format\": \"docx\",\n      \"title\": \"Soluzione Verifica Sommativa di Elettrotecnica\",\n      \"containers\": [\n        {\n          \"id\": \"section_solution\",\n          \"title\": \"Soluzione Circuiti RC e RL, Filtri Passivi\",\n          \"blocks\": [\n            {\n              \"id\": \"block_ex1_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex1_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex1_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex1_solution\"\n            },\n            {\n              \"id\": \"block_ex1_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex1_sol1\"\n            },\n            {\n              \"id\": \"block_ex1_sol_formula2\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex1_sol2\"\n            },\n            {\n              \"id\": \"block_ex1_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex1_teacher\"\n            },\n            {\n              \"id\": \"block_ex2_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex2_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex2_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex2_solution\"\n            },\n            {\n              \"id\": \"block_ex2_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex2_sol1\"\n            },\n            {\n              \"id\": \"block_ex2_sol_formula2\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex2_sol2\"\n            },\n            {\n              \"id\": \"block_ex2_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex2_teacher\"\n            },\n            {\n              \"id\": \"block_ex3_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex3_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex3_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex3_solution\"\n            },\n            {\n              \"id\": \"block_ex3_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex3_sol1\"\n            },\n            {\n              \"id\": \"block_ex3_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex3_teacher\"\n            },\n            {\n              \"id\": \"block_ex4_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex4_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex4_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex4_solution\"\n            },\n            {\n              \"id\": \"block_ex4_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex4_sol1\"\n            },\n            {\n              \"id\": \"block_ex4_sol_formula2\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex4_sol2\"\n            },\n            {\n              \"id\": \"block_ex4_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex4_teacher\"\n            },\n            {\n              \"id\": \"block_ex5_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex5_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex5_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex5_solution\"\n            },\n            {\n              \"id\": \"block_ex5_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex5_sol1\"\n            },\n            {\n              \"id\": \"block_ex5_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex5_teacher\"\n            },\n            {\n              \"id\": \"block_ex6_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex6_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex6_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex6_solution\"\n            },\n            {\n              \"id\": \"block_ex6_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex6_sol1\"\n            },\n            {\n              \"id\": \"block_ex6_sol_formula2\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex6_sol2\"\n            },\n            {\n              \"id\": \"block_ex6_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex6_teacher\"\n            },\n            {\n              \"id\": \"block_ex7_prompt_teacher\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex7_prompt_teacher\"\n            },\n            {\n              \"id\": \"block_ex7_solution_text\",\n              \"kind\": \"text\",\n              \"ref\": \"text_ex7_solution\"\n            },\n            {\n              \"id\": \"block_ex7_sol_formula1\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex7_sol1\"\n            },\n            {\n              \"id\": \"block_ex7_sol_formula2\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex7_sol2\"\n            },\n            {\n              \"id\": \"block_ex7_sol_formula3\",\n              \"kind\": \"formula\",\n              \"ref\": \"formula_ex7_sol3\"\n            },\n            {\n              \"id\": \"block_ex7_graph_teacher\",\n              \"kind\": \"graph\",\n              \"ref\": \"graph_ex7_teacher\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"texts\": [\n    {\n      \"id\": \"text_ex1_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 1 (10 punti): Un circuito RC serie è composto da un resistore con resistenza R = 10 kΩ e un condensatore con capacità C = 470 nF. Il circuito è alimentato da una sorgente di tensione continua V = 12 V. Determinare la costante di tempo del circuito e il valore della corrente iniziale nel momento in cui viene applicata la tensione.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex1_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 1 (10 punti): Un circuito RC serie è composto da un resistore con resistenza R = 10 kΩ e un condensatore con capacità C = 470 nF. Il circuito è alimentato da una sorgente di tensione continua V = 12 V. Determinare la costante di tempo del circuito e il valore della corrente iniziale nel momento in cui viene applicata la tensione.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex1_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"La costante di tempo τ di un circuito RC si calcola come prodotto della resistenza R per la capacità C. La corrente iniziale di carica è data dalla legge di Ohm applicata alla resistenza nel momento in cui il condensatore è scarico e si comporta come un cortocircuito.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 10 \\\\, \\\\text{k}\\\\Omega = 10 \\\\times 10^3 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"C = 470 \\\\, \\\\text{nF} = 470 \\\\times 10^{-9} \\\\, \\\\text{F}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 12 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Calcolo della costante di tempo τ:\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex2_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 2 (15 punti): Un circuito RC serie ha R = 2.2 kΩ e C = 100 µF. Il condensatore si sta caricando attraverso una tensione costante V = 9 V. Calcolare la tensione ai capi del condensatore e la corrente che attraversa il resistore dopo 0.3 secondi dall'inizio della carica. Tracciare un grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex2_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 2 (15 punti): Un circuito RC serie ha R = 2.2 kΩ e C = 100 µF. Il condensatore si sta caricando attraverso una tensione costante V = 9 V. Calcolare la tensione ai capi del condensatore e la corrente che attraversa il resistore dopo 0.3 secondi dall'inizio della carica. Tracciare un grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex2_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Durante la carica di un condensatore in un circuito RC, la tensione ai suoi capi e la corrente attraverso il resistore seguono leggi esponenziali.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 2.2 \\\\, \\\\text{k}\\\\Omega = 2.2 \\\\times 10^3 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"C = 100 \\\\, \\\\mu\\\\text{F} = 100 \\\\times 10^{-6} \\\\, \\\\text{F}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 9 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 0.3 \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Prima calcoliamo la costante di tempo τ:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"\\\\tau = R \\\\cdot C = (2.2 \\\\times 10^3 \\\\, \\\\Omega) \\\\cdot (100 \\\\times 10^{-6} \\\\, \\\\text{F}) = 0.22 \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Ora calcoliamo la tensione ai capi del condensatore \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V_C(t)\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" e la corrente nel resistore \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_R(t)\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" dopo \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 0.3 \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex3_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 3 (20 punti): In un circuito RC serie alimentato da una sorgente di tensione continua V = 15 V e con un resistore R = 3.3 kΩ, si misura una tensione ai capi del condensatore di 10 V dopo 0.05 secondi dall'inizio della carica. Determinare il valore della capacità C del condensatore. Tracciare un grafico della tensione sul condensatore nel tempo.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex3_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 3 (20 punti): In un circuito RC serie alimentato da una sorgente di tensione continua V = 15 V e con un resistore R = 3.3 kΩ, si misura una tensione ai capi del condensatore di 10 V dopo 0.05 secondi dall'inizio della carica. Determinare il valore della capacità C del condensatore. Tracciare un grafico della tensione sul condensatore nel tempo.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex3_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Per determinare la capacità C, dobbiamo utilizzare la formula della tensione sul condensatore durante la carica e risolverla per C.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 15 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 3.3 \\\\, \\\\text{k}\\\\Omega = 3.3 \\\\times 10^3 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V_C(t) = 10 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" a \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 0.05 \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".La formula per la tensione sul condensatore durante la carica è:\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex4_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 4 (15 punti): Un circuito RL serie è costituito da un resistore R = 150 Ω e un induttore L = 500 mH. Il circuito è alimentato da una sorgente di tensione continua V = 24 V. Calcolare la corrente che attraversa l'induttore e la tensione ai capi del resistore dopo 2 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex4_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 4 (15 punti): Un circuito RL serie è costituito da un resistore R = 150 Ω e un induttore L = 500 mH. Il circuito è alimentato da una sorgente di tensione continua V = 24 V. Calcolare la corrente che attraversa l'induttore e la tensione ai capi del resistore dopo 2 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex4_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Durante l'accensione di un circuito RL, la corrente nell'induttore aumenta esponenzialmente verso il valore di regime, mentre la tensione sul resistore, inizialmente zero, aumenta in proporzione alla corrente.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 150 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"L = 500 \\\\, \\\\text{mH} = 500 \\\\times 10^{-3} \\\\, \\\\text{H}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 24 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 2 \\\\, \\\\text{ms} = 2 \\\\times 10^{-3} \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Prima calcoliamo la costante di tempo τ:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"\\\\tau = \\\\frac{L}{R} = \\\\frac{500 \\\\times 10^{-3} \\\\, \\\\text{H}}{150 \\\\, \\\\Omega} \\\\approx 3.33 \\\\times 10^{-3} \\\\, \\\\text{s} = 3.33 \\\\, \\\\text{ms}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Ora calcoliamo la corrente nell'induttore \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_L(t)\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" e la tensione sul resistore \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V_R(t)\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" dopo \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 2 \\\\, \\\\text{ms}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex5_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 5 (20 punti): Un circuito RL serie è alimentato da una tensione V = 18 V. Se R = 1 kΩ e L = 2 H, determinare quanto tempo impiega la corrente nell'induttore per raggiungere il 70% del suo valore di regime. Tracciare un grafico della corrente nell'induttore nel tempo.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex5_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 5 (20 punti): Un circuito RL serie è alimentato da una tensione V = 18 V. Se R = 1 kΩ e L = 2 H, determinare quanto tempo impiega la corrente nell'induttore per raggiungere il 70% del suo valore di regime. Tracciare un grafico della corrente nell'induttore nel tempo.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex5_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Per trovare il tempo richiesto, dobbiamo prima calcolare il valore di regime della corrente e poi utilizzare la formula della corrente nell'induttore durante l'accensione, risolvendo per t.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 18 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 1 \\\\, \\\\text{k}\\\\Omega = 1000 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"L = 2 \\\\, \\\\text{H}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Percentuale target della corrente: 70% del valore di regime.Calcolo del valore di regime della corrente \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_f\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" (corrente finale o di regime):\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_f = \\\\frac{V}{R} = \\\\frac{18 \\\\, \\\\text{V}}{1000 \\\\, \\\\Omega} = 0.018 \\\\, \\\\text{A} = 18 \\\\, \\\\text{mA}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Il 70% di \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_f\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" è:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_L(t) = 0.70 \\\\cdot I_f = 0.70 \\\\cdot 0.018 \\\\, \\\\text{A} = 0.0126 \\\\, \\\\text{A}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Calcoliamo la costante di tempo τ:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"\\\\tau = \\\\frac{L}{R} = \\\\frac{2 \\\\, \\\\text{H}}{1000 \\\\, \\\\Omega} = 0.002 \\\\, \\\\text{s} = 2 \\\\, \\\\text{ms}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Ora usiamo la formula della corrente nell'induttore durante l'accensione:\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex6_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 6 (10 punti): In un circuito RL serie con R = 50 Ω e L = 1 H, alimentato da una tensione continua V = 10 V, calcolare l'energia immagazzinata nell'induttore dopo 20 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex6_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 6 (10 punti): In un circuito RL serie con R = 50 Ω e L = 1 H, alimentato da una tensione continua V = 10 V, calcolare l'energia immagazzinata nell'induttore dopo 20 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex6_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Per calcolare l'energia immagazzinata nell'induttore, dobbiamo prima determinare la corrente che lo attraversa al tempo specificato. L'energia immagazzinata in un induttore è data da \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"E = \\\\frac{1}{2} L I^2\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 50 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"L = 1 \\\\, \\\\text{H}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V = 10 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 20 \\\\, \\\\text{ms} = 20 \\\\times 10^{-3} \\\\, \\\\text{s}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Prima calcoliamo la costante di tempo τ:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"\\\\tau = \\\\frac{L}{R} = \\\\frac{1 \\\\, \\\\text{H}}{50 \\\\, \\\\Omega} = 0.02 \\\\, \\\\text{s} = 20 \\\\, \\\\text{ms}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \"Ora calcoliamo la corrente nell'induttore \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"I_L(t)\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \" al tempo \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = 20 \\\\, \\\\text{ms}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Notiamo che \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"t = \\\\tau\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex7_prompt_students\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 7 (10 punti): Si vuole progettare un filtro passa-basso RC con un resistore R = 330 Ω e un condensatore C = 1 µF. Calcolare la frequenza di taglio (a -3 dB) del filtro. Se una tensione di ingresso sinusoidale con ampiezza di 10 V e frequenza di 10 Hz viene applicata al filtro, determinare l'ampiezza della tensione di uscita e lo sfasamento tra ingresso e uscita. Tracciare un grafico del guadagno e dello sfasamento in funzione della frequenza (diagrammi di Bode).\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex7_prompt_teacher\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"Esercizio 7 (10 punti): Si vuole progettare un filtro passa-basso RC con un resistore R = 330 Ω e un condensatore C = 1 µF. Calcolare la frequenza di taglio (a -3 dB) del filtro. Se una tensione di ingresso sinusoidale con ampiezza di 10 V e frequenza di 10 Hz viene applicata al filtro, determinare l'ampiezza della tensione di uscita e lo sfasamento tra ingresso e uscita. Tracciare un grafico del guadagno e dello sfasamento in funzione della frequenza (diagrammi di Bode).\"\n        }\n      ]\n    },\n    {\n      \"id\": \"text_ex7_solution\",\n      \"segments\": [\n        {\n          \"kind\": \"text\",\n          \"value\": \"La frequenza di taglio di un filtro RC passa-basso è il punto in cui il guadagno di potenza è dimezzato (-3 dB) e si calcola come \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"f_c = \\\\frac{1}{2 \\\\pi RC}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \". Il guadagno e lo sfasamento dipendono dalla frequenza di ingresso rispetto alla frequenza di taglio.Dati:\"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"R = 330 \\\\, \\\\Omega\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"C = 1 \\\\, \\\\mu\\\\text{F} = 1 \\\\times 10^{-6} \\\\, \\\\text{F}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Ingresso: \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"V_{in} = 10 \\\\, \\\\text{V}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \", \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"f = 10 \\\\, \\\\text{Hz}\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".Calcolo della frequenza di taglio \"\n        },\n        {\n          \"kind\": \"formula\",\n          \"value\": \"f_c\"\n        },\n        {\n          \"kind\": \"text\",\n          \"value\": \".\"\n        }\n      ]\n    }\n  ],\n  \"formulas\": [\n    {\n      \"id\": \"formula_ex1_sol1\",\n      \"latex\": \"\\\\tau = R \\\\cdot C = (10 \\\\times 10^3 \\\\, \\\\Omega) \\\\cdot (470 \\\\times 10^{-9} \\\\, \\\\text{F}) = 0.0047 \\\\, \\\\text{s} = 4.7 \\\\, \\\\text{ms}\",\n      \"alt_text\": \"Tau uguale R per C uguale diecimila ohm per quattrocentosettanta nanofarad uguale zero punto zero zero quattro sette secondi uguale quattro punto sette millisecondi\",\n      \"expression\": \"10e3 * 470e-9\"\n    },\n    {\n      \"id\": \"formula_ex1_sol2\",\n      \"latex\": \"I_{\\\\text{iniziale}} = \\\\frac{V}{R} = \\\\frac{12 \\\\, \\\\text{V}}{10 \\\\times 10^3 \\\\, \\\\Omega} = 1.2 \\\\times 10^{-3} \\\\, \\\\text{A} = 1.2 \\\\, \\\\text{mA}\",\n      \"alt_text\": \"Corrente iniziale uguale V diviso R uguale dodici volt diviso diecimila ohm uguale uno punto due per dieci alla meno tre ampere uguale uno punto due milliampere\",\n      \"expression\": \"12 / 10e3\"\n    },\n    {\n      \"id\": \"formula_ex2_sol1\",\n      \"latex\": \"V_C(t) = V(1 - e^{-t/\\\\tau}) = 9 \\\\, \\\\text{V} (1 - e^{-0.3/0.22}) \\\\approx 9 \\\\, \\\\text{V} (1 - e^{-1.36}) \\\\approx 9 \\\\, \\\\text{V} (1 - 0.256) \\\\approx 6.696 \\\\, \\\\text{V}\",\n      \"alt_text\": \"Tensione sul condensatore al tempo t uguale V per uno meno e alla meno t su tau uguale nove volt per uno meno e alla meno zero punto tre diviso zero punto ventidue circa nove volt per uno meno e alla meno uno punto trentasei circa nove volt per uno meno zero punto duecentocinquantasei circa sei punto seicentovantanove volt\",\n      \"expression\": \"9 * (1 - exp(-0.3/0.22))\"\n    },\n    {\n      \"id\": \"formula_ex2_sol2\",\n      \"latex\": \"I_R(t) = \\\\frac{V}{R} e^{-t/\\\\tau} = \\\\frac{9 \\\\, \\\\text{V}}{2.2 \\\\times 10^3 \\\\, \\\\Omega} e^{-0.3/0.22} \\\\approx 4.09 \\\\times 10^{-3} \\\\, \\\\text{A} \\\\cdot 0.256 \\\\approx 1.047 \\\\times 10^{-3} \\\\, \\\\text{A} = 1.047 \\\\, \\\\text{mA}\",\n      \"alt_text\": \"Corrente sul resistore al tempo t uguale V diviso R per e alla meno t su tau uguale nove volt diviso due punto due per dieci alla tre ohm per e alla meno zero punto tre diviso zero punto ventidue circa quattro punto zero nove per dieci alla meno tre ampere per zero punto duecentocinquantasei circa uno punto zero quarantasette per dieci alla meno tre ampere uguale uno punto zero quarantasette milliampere\",\n      \"expression\": \"(9 / 2.2e3) * exp(-0.3/0.22)\"\n    },\n    {\n      \"id\": \"formula_ex3_sol1\",\n      \"latex\": \"V_C(t) = V(1 - e^{-t/(RC)}) \\\\\\\\ 10 = 15(1 - e^{-0.05/(3.3 \\\\times 10^3 \\\\cdot C)}) \\\\\\\\ \\\\frac{10}{15} = 1 - e^{-0.05/(3.3 \\\\times 10^3 \\\\cdot C)} \\\\\\\\ \\\\frac{2}{3} = 1 - e^{-0.05/(3300 C)} \\\\\\\\ e^{-0.05/(3300 C)} = 1 - \\\\frac{2}{3} = \\\\frac{1}{3} \\\\\\\\ -\\\\frac{0.05}{3300 C} = \\\\ln(\\\\frac{1}{3}) = -\\\\ln(3) \\\\\\\\ \\\\frac{0.05}{3300 C} = \\\\ln(3) \\\\\\\\ C = \\\\frac{0.05}{3300 \\\\cdot \\\\ln(3)} \\\\approx \\\\frac{0.05}{3300 \\\\cdot 1.0986} \\\\approx \\\\frac{0.05}{3625.38} \\\\approx 1.379 \\\\times 10^{-5} \\\\, \\\\text{F} = 13.79 \\\\, \\\\mu\\\\text{F}\",\n      \"alt_text\": \"Tensione sul condensatore al tempo t uguale V per uno meno e alla meno t diviso (RC). Dieci uguale quindici per uno meno e alla meno zero punto zero cinque diviso (tre punto tre per dieci alla tre per C). Dieci quindicesimi uguale uno meno e alla meno zero punto zero cinque diviso (tre punto tre per dieci alla tre per C). Due terzi uguale uno meno e alla meno zero punto zero cinque diviso (trecentotrenta per C). E alla meno zero punto zero cinque diviso (trecentotrenta per C) uguale uno meno due terzi uguale un terzo. Meno zero punto zero cinque diviso (trecentotrenta per C) uguale logaritmo naturale di un terzo uguale meno logaritmo naturale di tre. Zero punto zero cinque diviso (trecentotrenta per C) uguale logaritmo naturale di tre. C uguale zero punto zero cinque diviso (trecentotrenta per logaritmo naturale di tre) circa zero punto zero cinque diviso (trecentotrenta per uno punto zero novecentottantasei) circa zero punto zero cinque diviso tre mila seicentoventicinque punto trentotto circa uno punto trecentosettantanove per dieci alla meno cinque Farad uguale tredici punto settantanove microfarad.\",\n      \"expression\": \"0.05 / (3300 * log(3))\"\n    },\n    {\n      \"id\": \"formula_ex4_sol1\",\n      \"latex\": \"I_L(t) = \\\\frac{V}{R} (1 - e^{-t/\\\\tau}) = \\\\frac{24 \\\\, \\\\text{V}}{150 \\\\, \\\\Omega} (1 - e^{-2 \\\\times 10^{-3} / (3.33 \\\\times 10^{-3})}) \\\\approx 0.16 \\\\, \\\\text{A} (1 - e^{-0.6}) \\\\approx 0.16 \\\\, \\\\text{A} (1 - 0.5488) \\\\approx 0.16 \\\\, \\\\text{A} \\\\cdot 0.4512 \\\\approx 0.0722 \\\\, \\\\text{A} = 72.2 \\\\, \\\\text{mA}\",\n      \"alt_text\": \"Corrente nell'induttore al tempo t uguale V diviso R per (uno meno e alla meno t su tau) uguale ventiquattro volt diviso centocinquanta ohm per (uno meno e alla meno due per dieci alla meno tre diviso (tre punto trentatre per dieci alla meno tre)) circa zero punto sedici ampere per (uno meno e alla meno zero punto sei) circa zero punto sedici ampere per (uno meno zero punto cinquemilaquattrocentottantotto) circa zero punto sedici ampere per zero punto quarantacinquemila centododici circa zero punto zero settantadue due ampere uguale settantadue punto due milliampere\",\n      \"expression\": \"(24 / 150) * (1 - exp(-0.002 / 0.00333))\"\n    },\n    {\n      \"id\": \"formula_ex4_sol2\",\n      \"latex\": \"V_R(t) = R \\\\cdot I_L(t) = 150 \\\\, \\\\Omega \\\\cdot 0.0722 \\\\, \\\\text{A} \\\\approx 10.83 \\\\, \\\\text{V}\",\n      \"alt_text\": \"Tensione sul resistore al tempo t uguale R per corrente nell'induttore al tempo t uguale centocinquanta ohm per zero punto zero settantadue due ampere circa dieci punto ottantatre volt\",\n      \"expression\": \"150 * 0.0722\"\n    },\n    {\n      \"id\": \"formula_ex5_sol1\",\n      \"latex\": \"I_L(t) = I_f (1 - e^{-t/\\\\tau}) \\\\\\\\ 0.70 \\\\cdot I_f = I_f (1 - e^{-t/\\\\tau}) \\\\\\\\ 0.70 = 1 - e^{-t/\\\\tau} \\\\\\\\ e^{-t/\\\\tau} = 1 - 0.70 = 0.30 \\\\\\\\ -\\\\frac{t}{\\\\tau} = \\\\ln(0.30) \\\\\\\\ t = -\\\\tau \\\\cdot \\\\ln(0.30) \\\\\\\\ t = -(0.002 \\\\, \\\\text{s}) \\\\cdot \\\\ln(0.30) \\\\approx -(0.002 \\\\, \\\\text{s}) \\\\cdot (-1.204) \\\\approx 0.002408 \\\\, \\\\text{s} = 2.408 \\\\, \\\\text{ms}\",\n      \"alt_text\": \"Corrente nell'induttore al tempo t uguale corrente finale per (uno meno e alla meno t su tau). Zero punto settanta per corrente finale uguale corrente finale per (uno meno e alla meno t su tau). Zero punto settanta uguale uno meno e alla meno t su tau. E alla meno t su tau uguale uno meno zero punto settanta uguale zero punto trenta. Meno t su tau uguale logaritmo naturale di zero punto trenta. t uguale meno tau per logaritmo naturale di zero punto trenta. t uguale meno zero punto zero zero due secondi per logaritmo naturale di zero punto trenta circa meno zero punto zero zero due secondi per meno uno punto due zero quattro circa zero punto zero zero duecentoquattrocentootto secondi uguale due punto quattrocentootto millisecondi.\",\n      \"expression\": \"-0.002 * log(0.30)\"\n    },\n    {\n      \"id\": \"formula_ex6_sol1\",\n      \"latex\": \"I_L(t) = \\\\frac{V}{R} (1 - e^{-t/\\\\tau}) = \\\\frac{10 \\\\, \\\\text{V}}{50 \\\\, \\\\Omega} (1 - e^{-0.02/0.02}) = 0.2 \\\\, \\\\text{A} (1 - e^{-1}) \\\\approx 0.2 \\\\, \\\\text{A} (1 - 0.3679) \\\\approx 0.2 \\\\, \\\\text{A} \\\\cdot 0.6321 \\\\approx 0.12642 \\\\, \\\\text{A}\",\n      \"alt_text\": \"Corrente nell'induttore al tempo t uguale V diviso R per (uno meno e alla meno t su tau) uguale dieci volt diviso cinquanta ohm per (uno meno e alla meno zero punto zero due diviso zero punto zero due) uguale zero punto due ampere per (uno meno e alla meno uno) circa zero punto due ampere per (uno meno zero punto trecentosessantasette nove) circa zero punto due ampere per zero punto seicentotrentadue uno circa zero punto centoventisei quattro due ampere\",\n      \"expression\": \"(10 / 50) * (1 - exp(-0.02 / 0.02))\"\n    },\n    {\n      \"id\": \"formula_ex6_sol2\",\n      \"latex\": \"E_L = \\\\frac{1}{2} L I_L(t)^2 = \\\\frac{1}{2} (1 \\\\, \\\\text{H}) (0.12642 \\\\, \\\\text{A})^2 \\\\approx \\\\frac{1}{2} \\\\cdot 1 \\\\cdot 0.01598 \\\\approx 0.00799 \\\\, \\\\text{J} = 7.99 \\\\, \\\\text{mJ}\",\n      \"alt_text\": \"Energia nell'induttore uguale un mezzo per L per corrente nell'induttore al tempo t al quadrato uguale un mezzo per uno Henry per zero punto centoventisei quarantadue ampere al quadrato circa un mezzo per uno per zero punto zero quindici nove otto circa zero punto zero zero settecentonovantanove Joule uguale sette punto novantanove millijoule\",\n      \"expression\": \"0.5 * 1 * (0.12642)^2\"\n    },\n    {\n      \"id\": \"formula_ex7_sol1\",\n      \"latex\": \"f_c = \\\\frac{1}{2 \\\\pi R C} = \\\\frac{1}{2 \\\\pi (330 \\\\, \\\\Omega) (1 \\\\times 10^{-6} \\\\, \\\\text{F})} \\\\approx \\\\frac{1}{2.073 \\\\times 10^{-3}} \\\\approx 482.3 \\\\, \\\\text{Hz}\",\n      \"alt_text\": \"Frequenza di taglio uguale uno diviso due pi greco RC uguale uno diviso due pi greco per trecentotrenta ohm per uno per dieci alla meno sei Farad circa uno diviso zero punto zero zero due zero sette tre circa quattrocentottantadue punto tre Hertz\",\n      \"expression\": \"1 / (2 * pi * 330 * 1e-6)\"\n    },\n    {\n      \"id\": \"formula_ex7_sol2\",\n      \"latex\": \"\\\\text{Guadagno (rapporto)} = \\\\frac{V_{out}}{V_{in}} = \\\\frac{1}{\\\\sqrt{1 + (\\\\frac{f}{f_c})^2}} = \\\\frac{1}{\\\\sqrt{1 + (\\\\frac{10 \\\\, \\\\text{Hz}}{482.3 \\\\, \\\\text{Hz}})^2}} \\\\approx \\\\frac{1}{\\\\sqrt{1 + (0.0207)^2}} \\\\approx \\\\frac{1}{\\\\sqrt{1 + 0.000428}} \\\\approx \\\\frac{1}{1.00021} \\\\approx 0.99979\",\n      \"alt_text\": \"Guadagno (rapporto) uguale Vout diviso Vin uguale uno diviso radice quadrata di (uno più (f diviso fc) al quadrato) uguale uno diviso radice quadrata di (uno più (dieci Hertz diviso quattrocentottantadue punto tre Hertz) al quadrato) circa uno diviso radice quadrata di (uno più zero punto zero due zero sette al quadrato) circa uno diviso radice quadrata di (uno più zero punto zero zero zero quattro due otto) circa uno diviso uno punto zero zero zero due uno circa zero punto novecentonovantanove sette nove\",\n      \"expression\": \"1 / sqrt(1 + (10 / 482.3)^2)\"\n    },\n    {\n      \"id\": \"formula_ex7_sol3\",\n      \"latex\": \"\\\\text{Ampiezza di uscita } V_{out} = V_{in} \\\\cdot \\\\text{Guadagno} = 10 \\\\, \\\\text{V} \\\\cdot 0.99979 \\\\approx 9.9979 \\\\, \\\\text{V} \\\\\\\\ \\\\text{Sfasamento } \\\\phi = -\\\\arctan(\\\\frac{f}{f_c}) = -\\\\arctan(\\\\frac{10 \\\\, \\\\text{Hz}}{482.3 \\\\, \\\\text{Hz}}) \\\\approx -\\\\arctan(0.0207) \\\\approx -1.18 \\\\, \\\\text{gradi}\",\n      \"alt_text\": \"Ampiezza di uscita Vout uguale Vin per Guadagno uguale dieci volt per zero punto novecentonovantanove sette nove circa nove punto novecentonovantasette nove volt. Sfasamento phi uguale meno arcotangente di (f diviso fc) uguale meno arcotangente di (dieci Hertz diviso quattrocentottantadue punto tre Hertz) circa meno arcotangente di zero punto zero due zero sette circa meno uno punto diciotto gradi.\",\n      \"expression\": \"10 * (1 / sqrt(1 + (10 / 482.3)^2))\"\n    }\n  ],\n  \"graphs\": [\n    {\n      \"id\": \"graph_ex1_students\",\n      \"kind\": \"geometry_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": -0.5,\n        \"x_max\": 2.5,\n        \"y_min\": -0.5,\n        \"y_max\": 2.5\n      },\n      \"x_label\": \"X\",\n      \"y_label\": \"Y\",\n      \"alt_text\": \"Un circuito RC serie schematizzato con un resistore e un condensatore collegati in serie a una sorgente di tensione continua.\",\n      \"polygons\": [\n        {\n          \"vertices\": [\n            {\n              \"x\": 0,\n              \"y\": 0\n            },\n            {\n              \"x\": 0,\n              \"y\": 2\n            },\n            {\n              \"x\": 1,\n              \"y\": 2\n            },\n            {\n              \"x\": 1.5,\n              \"y\": 1.5\n            },\n            {\n              \"x\": 1,\n              \"y\": 1\n            },\n            {\n              \"x\": 0.5,\n              \"y\": 1.5\n            },\n            {\n              \"x\": 0.5,\n              \"y\": 0\n            }\n          ],\n          \"label\": \"Circuito RC\"\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex1_teacher\",\n      \"kind\": \"geometry_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": -0.5,\n        \"x_max\": 2.5,\n        \"y_min\": -0.5,\n        \"y_max\": 2.5\n      },\n      \"x_label\": \"X\",\n      \"y_label\": \"Y\",\n      \"alt_text\": \"Un circuito RC serie schematizzato con un resistore R e un condensatore C collegati in serie a una sorgente di tensione continua V.\",\n      \"polygons\": [\n        {\n          \"vertices\": [\n            {\n              \"x\": 0,\n              \"y\": 0\n            },\n            {\n              \"x\": 0,\n              \"y\": 2\n            },\n            {\n              \"x\": 1,\n              \"y\": 2\n            },\n            {\n              \"x\": 1.5,\n              \"y\": 1.5\n            },\n            {\n              \"x\": 1,\n              \"y\": 1\n            },\n            {\n              \"x\": 0.5,\n              \"y\": 1.5\n            },\n            {\n              \"x\": 0.5,\n              \"y\": 0\n            }\n          ],\n          \"label\": \"Circuito RC\"\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex2_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 1.5,\n        \"y_min\": 0,\n        \"y_max\": 10\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Tensione/Corrente\",\n      \"alt_text\": \"Grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica in un circuito RC. La tensione sul condensatore aumenta esponenzialmente da 0 fino a un valore massimo. La corrente nel resistore diminuisce esponenzialmente da un valore massimo a 0.\",\n      \"pieces\": [\n        {\n          \"expression\": \"9*(1-exp(-x/0.22))\",\n          \"x_start\": 0,\n          \"x_end\": 1.5,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"(9/2200)*exp(-x/0.22)\",\n          \"x_start\": 0,\n          \"x_end\": 1.5,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex2_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 0.3,\n          \"y\": 6.696\n        },\n        {\n          \"x\": 0.3,\n          \"y\": 1.047\n        }\n      ],\n      \"labels\": [\"Vc(0.3s)\", \"Ir(0.3s)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 1.5,\n        \"y_min\": 0,\n        \"y_max\": 10\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Tensione (V) / Corrente (mA)\",\n      \"alt_text\": \"Grafico della tensione sul condensatore (curva crescente) e della corrente nel resistore (curva decrescente) durante la carica. La tensione Vc(0.3s) è circa 6.7V. La corrente Ir(0.3s) è circa 1.05mA. La tensione del condensatore aumenta esponenzialmente da 0V a 9V. La corrente nel resistore diminuisce esponenzialmente da circa 4.09mA a 0mA.\",\n      \"pieces\": [\n        {\n          \"expression\": \"9*(1-exp(-x/0.22))\",\n          \"x_start\": 0,\n          \"x_end\": 1.5,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"(9/2200)*exp(-x/0.22)*1000\",\n          \"x_start\": 0,\n          \"x_end\": 1.5,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex3_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.3,\n        \"y_min\": 0,\n        \"y_max\": 16\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Tensione (V)\",\n      \"alt_text\": \"Grafico qualitativo della tensione sul condensatore durante la carica. La tensione parte da 0V e sale esponenzialmente verso un valore massimo.\",\n      \"pieces\": [\n        {\n          \"expression\": \"15*(1-exp(-x/(3300*13.79e-6)))\",\n          \"x_start\": 0,\n          \"x_end\": 0.3,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex3_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 0.05,\n          \"y\": 10\n        }\n      ],\n      \"labels\": [\"(0.05s, 10V)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.3,\n        \"y_min\": 0,\n        \"y_max\": 16\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Tensione (V)\",\n      \"alt_text\": \"Grafico della tensione sul condensatore durante la carica, mostra un punto (0.05s, 10V). La tensione del condensatore aumenta esponenzialmente da 0V verso 15V con una costante di tempo di circa 0.0455s.\",\n      \"pieces\": [\n        {\n          \"expression\": \"15*(1-exp(-x/(3300*13.79e-6)))\",\n          \"x_start\": 0,\n          \"x_end\": 0.3,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex4_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.015,\n        \"y_min\": 0,\n        \"y_max\": 0.2\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente/Tensione\",\n      \"alt_text\": \"Grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione in un circuito RL. La corrente nell'induttore aumenta esponenzialmente da 0 fino a un valore massimo. La tensione sul resistore, inizialmente 0, aumenta esponenzialmente fino a un valore massimo e poi diminuisce a 0.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(24/150)*(1-exp(-x/0.00333))\",\n          \"x_start\": 0,\n          \"x_end\": 0.015,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"24*exp(-x/0.00333)\",\n          \"x_start\": 0,\n          \"x_end\": 0.015,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex4_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 0.002,\n          \"y\": 0.0722\n        },\n        {\n          \"x\": 0.002,\n          \"y\": 10.83\n        }\n      ],\n      \"labels\": [\"IL(2ms)\", \"VR(2ms)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.015,\n        \"y_min\": 0,\n        \"y_max\": 25\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente (A) / Tensione (V)\",\n      \"alt_text\": \"Grafico della corrente nell'induttore (curva crescente) e della tensione sul resistore (curva decrescente) durante l'accensione. La corrente IL(2ms) è circa 0.0722A. La tensione VR(2ms) è circa 10.83V. La corrente nell'induttore aumenta esponenzialmente da 0A a 0.16A. La tensione sul resistore diminuisce esponenzialmente da 24V a 0V.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(24/150)*(1-exp(-x/0.00333))\",\n          \"x_start\": 0,\n          \"x_end\": 0.015,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"24*exp(-x/0.00333)\",\n          \"x_start\": 0,\n          \"x_end\": 0.015,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex5_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.01,\n        \"y_min\": 0,\n        \"y_max\": 0.02\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente (A)\",\n      \"alt_text\": \"Grafico qualitativo della corrente nell'induttore durante l'accensione in un circuito RL. La corrente aumenta esponenzialmente da 0 fino a un valore massimo.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(18/1000)*(1-exp(-x/0.002))\",\n          \"x_start\": 0,\n          \"x_end\": 0.01,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex5_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 0.002408,\n          \"y\": 0.0126\n        }\n      ],\n      \"labels\": [\"(2.408ms, 12.6mA)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.01,\n        \"y_min\": 0,\n        \"y_max\": 0.02\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente (A)\",\n      \"alt_text\": \"Grafico della corrente nell'induttore durante l'accensione, mostra il punto in cui la corrente è il 70% del suo valore di regime. La corrente aumenta esponenzialmente da 0A verso 0.018A. Al tempo 2.408ms, la corrente è 0.0126A.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(18/1000)*(1-exp(-x/0.002))\",\n          \"x_start\": 0,\n          \"x_end\": 0.01,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex6_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.1,\n        \"y_min\": 0,\n        \"y_max\": 0.01\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente (A) / Energia (J)\",\n      \"alt_text\": \"Grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata durante l'accensione. La corrente nell'induttore aumenta esponenzialmente. L'energia immagazzinata aumenta con la corrente al quadrato, mostrando una crescita più rapida.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(10/50)*(1-exp(-x/0.02))\",\n          \"x_start\": 0,\n          \"x_end\": 0.1,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"0.5*1*((10/50)*(1-exp(-x/0.02)))^2\",\n          \"x_start\": 0,\n          \"x_end\": 0.1,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex6_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 0.02,\n          \"y\": 0.12642\n        },\n        {\n          \"x\": 0.02,\n          \"y\": 0.00799\n        }\n      ],\n      \"labels\": [\"IL(20ms)\", \"EL(20ms)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 0,\n        \"x_max\": 0.1,\n        \"y_min\": 0,\n        \"y_max\": 0.2\n      },\n      \"x_label\": \"Tempo (s)\",\n      \"y_label\": \"Corrente (A) / Energia (J)\",\n      \"alt_text\": \"Grafico della corrente nell'induttore (curva crescente) e dell'energia immagazzinata (curva crescente, più ripida) durante l'accensione. La corrente IL(20ms) è circa 0.126A. L'energia EL(20ms) è circa 0.008J. La corrente nell'induttore aumenta esponenzialmente da 0A a 0.2A. L'energia immagazzinata aumenta da 0J a 0.02J.\",\n      \"pieces\": [\n        {\n          \"expression\": \"(10/50)*(1-exp(-x/0.02))\",\n          \"x_start\": 0,\n          \"x_end\": 0.1,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        },\n        {\n          \"expression\": \"0.5*1*((10/50)*(1-exp(-x/0.02)))^2\",\n          \"x_start\": 0,\n          \"x_end\": 0.1,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex7_students\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [],\n      \"labels\": [],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 1,\n        \"x_max\": 10000,\n        \"y_min\": -90,\n        \"y_max\": 0\n      },\n      \"x_label\": \"Frequenza (Hz)\",\n      \"y_label\": \"Fase (gradi)\",\n      \"alt_text\": \"Grafico qualitativo del diagramma di Bode per un filtro passa-basso RC. Il guadagno in dB è piatto a 0 dB per basse frequenze e diminuisce linearmente (con pendenza -20dB/decade) dopo la frequenza di taglio. Lo sfasamento è vicino a 0 gradi per basse frequenze e si avvicina a -90 gradi per alte frequenze, passando per -45 gradi alla frequenza di taglio.\",\n      \"pieces\": [\n        {\n          \"expression\": \"-atan(x/482.3)*180/pi\",\n          \"x_start\": 1,\n          \"x_end\": 10000,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"graph_ex7_teacher\",\n      \"kind\": \"function_2d\",\n      \"expression\": \"\",\n      \"points\": [\n        {\n          \"x\": 482.3,\n          \"y\": -45\n        },\n        {\n          \"x\": 10,\n          \"y\": -1.18\n        }\n      ],\n      \"labels\": [\"fc (-45°)\", \"phi(10Hz)\"],\n      \"values\": [],\n      \"viewport\": {\n        \"x_min\": 1,\n        \"x_max\": 10000,\n        \"y_min\": -90,\n        \"y_max\": 0\n      },\n      \"x_label\": \"Frequenza (Hz)\",\n      \"y_label\": \"Fase (gradi)\",\n      \"alt_text\": \"Diagramma di Bode dello sfasamento per un filtro passa-basso RC. La frequenza di taglio è a 482.3 Hz, dove lo sfasamento è -45 gradi. A 10 Hz, lo sfasamento è circa -1.18 gradi. Lo sfasamento varia da 0 a -90 gradi. La scala della frequenza è logaritmica.\",\n      \"pieces\": [\n        {\n          \"expression\": \"-atan(x/482.3)*180/pi\",\n          \"x_start\": 1,\n          \"x_end\": 10000,\n          \"start\": \"closed\",\n          \"end\": \"none\",\n          \"holes\": []\n        }\n      ]\n    }\n  ],\n  \"generated_images\": [],\n  \"provided_images\": [],\n  \"lists\": [],\n  \"tables\": [],\n  \"questions\": [],\n  \"validation_summary\": {\n    \"complete\": true,\n    \"audience_checked\": true,\n    \"math_checked\": true\n  }\n}",
+    "artifacts": [
+      {
+        "artifact_id": "test_students",
+        "artifact_type": "student_test",
+        "audience": "students",
+        "format": "docx",
+        "title": "Verifica Sommativa di Elettrotecnica",
+        "references": [],
+        "filename_hint": "test_students.docx",
+        "sections": [
+          {
+            "section_id": "section_test",
+            "title": "Circuiti RC e RL, Filtri Passivi",
+            "blocks": [
+              {
+                "block_id": "block_ex1_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 1 (10 punti): Un circuito RC serie è composto da un resistore con resistenza R = 10 kΩ e un condensatore con capacità C = 470 nF. Il circuito è alimentato da una sorgente di tensione continua V = 12 V. Determinare la costante di tempo del circuito e il valore della corrente iniziale nel momento in cui viene applicata la tensione."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex1_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "geometry_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": -0.5,
+                  "x_max": 2.5,
+                  "y_min": -0.5,
+                  "y_max": 2.5
+                },
+                "x_label": "X",
+                "y_label": "Y",
+                "alt_text": "Un circuito RC serie schematizzato con un resistore e un condensatore collegati in serie a una sorgente di tensione continua.",
+                "polygons": [
+                  {
+                    "vertices": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 2
+                      },
+                      {
+                        "x": 1,
+                        "y": 2
+                      },
+                      {
+                        "x": 1.5,
+                        "y": 1.5
+                      },
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 1.5
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 0
+                      }
+                    ],
+                    "label": "Circuito RC"
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex2_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 2 (15 punti): Un circuito RC serie ha R = 2.2 kΩ e C = 100 µF. Il condensatore si sta caricando attraverso una tensione costante V = 9 V. Calcolare la tensione ai capi del condensatore e la corrente che attraversa il resistore dopo 0.3 secondi dall'inizio della carica. Tracciare un grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex2_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 1.5,
+                  "y_min": 0,
+                  "y_max": 10
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Tensione/Corrente",
+                "alt_text": "Grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica in un circuito RC. La tensione sul condensatore aumenta esponenzialmente da 0 fino a un valore massimo. La corrente nel resistore diminuisce esponenzialmente da un valore massimo a 0.",
+                "pieces": [
+                  {
+                    "expression": "9*(1-exp(-x/0.22))",
+                    "x_start": 0,
+                    "x_end": 1.5,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "(9/2200)*exp(-x/0.22)",
+                    "x_start": 0,
+                    "x_end": 1.5,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex3_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 3 (20 punti): In un circuito RC serie alimentato da una sorgente di tensione continua V = 15 V e con un resistore R = 3.3 kΩ, si misura una tensione ai capi del condensatore di 10 V dopo 0.05 secondi dall'inizio della carica. Determinare il valore della capacità C del condensatore. Tracciare un grafico della tensione sul condensatore nel tempo."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex3_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.3,
+                  "y_min": 0,
+                  "y_max": 16
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Tensione (V)",
+                "alt_text": "Grafico qualitativo della tensione sul condensatore durante la carica. La tensione parte da 0V e sale esponenzialmente verso un valore massimo.",
+                "pieces": [
+                  {
+                    "expression": "15*(1-exp(-x/(3300*13.79e-6)))",
+                    "x_start": 0,
+                    "x_end": 0.3,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex4_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 4 (15 punti): Un circuito RL serie è costituito da un resistore R = 150 Ω e un induttore L = 500 mH. Il circuito è alimentato da una sorgente di tensione continua V = 24 V. Calcolare la corrente che attraversa l'induttore e la tensione ai capi del resistore dopo 2 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex4_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.015,
+                  "y_min": 0,
+                  "y_max": 0.2
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente/Tensione",
+                "alt_text": "Grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione in un circuito RL. La corrente nell'induttore aumenta esponenzialmente da 0 fino a un valore massimo. La tensione sul resistore, inizialmente 0, aumenta esponenzialmente fino a un valore massimo e poi diminuisce a 0.",
+                "pieces": [
+                  {
+                    "expression": "(24/150)*(1-exp(-x/0.00333))",
+                    "x_start": 0,
+                    "x_end": 0.015,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "24*exp(-x/0.00333)",
+                    "x_start": 0,
+                    "x_end": 0.015,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex5_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 5 (20 punti): Un circuito RL serie è alimentato da una tensione V = 18 V. Se R = 1 kΩ e L = 2 H, determinare quanto tempo impiega la corrente nell'induttore per raggiungere il 70% del suo valore di regime. Tracciare un grafico della corrente nell'induttore nel tempo."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex5_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.01,
+                  "y_min": 0,
+                  "y_max": 0.02
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente (A)",
+                "alt_text": "Grafico qualitativo della corrente nell'induttore durante l'accensione in un circuito RL. La corrente aumenta esponenzialmente da 0 fino a un valore massimo.",
+                "pieces": [
+                  {
+                    "expression": "(18/1000)*(1-exp(-x/0.002))",
+                    "x_start": 0,
+                    "x_end": 0.01,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex6_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 6 (10 punti): In un circuito RL serie con R = 50 Ω e L = 1 H, alimentato da una tensione continua V = 10 V, calcolare l'energia immagazzinata nell'induttore dopo 20 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex6_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.1,
+                  "y_min": 0,
+                  "y_max": 0.01
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente (A) / Energia (J)",
+                "alt_text": "Grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata durante l'accensione. La corrente nell'induttore aumenta esponenzialmente. L'energia immagazzinata aumenta con la corrente al quadrato, mostrando una crescita più rapida.",
+                "pieces": [
+                  {
+                    "expression": "(10/50)*(1-exp(-x/0.02))",
+                    "x_start": 0,
+                    "x_end": 0.1,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "0.5*1*((10/50)*(1-exp(-x/0.02)))^2",
+                    "x_start": 0,
+                    "x_end": 0.1,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex7_prompt",
+                "block_type": "text",
+                "audience": "students",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 7 (10 punti): Si vuole progettare un filtro passa-basso RC con un resistore R = 330 Ω e un condensatore C = 1 µF. Calcolare la frequenza di taglio (a -3 dB) del filtro. Se una tensione di ingresso sinusoidale con ampiezza di 10 V e frequenza di 10 Hz viene applicata al filtro, determinare l'ampiezza della tensione di uscita e lo sfasamento tra ingresso e uscita. Tracciare un grafico del guadagno e dello sfasamento in funzione della frequenza (diagrammi di Bode)."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex7_graph",
+                "block_type": "graph",
+                "audience": "students",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": 1,
+                  "x_max": 10000,
+                  "y_min": -90,
+                  "y_max": 0
+                },
+                "x_label": "Frequenza (Hz)",
+                "y_label": "Fase (gradi)",
+                "alt_text": "Grafico qualitativo del diagramma di Bode per un filtro passa-basso RC. Il guadagno in dB è piatto a 0 dB per basse frequenze e diminuisce linearmente (con pendenza -20dB/decade) dopo la frequenza di taglio. Lo sfasamento è vicino a 0 gradi per basse frequenze e si avvicina a -90 gradi per alte frequenze, passando per -45 gradi alla frequenza di taglio.",
+                "pieces": [
+                  {
+                    "expression": "-atan(x/482.3)*180/pi",
+                    "x_start": 1,
+                    "x_end": 10000,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "artifact_id": "test_teacher",
+        "artifact_type": "teacher_solution",
+        "audience": "teacher",
+        "format": "docx",
+        "title": "Soluzione Verifica Sommativa di Elettrotecnica",
+        "references": [],
+        "filename_hint": "test_teacher.docx",
+        "sections": [
+          {
+            "section_id": "section_solution",
+            "title": "Soluzione Circuiti RC e RL, Filtri Passivi",
+            "blocks": [
+              {
+                "block_id": "block_ex1_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 1 (10 punti): Un circuito RC serie è composto da un resistore con resistenza R = 10 kΩ e un condensatore con capacità C = 470 nF. Il circuito è alimentato da una sorgente di tensione continua V = 12 V. Determinare la costante di tempo del circuito e il valore della corrente iniziale nel momento in cui viene applicata la tensione."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex1_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "La costante di tempo τ di un circuito RC si calcola come prodotto della resistenza R per la capacità C. La corrente iniziale di carica è data dalla legge di Ohm applicata alla resistenza nel momento in cui il condensatore è scarico e si comporta come un cortocircuito.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 10 \\, \\text{k}\\Omega = 10 \\times 10^3 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "C = 470 \\, \\text{nF} = 470 \\times 10^{-9} \\, \\text{F}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 12 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Calcolo della costante di tempo τ:"
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex1_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "\\tau = R \\cdot C = (10 \\times 10^3 \\, \\Omega) \\cdot (470 \\times 10^{-9} \\, \\text{F}) = 0.0047 \\, \\text{s} = 4.7 \\, \\text{ms}",
+                "alt_text": "Tau uguale R per C uguale diecimila ohm per quattrocentosettanta nanofarad uguale zero punto zero zero quattro sette secondi uguale quattro punto sette millisecondi",
+                "expression": "10e3 * 470e-9",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex1_sol_formula2",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "I_{\\text{iniziale}} = \\frac{V}{R} = \\frac{12 \\, \\text{V}}{10 \\times 10^3 \\, \\Omega} = 1.2 \\times 10^{-3} \\, \\text{A} = 1.2 \\, \\text{mA}",
+                "alt_text": "Corrente iniziale uguale V diviso R uguale dodici volt diviso diecimila ohm uguale uno punto due per dieci alla meno tre ampere uguale uno punto due milliampere",
+                "expression": "12 / 10e3",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex1_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "geometry_2d",
+                "expression": "",
+                "points": [],
+                "labels": [],
+                "values": [],
+                "viewport": {
+                  "x_min": -0.5,
+                  "x_max": 2.5,
+                  "y_min": -0.5,
+                  "y_max": 2.5
+                },
+                "x_label": "X",
+                "y_label": "Y",
+                "alt_text": "Un circuito RC serie schematizzato con un resistore R e un condensatore C collegati in serie a una sorgente di tensione continua V.",
+                "polygons": [
+                  {
+                    "vertices": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 0,
+                        "y": 2
+                      },
+                      {
+                        "x": 1,
+                        "y": 2
+                      },
+                      {
+                        "x": 1.5,
+                        "y": 1.5
+                      },
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 1.5
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 0
+                      }
+                    ],
+                    "label": "Circuito RC"
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex2_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 2 (15 punti): Un circuito RC serie ha R = 2.2 kΩ e C = 100 µF. Il condensatore si sta caricando attraverso una tensione costante V = 9 V. Calcolare la tensione ai capi del condensatore e la corrente che attraversa il resistore dopo 0.3 secondi dall'inizio della carica. Tracciare un grafico qualitativo della tensione sul condensatore e della corrente nel resistore durante la carica."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex2_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Durante la carica di un condensatore in un circuito RC, la tensione ai suoi capi e la corrente attraverso il resistore seguono leggi esponenziali.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 2.2 \\, \\text{k}\\Omega = 2.2 \\times 10^3 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "C = 100 \\, \\mu\\text{F} = 100 \\times 10^{-6} \\, \\text{F}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 9 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 0.3 \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Prima calcoliamo la costante di tempo τ:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "\\tau = R \\cdot C = (2.2 \\times 10^3 \\, \\Omega) \\cdot (100 \\times 10^{-6} \\, \\text{F}) = 0.22 \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Ora calcoliamo la tensione ai capi del condensatore "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V_C(t)",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " e la corrente nel resistore "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_R(t)",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " dopo "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 0.3 \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex2_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "V_C(t) = V(1 - e^{-t/\\tau}) = 9 \\, \\text{V} (1 - e^{-0.3/0.22}) \\approx 9 \\, \\text{V} (1 - e^{-1.36}) \\approx 9 \\, \\text{V} (1 - 0.256) \\approx 6.696 \\, \\text{V}",
+                "alt_text": "Tensione sul condensatore al tempo t uguale V per uno meno e alla meno t su tau uguale nove volt per uno meno e alla meno zero punto tre diviso zero punto ventidue circa nove volt per uno meno e alla meno uno punto trentasei circa nove volt per uno meno zero punto duecentocinquantasei circa sei punto seicentovantanove volt",
+                "expression": "9 * (1 - exp(-0.3/0.22))",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex2_sol_formula2",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "I_R(t) = \\frac{V}{R} e^{-t/\\tau} = \\frac{9 \\, \\text{V}}{2.2 \\times 10^3 \\, \\Omega} e^{-0.3/0.22} \\approx 4.09 \\times 10^{-3} \\, \\text{A} \\cdot 0.256 \\approx 1.047 \\times 10^{-3} \\, \\text{A} = 1.047 \\, \\text{mA}",
+                "alt_text": "Corrente sul resistore al tempo t uguale V diviso R per e alla meno t su tau uguale nove volt diviso due punto due per dieci alla tre ohm per e alla meno zero punto tre diviso zero punto ventidue circa quattro punto zero nove per dieci alla meno tre ampere per zero punto duecentocinquantasei circa uno punto zero quarantasette per dieci alla meno tre ampere uguale uno punto zero quarantasette milliampere",
+                "expression": "(9 / 2.2e3) * exp(-0.3/0.22)",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex2_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 0.3,
+                    "y": 6.696
+                  },
+                  {
+                    "x": 0.3,
+                    "y": 1.047
+                  }
+                ],
+                "labels": [
+                  "Vc(0.3s)",
+                  "Ir(0.3s)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 1.5,
+                  "y_min": 0,
+                  "y_max": 10
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Tensione (V) / Corrente (mA)",
+                "alt_text": "Grafico della tensione sul condensatore (curva crescente) e della corrente nel resistore (curva decrescente) durante la carica. La tensione Vc(0.3s) è circa 6.7V. La corrente Ir(0.3s) è circa 1.05mA. La tensione del condensatore aumenta esponenzialmente da 0V a 9V. La corrente nel resistore diminuisce esponenzialmente da circa 4.09mA a 0mA.",
+                "pieces": [
+                  {
+                    "expression": "9*(1-exp(-x/0.22))",
+                    "x_start": 0,
+                    "x_end": 1.5,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "(9/2200)*exp(-x/0.22)*1000",
+                    "x_start": 0,
+                    "x_end": 1.5,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex3_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 3 (20 punti): In un circuito RC serie alimentato da una sorgente di tensione continua V = 15 V e con un resistore R = 3.3 kΩ, si misura una tensione ai capi del condensatore di 10 V dopo 0.05 secondi dall'inizio della carica. Determinare il valore della capacità C del condensatore. Tracciare un grafico della tensione sul condensatore nel tempo."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex3_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Per determinare la capacità C, dobbiamo utilizzare la formula della tensione sul condensatore durante la carica e risolverla per C.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 15 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 3.3 \\, \\text{k}\\Omega = 3.3 \\times 10^3 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V_C(t) = 10 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " a "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 0.05 \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".La formula per la tensione sul condensatore durante la carica è:"
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex3_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "V_C(t) = V(1 - e^{-t/(RC)}) \\\\ 10 = 15(1 - e^{-0.05/(3.3 \\times 10^3 \\cdot C)}) \\\\ \\frac{10}{15} = 1 - e^{-0.05/(3.3 \\times 10^3 \\cdot C)} \\\\ \\frac{2}{3} = 1 - e^{-0.05/(3300 C)} \\\\ e^{-0.05/(3300 C)} = 1 - \\frac{2}{3} = \\frac{1}{3} \\\\ -\\frac{0.05}{3300 C} = \\ln(\\frac{1}{3}) = -\\ln(3) \\\\ \\frac{0.05}{3300 C} = \\ln(3) \\\\ C = \\frac{0.05}{3300 \\cdot \\ln(3)} \\approx \\frac{0.05}{3300 \\cdot 1.0986} \\approx \\frac{0.05}{3625.38} \\approx 1.379 \\times 10^{-5} \\, \\text{F} = 13.79 \\, \\mu\\text{F}",
+                "alt_text": "Tensione sul condensatore al tempo t uguale V per uno meno e alla meno t diviso (RC). Dieci uguale quindici per uno meno e alla meno zero punto zero cinque diviso (tre punto tre per dieci alla tre per C). Dieci quindicesimi uguale uno meno e alla meno zero punto zero cinque diviso (tre punto tre per dieci alla tre per C). Due terzi uguale uno meno e alla meno zero punto zero cinque diviso (trecentotrenta per C). E alla meno zero punto zero cinque diviso (trecentotrenta per C) uguale uno meno due terzi uguale un terzo. Meno zero punto zero cinque diviso (trecentotrenta per C) uguale logaritmo naturale di un terzo uguale meno logaritmo naturale di tre. Zero punto zero cinque diviso (trecentotrenta per C) uguale logaritmo naturale di tre. C uguale zero punto zero cinque diviso (trecentotrenta per logaritmo naturale di tre) circa zero punto zero cinque diviso (trecentotrenta per uno punto zero novecentottantasei) circa zero punto zero cinque diviso tre mila seicentoventicinque punto trentotto circa uno punto trecentosettantanove per dieci alla meno cinque Farad uguale tredici punto settantanove microfarad.",
+                "expression": "0.05 / (3300 * log(3))",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex3_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 0.05,
+                    "y": 10
+                  }
+                ],
+                "labels": [
+                  "(0.05s, 10V)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.3,
+                  "y_min": 0,
+                  "y_max": 16
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Tensione (V)",
+                "alt_text": "Grafico della tensione sul condensatore durante la carica, mostra un punto (0.05s, 10V). La tensione del condensatore aumenta esponenzialmente da 0V verso 15V con una costante di tempo di circa 0.0455s.",
+                "pieces": [
+                  {
+                    "expression": "15*(1-exp(-x/(3300*13.79e-6)))",
+                    "x_start": 0,
+                    "x_end": 0.3,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex4_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 4 (15 punti): Un circuito RL serie è costituito da un resistore R = 150 Ω e un induttore L = 500 mH. Il circuito è alimentato da una sorgente di tensione continua V = 24 V. Calcolare la corrente che attraversa l'induttore e la tensione ai capi del resistore dopo 2 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e della tensione sul resistore durante l'accensione."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex4_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Durante l'accensione di un circuito RL, la corrente nell'induttore aumenta esponenzialmente verso il valore di regime, mentre la tensione sul resistore, inizialmente zero, aumenta in proporzione alla corrente.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 150 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "L = 500 \\, \\text{mH} = 500 \\times 10^{-3} \\, \\text{H}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 24 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 2 \\, \\text{ms} = 2 \\times 10^{-3} \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Prima calcoliamo la costante di tempo τ:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "\\tau = \\frac{L}{R} = \\frac{500 \\times 10^{-3} \\, \\text{H}}{150 \\, \\Omega} \\approx 3.33 \\times 10^{-3} \\, \\text{s} = 3.33 \\, \\text{ms}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Ora calcoliamo la corrente nell'induttore "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_L(t)",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " e la tensione sul resistore "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V_R(t)",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " dopo "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 2 \\, \\text{ms}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex4_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "I_L(t) = \\frac{V}{R} (1 - e^{-t/\\tau}) = \\frac{24 \\, \\text{V}}{150 \\, \\Omega} (1 - e^{-2 \\times 10^{-3} / (3.33 \\times 10^{-3})}) \\approx 0.16 \\, \\text{A} (1 - e^{-0.6}) \\approx 0.16 \\, \\text{A} (1 - 0.5488) \\approx 0.16 \\, \\text{A} \\cdot 0.4512 \\approx 0.0722 \\, \\text{A} = 72.2 \\, \\text{mA}",
+                "alt_text": "Corrente nell'induttore al tempo t uguale V diviso R per (uno meno e alla meno t su tau) uguale ventiquattro volt diviso centocinquanta ohm per (uno meno e alla meno due per dieci alla meno tre diviso (tre punto trentatre per dieci alla meno tre)) circa zero punto sedici ampere per (uno meno e alla meno zero punto sei) circa zero punto sedici ampere per (uno meno zero punto cinquemilaquattrocentottantotto) circa zero punto sedici ampere per zero punto quarantacinquemila centododici circa zero punto zero settantadue due ampere uguale settantadue punto due milliampere",
+                "expression": "(24 / 150) * (1 - exp(-0.002 / 0.00333))",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex4_sol_formula2",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "V_R(t) = R \\cdot I_L(t) = 150 \\, \\Omega \\cdot 0.0722 \\, \\text{A} \\approx 10.83 \\, \\text{V}",
+                "alt_text": "Tensione sul resistore al tempo t uguale R per corrente nell'induttore al tempo t uguale centocinquanta ohm per zero punto zero settantadue due ampere circa dieci punto ottantatre volt",
+                "expression": "150 * 0.0722",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex4_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 0.002,
+                    "y": 0.0722
+                  },
+                  {
+                    "x": 0.002,
+                    "y": 10.83
+                  }
+                ],
+                "labels": [
+                  "IL(2ms)",
+                  "VR(2ms)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.015,
+                  "y_min": 0,
+                  "y_max": 25
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente (A) / Tensione (V)",
+                "alt_text": "Grafico della corrente nell'induttore (curva crescente) e della tensione sul resistore (curva decrescente) durante l'accensione. La corrente IL(2ms) è circa 0.0722A. La tensione VR(2ms) è circa 10.83V. La corrente nell'induttore aumenta esponenzialmente da 0A a 0.16A. La tensione sul resistore diminuisce esponenzialmente da 24V a 0V.",
+                "pieces": [
+                  {
+                    "expression": "(24/150)*(1-exp(-x/0.00333))",
+                    "x_start": 0,
+                    "x_end": 0.015,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "24*exp(-x/0.00333)",
+                    "x_start": 0,
+                    "x_end": 0.015,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex5_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 5 (20 punti): Un circuito RL serie è alimentato da una tensione V = 18 V. Se R = 1 kΩ e L = 2 H, determinare quanto tempo impiega la corrente nell'induttore per raggiungere il 70% del suo valore di regime. Tracciare un grafico della corrente nell'induttore nel tempo."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex5_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Per trovare il tempo richiesto, dobbiamo prima calcolare il valore di regime della corrente e poi utilizzare la formula della corrente nell'induttore durante l'accensione, risolvendo per t.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 18 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 1 \\, \\text{k}\\Omega = 1000 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "L = 2 \\, \\text{H}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Percentuale target della corrente: 70% del valore di regime.Calcolo del valore di regime della corrente "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_f",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " (corrente finale o di regime):"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_f = \\frac{V}{R} = \\frac{18 \\, \\text{V}}{1000 \\, \\Omega} = 0.018 \\, \\text{A} = 18 \\, \\text{mA}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Il 70% di "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_f",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " è:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_L(t) = 0.70 \\cdot I_f = 0.70 \\cdot 0.018 \\, \\text{A} = 0.0126 \\, \\text{A}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Calcoliamo la costante di tempo τ:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "\\tau = \\frac{L}{R} = \\frac{2 \\, \\text{H}}{1000 \\, \\Omega} = 0.002 \\, \\text{s} = 2 \\, \\text{ms}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Ora usiamo la formula della corrente nell'induttore durante l'accensione:"
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex5_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "I_L(t) = I_f (1 - e^{-t/\\tau}) \\\\ 0.70 \\cdot I_f = I_f (1 - e^{-t/\\tau}) \\\\ 0.70 = 1 - e^{-t/\\tau} \\\\ e^{-t/\\tau} = 1 - 0.70 = 0.30 \\\\ -\\frac{t}{\\tau} = \\ln(0.30) \\\\ t = -\\tau \\cdot \\ln(0.30) \\\\ t = -(0.002 \\, \\text{s}) \\cdot \\ln(0.30) \\approx -(0.002 \\, \\text{s}) \\cdot (-1.204) \\approx 0.002408 \\, \\text{s} = 2.408 \\, \\text{ms}",
+                "alt_text": "Corrente nell'induttore al tempo t uguale corrente finale per (uno meno e alla meno t su tau). Zero punto settanta per corrente finale uguale corrente finale per (uno meno e alla meno t su tau). Zero punto settanta uguale uno meno e alla meno t su tau. E alla meno t su tau uguale uno meno zero punto settanta uguale zero punto trenta. Meno t su tau uguale logaritmo naturale di zero punto trenta. t uguale meno tau per logaritmo naturale di zero punto trenta. t uguale meno zero punto zero zero due secondi per logaritmo naturale di zero punto trenta circa meno zero punto zero zero due secondi per meno uno punto due zero quattro circa zero punto zero zero duecentoquattrocentootto secondi uguale due punto quattrocentootto millisecondi.",
+                "expression": "-0.002 * log(0.30)",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex5_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 0.002408,
+                    "y": 0.0126
+                  }
+                ],
+                "labels": [
+                  "(2.408ms, 12.6mA)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.01,
+                  "y_min": 0,
+                  "y_max": 0.02
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente (A)",
+                "alt_text": "Grafico della corrente nell'induttore durante l'accensione, mostra il punto in cui la corrente è il 70% del suo valore di regime. La corrente aumenta esponenzialmente da 0A verso 0.018A. Al tempo 2.408ms, la corrente è 0.0126A.",
+                "pieces": [
+                  {
+                    "expression": "(18/1000)*(1-exp(-x/0.002))",
+                    "x_start": 0,
+                    "x_end": 0.01,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex6_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 6 (10 punti): In un circuito RL serie con R = 50 Ω e L = 1 H, alimentato da una tensione continua V = 10 V, calcolare l'energia immagazzinata nell'induttore dopo 20 ms dall'applicazione della tensione. Tracciare un grafico qualitativo della corrente nell'induttore e dell'energia immagazzinata."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex6_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Per calcolare l'energia immagazzinata nell'induttore, dobbiamo prima determinare la corrente che lo attraversa al tempo specificato. L'energia immagazzinata in un induttore è data da "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "E = \\frac{1}{2} L I^2",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 50 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "L = 1 \\, \\text{H}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V = 10 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 20 \\, \\text{ms} = 20 \\times 10^{-3} \\, \\text{s}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Prima calcoliamo la costante di tempo τ:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "\\tau = \\frac{L}{R} = \\frac{1 \\, \\text{H}}{50 \\, \\Omega} = 0.02 \\, \\text{s} = 20 \\, \\text{ms}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "Ora calcoliamo la corrente nell'induttore "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "I_L(t)",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": " al tempo "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = 20 \\, \\text{ms}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Notiamo che "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "t = \\tau",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex6_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "I_L(t) = \\frac{V}{R} (1 - e^{-t/\\tau}) = \\frac{10 \\, \\text{V}}{50 \\, \\Omega} (1 - e^{-0.02/0.02}) = 0.2 \\, \\text{A} (1 - e^{-1}) \\approx 0.2 \\, \\text{A} (1 - 0.3679) \\approx 0.2 \\, \\text{A} \\cdot 0.6321 \\approx 0.12642 \\, \\text{A}",
+                "alt_text": "Corrente nell'induttore al tempo t uguale V diviso R per (uno meno e alla meno t su tau) uguale dieci volt diviso cinquanta ohm per (uno meno e alla meno zero punto zero due diviso zero punto zero due) uguale zero punto due ampere per (uno meno e alla meno uno) circa zero punto due ampere per (uno meno zero punto trecentosessantasette nove) circa zero punto due ampere per zero punto seicentotrentadue uno circa zero punto centoventisei quattro due ampere",
+                "expression": "(10 / 50) * (1 - exp(-0.02 / 0.02))",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex6_sol_formula2",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "E_L = \\frac{1}{2} L I_L(t)^2 = \\frac{1}{2} (1 \\, \\text{H}) (0.12642 \\, \\text{A})^2 \\approx \\frac{1}{2} \\cdot 1 \\cdot 0.01598 \\approx 0.00799 \\, \\text{J} = 7.99 \\, \\text{mJ}",
+                "alt_text": "Energia nell'induttore uguale un mezzo per L per corrente nell'induttore al tempo t al quadrato uguale un mezzo per uno Henry per zero punto centoventisei quarantadue ampere al quadrato circa un mezzo per uno per zero punto zero quindici nove otto circa zero punto zero zero settecentonovantanove Joule uguale sette punto novantanove millijoule",
+                "expression": "0.5 * 1 * (0.12642)^2",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex6_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 0.02,
+                    "y": 0.12642
+                  },
+                  {
+                    "x": 0.02,
+                    "y": 0.00799
+                  }
+                ],
+                "labels": [
+                  "IL(20ms)",
+                  "EL(20ms)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 0,
+                  "x_max": 0.1,
+                  "y_min": 0,
+                  "y_max": 0.2
+                },
+                "x_label": "Tempo (s)",
+                "y_label": "Corrente (A) / Energia (J)",
+                "alt_text": "Grafico della corrente nell'induttore (curva crescente) e dell'energia immagazzinata (curva crescente, più ripida) durante l'accensione. La corrente IL(20ms) è circa 0.126A. L'energia EL(20ms) è circa 0.008J. La corrente nell'induttore aumenta esponenzialmente da 0A a 0.2A. L'energia immagazzinata aumenta da 0J a 0.02J.",
+                "pieces": [
+                  {
+                    "expression": "(10/50)*(1-exp(-x/0.02))",
+                    "x_start": 0,
+                    "x_end": 0.1,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  },
+                  {
+                    "expression": "0.5*1*((10/50)*(1-exp(-x/0.02)))^2",
+                    "x_start": 0,
+                    "x_end": 0.1,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex7_prompt_teacher",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "Esercizio 7 (10 punti): Si vuole progettare un filtro passa-basso RC con un resistore R = 330 Ω e un condensatore C = 1 µF. Calcolare la frequenza di taglio (a -3 dB) del filtro. Se una tensione di ingresso sinusoidale con ampiezza di 10 V e frequenza di 10 Hz viene applicata al filtro, determinare l'ampiezza della tensione di uscita e lo sfasamento tra ingresso e uscita. Tracciare un grafico del guadagno e dello sfasamento in funzione della frequenza (diagrammi di Bode)."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex7_solution_text",
+                "block_type": "text",
+                "audience": "teacher",
+                "segments": [
+                  {
+                    "type": "text",
+                    "content": "La frequenza di taglio di un filtro RC passa-basso è il punto in cui il guadagno di potenza è dimezzato (-3 dB) e si calcola come "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "f_c = \\frac{1}{2 \\pi RC}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ". Il guadagno e lo sfasamento dipendono dalla frequenza di ingresso rispetto alla frequenza di taglio.Dati:"
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "R = 330 \\, \\Omega",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "C = 1 \\, \\mu\\text{F} = 1 \\times 10^{-6} \\, \\text{F}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Ingresso: "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "V_{in} = 10 \\, \\text{V}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ", "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "f = 10 \\, \\text{Hz}",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": ".Calcolo della frequenza di taglio "
+                  },
+                  {
+                    "type": "formula",
+                    "display": "inline",
+                    "latex": "f_c",
+                    "alt_text": ""
+                  },
+                  {
+                    "type": "text",
+                    "content": "."
+                  }
+                ]
+              },
+              {
+                "block_id": "block_ex7_sol_formula1",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "f_c = \\frac{1}{2 \\pi R C} = \\frac{1}{2 \\pi (330 \\, \\Omega) (1 \\times 10^{-6} \\, \\text{F})} \\approx \\frac{1}{2.073 \\times 10^{-3}} \\approx 482.3 \\, \\text{Hz}",
+                "alt_text": "Frequenza di taglio uguale uno diviso due pi greco RC uguale uno diviso due pi greco per trecentotrenta ohm per uno per dieci alla meno sei Farad circa uno diviso zero punto zero zero due zero sette tre circa quattrocentottantadue punto tre Hertz",
+                "expression": "1 / (2 * pi * 330 * 1e-6)",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex7_sol_formula2",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "\\text{Guadagno (rapporto)} = \\frac{V_{out}}{V_{in}} = \\frac{1}{\\sqrt{1 + (\\frac{f}{f_c})^2}} = \\frac{1}{\\sqrt{1 + (\\frac{10 \\, \\text{Hz}}{482.3 \\, \\text{Hz}})^2}} \\approx \\frac{1}{\\sqrt{1 + (0.0207)^2}} \\approx \\frac{1}{\\sqrt{1 + 0.000428}} \\approx \\frac{1}{1.00021} \\approx 0.99979",
+                "alt_text": "Guadagno (rapporto) uguale Vout diviso Vin uguale uno diviso radice quadrata di (uno più (f diviso fc) al quadrato) uguale uno diviso radice quadrata di (uno più (dieci Hertz diviso quattrocentottantadue punto tre Hertz) al quadrato) circa uno diviso radice quadrata di (uno più zero punto zero due zero sette al quadrato) circa uno diviso radice quadrata di (uno più zero punto zero zero zero quattro due otto) circa uno diviso uno punto zero zero zero due uno circa zero punto novecentonovantanove sette nove",
+                "expression": "1 / sqrt(1 + (10 / 482.3)^2)",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex7_sol_formula3",
+                "block_type": "formula",
+                "audience": "teacher",
+                "latex": "\\text{Ampiezza di uscita } V_{out} = V_{in} \\cdot \\text{Guadagno} = 10 \\, \\text{V} \\cdot 0.99979 \\approx 9.9979 \\, \\text{V} \\\\ \\text{Sfasamento } \\phi = -\\arctan(\\frac{f}{f_c}) = -\\arctan(\\frac{10 \\, \\text{Hz}}{482.3 \\, \\text{Hz}}) \\approx -\\arctan(0.0207) \\approx -1.18 \\, \\text{gradi}",
+                "alt_text": "Ampiezza di uscita Vout uguale Vin per Guadagno uguale dieci volt per zero punto novecentonovantanove sette nove circa nove punto novecentonovantasette nove volt. Sfasamento phi uguale meno arcotangente di (f diviso fc) uguale meno arcotangente di (dieci Hertz diviso quattrocentottantadue punto tre Hertz) circa meno arcotangente di zero punto zero due zero sette circa meno uno punto diciotto gradi.",
+                "expression": "10 * (1 / sqrt(1 + (10 / 482.3)^2))",
+                "display": "block"
+              },
+              {
+                "block_id": "block_ex7_graph_teacher",
+                "block_type": "graph",
+                "audience": "teacher",
+                "kind": "function_2d",
+                "expression": "",
+                "points": [
+                  {
+                    "x": 482.3,
+                    "y": -45
+                  },
+                  {
+                    "x": 10,
+                    "y": -1.18
+                  }
+                ],
+                "labels": [
+                  "fc (-45°)",
+                  "phi(10Hz)"
+                ],
+                "values": [],
+                "viewport": {
+                  "x_min": 1,
+                  "x_max": 10000,
+                  "y_min": -90,
+                  "y_max": 0
+                },
+                "x_label": "Frequenza (Hz)",
+                "y_label": "Fase (gradi)",
+                "alt_text": "Diagramma di Bode dello sfasamento per un filtro passa-basso RC. La frequenza di taglio è a 482.3 Hz, dove lo sfasamento è -45 gradi. A 10 Hz, lo sfasamento è circa -1.18 gradi. Lo sfasamento varia da 0 a -90 gradi. La scala della frequenza è logaritmica.",
+                "pieces": [
+                  {
+                    "expression": "-atan(x/482.3)*180/pi",
+                    "x_start": 1,
+                    "x_end": 10000,
+                    "start": "closed",
+                    "end": "none",
+                    "holes": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "validation_problems": [],
+    "request_data": {
+      "artifact": "Verifica sommativa",
+      "classe": "4",
+      "lesson_topic": "",
+      "game_type": "",
+      "game_parameters": {},
+      "lesson_type": "",
+      "school_type": "Istituto professionale",
+      "school_address": "Manutenzione e assistenza tecnica",
+      "ai_role": "Agisci come docente di elettrotecnica.",
+      "bes_dsa": false,
+      "use_cache": false,
+      "cache_minutes": 15,
+      "generate_images": false,
+      "image_limit": 3,
+      "prompt": "Agisci come docente di elettrotecnica.\nClasse: 4.\nArtefatto richiesto: Verifica sommativa.\nGenera una verifica sommativa coerente come unico oggetto valutativo.\nEsercizio 1: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED03; livello cognitivo DBL02; soluzione DES04; grafico DGT02.\nEsercizio 2: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 3: tipo DET02; numero 1; argomento Carica e scarica del condensatore; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nEsercizio 4: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 5: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nEsercizio 6: tipo DET02; numero 1; argomento Carica e scarica dell'induttanza; difficoltà DED03; livello cognitivo DBL03; soluzione DES04; grafico DGT02.\nEsercizio 7: tipo DET02; numero 1; argomento Filtro passivo RC; difficoltà DED04; livello cognitivo DBL04; soluzione DES04; grafico DGT02.\nRispetta le direttive che sono state inviate con il prompt",
+      "rows": [
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica del condensatore",
+          "ded": "DED03",
+          "dbl": "DBL02",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica del condensatore",
+          "ded": "DED03",
+          "dbl": "DBL03",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica del condensatore",
+          "ded": "DED04",
+          "dbl": "DBL04",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica dell'induttanza",
+          "ded": "DED03",
+          "dbl": "DBL03",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica dell'induttanza",
+          "ded": "DED04",
+          "dbl": "DBL04",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Carica e scarica dell'induttanza",
+          "ded": "DED03",
+          "dbl": "DBL03",
+          "des": "DES04",
+          "dgt": "DGT02"
+        },
+        {
+          "det": "DET02",
+          "count": "1",
+          "topic": "Filtro passivo RC",
+          "ded": "DED04",
+          "dbl": "DBL04",
+          "des": "DES04",
+          "dgt": "DGT02"
+        }
+      ]
+    }
   }
 ]
