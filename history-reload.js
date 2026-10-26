@@ -31,6 +31,9 @@ async function restoreHistoryPrompt() {
     const data = historyRequest(entry);
     const set = (id, value) => { if (value !== undefined) $(id).value = value; };
     set('artifact',data.artifact); set('classe',data.classe);
+    if (document.getElementById('googleFormFeedback')) document.getElementById('googleFormFeedback').checked = data.google_form_feedback === true;
+    set('googleFormTopic',data.google_form_topic); set('googleFormQuestions',data.google_form_questions);
+    set('googleFormAnswers',data.google_form_answers); set('googleFormBloom',data.google_form_bloom);
     set('lessonType',data.lesson_type); set('lessonTopic',data.lesson_topic);
     set('aiRole',data.ai_role); set('schoolType',data.school_type);
     updateSchoolAddresses(); set('schoolAddress',data.school_address);

@@ -12,3 +12,6 @@ contract_backups/
 .env
 .env.*
 gemini_cache_index.json
+
+google_oauth_client.json
+client_secret*.json

@@ -133,7 +133,7 @@
           <div class="field school-field"><label for="schoolType">Tipo scuola</label><select id="schoolType" disabled><option>Caricamento...</option></select></div>
           <div class="field school-field"><label for="schoolAddress">Indirizzo</label><select id="schoolAddress" disabled><option>Seleziona il tipo scuola</option></select></div>
           <div class="field"><label for="classe">Classe *</label><select id="classe"><option value="">Seleziona la classe</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-          <div class="field"><label for="artifact">Tipo di elaborato *</label><select id="artifact"><option value="">Seleziona il tipo</option><option value="Lezione">Lezione</option><option value="Giochi">Giochi</option><option value="Esercizi">Esercizi</option><option value="Verifica sommativa">Verifica sommativa</option></select></div>
+          <div class="field"><label for="artifact">Tipo di elaborato *</label><select id="artifact"><option value="">Seleziona il tipo</option><option value="Lezione">Lezione</option><option value="Giochi">Giochi</option><option value="Esercizi">Esercizi</option><option value="Verifica sommativa">Verifica sommativa</option><option value="modulo google">modulo google</option></select></div>
           <div class="field"><label for="chatbot">Chatbot da utilizzare *</label><select id="chatbot" disabled><option>Caricamento...</option></select></div>
         </div>
 
@@ -155,6 +155,18 @@
           <div class="lesson-fields">
             <div class="field"><label for="lessonType">Tipo di lezione *</label><select id="lessonType" disabled><option value="">Caricamento...</option></select></div>
             <div class="field"><label for="lessonTopic">Argomento della lezione *</label><input id="lessonTopic" type="text" placeholder="Es. Equazioni di primo grado"></div>
+          </div>
+        </div>
+
+        <div id="googleFormPanel" class="conditional">
+          <h3>Impostazioni del modulo Google</h3>
+          <label><input id="googleFormFeedback" type="checkbox"> Prepara feedback video per le risposte errate</label>
+          <p>Genera un JSON separato con spiegazione e formula per ogni passaggio. Scarica i video dal materiale generato (richiede Windows e FFmpeg).</p>
+          <div class="fields">
+            <div class="field"><label for="googleFormTopic">Argomento del modulo *</label><input id="googleFormTopic" type="text" placeholder="Es. Equazioni di primo grado"></div>
+            <div class="field"><label for="googleFormQuestions">Numero di domande *</label><input id="googleFormQuestions" type="number" min="1" step="1" value="10"></div>
+            <div class="field"><label for="googleFormAnswers">Risposte per domanda a scelta multipla *</label><input id="googleFormAnswers" type="number" min="2" step="1" value="4"></div>
+            <div class="field"><label for="googleFormBloom">Livello di Bloom *</label><select id="googleFormBloom"><option value="">Seleziona</option></select></div>
           </div>
         </div>
 
@@ -182,7 +194,7 @@
     <iframe id="matrixInfoPdf" title="Matrice di compatibilità DED per DBL"></iframe>
     <a href="/InfoPopup/MatriceDEDxDBL/MatriceCompatibilitaDEDxDBL-14-09-26.pdf" target="_blank" rel="noopener">Apri il PDF in una nuova scheda</a>
   </dialog>
-  <script>
+  <script src="/google-direct-ui.js"></script><script src="/render-ui.js?v=20261017-feedback"></script><script>
     const matrixDialog = document.getElementById('matrixInfo');
     document.addEventListener('click', event => {
       if (!event.target.closest('[data-matrix-info]')) return;
@@ -246,6 +258,7 @@
     }
     function updateVisibility() {
       const value = artifact.value;
+      $('googleFormPanel').classList.toggle('visible', value === 'modulo google');
       $('gamePanel').classList.toggle('visible', value === 'Giochi');
       $('lessonPanel').classList.toggle('visible', value === 'Lezione');
       $('exercisePanel').classList.toggle('visible', value === 'Esercizi' || value === 'Verifica sommativa');
@@ -259,6 +272,8 @@
       let requestReady = false;
       if (type === 'Lezione') {
         requestReady = Boolean($('lessonType').value && $('lessonTopic').value.trim());
+      } else if (type === 'modulo google') {
+        requestReady = Boolean($('googleFormTopic').value.trim() && $('googleFormBloom').value) && ['googleFormQuestions', 'googleFormAnswers'].every(id => $(id).value && $(id).validity.valid);
       } else if (type === 'Giochi') {
         requestReady = ($('gameType').value !== 'DGM01' || DGM01Procedure.valid()) && Boolean($('gameType').value) && Object.values(gameValues()).every(Boolean) && [...document.querySelectorAll('#gameParameters input')].every(e => e.validity.valid);
       } else if (type === 'Esercizi' || type === 'Verifica sommativa') {
@@ -272,7 +287,7 @@
       $('prepare').disabled = !enabled;
       $('sendGemini').disabled = !enabled;
     }
-    function requestPayload(prompt) { return { artifact: artifact.value, classe: $('classe').value, lesson_topic: $('lessonTopic').value, game_type: $('gameType').value, game_parameters: gameValues(), lesson_type: $('lessonType').value, school_type: schoolType.value, school_address: schoolAddress.value, ai_role: $('aiRole').value.trim(), bes_dsa: $('besDsa').checked, use_cache: $('useCache').checked, cache_minutes: Number($('cacheMinutes').value), generate_images: $('generateImages').checked, image_limit: Number($('imageLimit').value), prompt, rows: artifact.value === 'Giochi' ? ($('gameType').value === 'DGM01' ? DGM01Procedure.rows() : []) : [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(row => Object.values(row).some(Boolean)) }; }
+    function requestPayload(prompt) { return { artifact: artifact.value, google_form_feedback: $('googleFormFeedback').checked, google_form_topic: $('googleFormTopic').value.trim(), google_form_questions: Number($('googleFormQuestions').value), google_form_answers: Number($('googleFormAnswers').value), google_form_bloom: $('googleFormBloom').value, classe: $('classe').value, lesson_topic: $('lessonTopic').value, game_type: $('gameType').value, game_parameters: gameValues(), lesson_type: $('lessonType').value, school_type: schoolType.value, school_address: schoolAddress.value, ai_role: $('aiRole').value.trim(), bes_dsa: $('besDsa').checked, use_cache: $('useCache').checked, cache_minutes: Number($('cacheMinutes').value), generate_images: $('generateImages').checked, image_limit: Number($('imageLimit').value), prompt, rows: artifact.value === 'modulo google' ? [] : artifact.value === 'Giochi' ? ($('gameType').value === 'DGM01' ? DGM01Procedure.rows() : []) : [...document.querySelectorAll('#exerciseRows tr')].map(rowValues).filter(row => Object.values(row).some(Boolean)) }; }
     function updateSchoolAddresses() {
       const addresses = schools.filter(school => school.TipoScuola === schoolType.value).map(school => school.Indirizzo);
       schoolAddress.innerHTML = '<option value="">Seleziona indirizzo</option>' + addresses.map(address => `<option value="${address}">${address}</option>`).join('');
@@ -299,11 +314,12 @@
         const card = document.createElement('div');
         card.className = 'artifact-card';
         card.innerHTML = `<strong>${artifact.title || artifact.artifact_type || `Artefatto ${index + 1}`}</strong>`;
-        (artifact.formats || ['pdf', 'pptx', 'docx']).forEach(format => {
-          const button = document.createElement('button'); button.className = 'secondary'; button.textContent = `Render ${format.toUpperCase()}`;
+        (artifact.artifact_type === 'modulogoogle' ? (artifact.formats || ['pdf', 'docx', 'gs']) : artifact.formats || ['pdf', 'pptx', 'docx']).forEach(format => {
+          const button = document.createElement('button'); button.className = 'secondary'; button.textContent = format === 'json' ? 'Scarica JSON feedback' : format === 'zip' ? 'Genera video feedback (.zip)' : format === 'gs' ? 'Scarica script Google (.gs)' : format === 'docx' ? 'Genera Word' : `Genera ${format.toUpperCase()}`;
           button.addEventListener('click', () => downloadArtifact(artifact, responseText, format, button));
           card.appendChild(button);
         });
+        if (artifact.artifact_type === 'modulogoogle') appendGoogleFormControls(card, artifact, responseText);
         $('artifacts').appendChild(card);
       });
     }
@@ -349,6 +365,7 @@
           chatbotSettings.chatbot = selected;
         });
         catalogs = Object.fromEntries(Object.entries(apiCatalogs).map(([group, items]) => [group, items.map(item => [item.code, item.title])]));
+        $('googleFormBloom').innerHTML = options('DBL');
         buildRows();
         updateActionState();
         artifact.addEventListener('change', updateVisibility);
@@ -419,5 +436,5 @@
     }
     init();
   </script>
-<script src="/render-ui.js"></script></body>
+</body>
 </html>

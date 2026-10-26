@@ -43,6 +43,13 @@ def materialize(manifest):
         converted = {"artifact_id":identifier, "artifact_type":artifact.get("kind", "exercise_sheet"), "audience":artifact.get("audience", "teacher"),
                      "format":artifact.get("format", "pdf"), "title":artifact.get("title", "Artefatto"), "references":[],
                      "filename_hint": re.sub(r"[^a-zA-Z0-9_-]", "_", str(identifier))+"."+str(artifact.get("format", "pdf"))}
+        if converted["artifact_type"] == "modulogoogle":
+            converted["quiz_questions"] = [{"feedback_steps": [], **q, "diagrams": [{"measurement_latex": "", **d} for d in q.get("diagrams", [])]} for q in artifact.get("quiz_questions", [])]
+            converted["formats"] = ["pdf", "docx", "gs"]
+            if converted["quiz_questions"] and all(q.get("feedback_steps") for q in converted["quiz_questions"]):
+                converted["formats"] += ["json", "zip"]
+                from quiz_feedback import feedback_document
+                converted["feedback_folder"] = feedback_document(converted)["folder_name"]
         containers = []
         for container in artifact.get("containers", []):
             if not isinstance(container, dict):
@@ -74,5 +81,8 @@ def materialize(manifest):
                 blocks.append(base)
             containers.append({"section_id" if converted["format"] != "pptx" else "slide_id":container.get("id", ""), "title":container.get("title", ""), "blocks":blocks})
         converted["slides" if converted["format"] == "pptx" else "sections"] = containers
+        if converted["artifact_type"] == "modulogoogle":
+            from google_form_export import google_form_document
+            converted = google_form_document(converted)
         artifacts.append(converted)
     return artifacts, list(dict.fromkeys(warnings))

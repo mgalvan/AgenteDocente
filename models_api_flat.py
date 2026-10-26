@@ -188,13 +188,62 @@ class Container(Model):
     blocks: list[BlockRef]
 
 
+class FeedbackStep(Model):
+    text: str = Field(min_length=1, description="Italian spoken explanation of this solution step, without LaTeX.")
+    formula: str = Field(description="LaTeX shown during this narration, without delimiters; empty when no formula is needed.")
+
+    @model_validator(mode="after")
+    def nonblank(self):
+        if not self.text.strip():
+            raise ValueError("Il testo del feedback non puo essere vuoto.")
+        return self
+
+
+class RegularPolygonDiagram(Model):
+    sides: int = Field(ge=3, le=20, description="Number of sides of the regular polygon.")
+    length: float = Field(gt=0, allow_inf_nan=False, description="Numeric given measurement. For symbolic measurements set length to 1 and provide the complete expression in measurement_latex.")
+    measurement_latex: str = Field(default="", max_length=1000, description="Complete given symbolic measurement in LaTeX, without delimiters or assignment: preserve factors and parentheses exactly as in title, e.g. 2(x+y), never split it between length and unit. Empty for numeric measurements.")
+    measure: Literal["side", "apothem"] = Field(description="Whether length measures a side or the apothem.")
+    unit: str = Field(max_length=12, description="Physical length unit only, e.g. cm or m; empty for unitless algebra. Never place variables or expressions here.")
+    show_apothem: bool = Field(description="Draw a dashed apothem. Its numeric value appears only when measure is apothem.")
+
+
+class GoogleFormQuestion(Model):
+    diagrams: list[RegularPolygonDiagram] = Field(default_factory=list, max_length=1, description="When a regular polygon figure is requested or needed, provide its structured drawing here; a prose description does not create an image. Empty for questions without a regular polygon. Never include solution measurements.")
+    title: str = Field(description="Question text. Mathematical expressions must use LaTeX enclosed in \( ... \) or $$ ... $$. Keep surrounding prose as plain text.")
+    options: list[str] = Field(description="Answer texts. Mathematical expressions must use delimited LaTeX as in title; no letter or number prefixes.")
+    feedback_steps: list[FeedbackStep] = Field(default_factory=list, description="Ordered solution steps for incorrect answers, only when requested. Each step pairs spoken text with the formula displayed during speech.")
+    correct_index: int = Field(description="Zero-based index of the single correct option.")
+    points: int
+
+    @model_validator(mode="after")
+    def valid_quiz(self):
+        if not self.title.strip() or len(self.options) < 2 or any(not x.strip() for x in self.options):
+            raise ValueError("modulogoogle: domanda e almeno due risposte non vuote obbligatorie.")
+        if len({x.strip().casefold() for x in self.options}) != len(self.options):
+            raise ValueError("modulogoogle: risposte duplicate.")
+        if not 0 <= self.correct_index < len(self.options) or self.points < 1:
+            raise ValueError("modulogoogle: indice della risposta corretta o punteggio non valido.")
+        return self
+
+
 class Artifact(Model):
     id: str
-    kind: Literal["teacher_guide", "student_presentation", "exercise_sheet", "student_test", "teacher_solution"]
+    kind: Literal["teacher_guide", "student_presentation", "exercise_sheet", "student_test", "teacher_solution", "modulogoogle"]
     audience: Literal["teacher", "students"]
-    format: Literal["pdf", "pptx", "docx"]
+    format: Literal["pdf", "pptx", "docx", "gs"]
     title: str
-    containers: list[Container]  # Ordered sections for PDF/DOCX, slides for PPTX.
+    containers: list[Container]  # Empty for modulogoogle.
+    quiz_questions: list[GoogleFormQuestion] = Field(default_factory=list, description="Only for modulogoogle: complete multiple-choice questions, plain prose with delimited LaTeX math, options, correct_index and points. Empty for other artifacts.")
+
+    @model_validator(mode="after")
+    def artifact_format(self):
+        if self.kind == "modulogoogle":
+            if self.format != "gs" or self.containers or not self.quiz_questions or not self.title.strip():
+                raise ValueError("modulogoogle richiede format gs, titolo, quiz_questions e containers vuoto.")
+        elif self.format == "gs" or self.quiz_questions:
+            raise ValueError("Formato gs e quiz_questions riservati a modulogoogle.")
+        return self
 
 
 class Question(Model):
@@ -251,7 +300,7 @@ class FlatResponse(Model):
                 raise ValueError(f"Testo senza segments: {text.id}.")
         for artifact in self.artifacts:
             register(artifact)
-            if not artifact.containers:
+            if artifact.kind != "modulogoogle" and not artifact.containers:
                 raise ValueError("Artefatto senza sezioni/slide.")
             for container in artifact.containers:
                 register(container)

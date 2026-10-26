@@ -42,7 +42,8 @@
             "student_presentation",
             "exercise_sheet",
             "student_test",
-            "teacher_solution"
+            "teacher_solution",
+            "modulogoogle"
           ],
           "title": "Kind",
           "type": "string"
@@ -59,7 +60,8 @@
           "enum": [
             "pdf",
             "pptx",
-            "docx"
+            "docx",
+            "gs"
           ],
           "title": "Format",
           "type": "string"
@@ -73,6 +75,14 @@
             "$ref": "#/$defs/Container"
           },
           "title": "Containers",
+          "type": "array"
+        },
+        "quiz_questions": {
+          "description": "Only for modulogoogle: complete multiple-choice questions, plain prose with delimited LaTeX math, options, correct_index and points. Empty for other artifacts.",
+          "items": {
+            "$ref": "#/$defs/GoogleFormQuestion"
+          },
+          "title": "Quiz Questions",
           "type": "array"
         }
       },
@@ -241,6 +251,28 @@
       "title": "CurvePiece",
       "type": "object"
     },
+    "FeedbackStep": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "description": "Italian spoken explanation of this solution step, without LaTeX.",
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "formula": {
+          "description": "LaTeX shown during this narration, without delimiters; empty when no formula is needed.",
+          "title": "Formula",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "formula"
+      ],
+      "title": "FeedbackStep",
+      "type": "object"
+    },
     "Formula": {
       "additionalProperties": false,
       "properties": {
@@ -292,6 +324,58 @@
         "alt_text"
       ],
       "title": "GeneratedImage",
+      "type": "object"
+    },
+    "GoogleFormQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "When a regular polygon figure is requested or needed, provide its structured drawing here; a prose description does not create an image. Empty for questions without a regular polygon. Never include solution measurements.",
+          "items": {
+            "$ref": "#/$defs/RegularPolygonDiagram"
+          },
+          "maxItems": 1,
+          "title": "Diagrams",
+          "type": "array"
+        },
+        "title": {
+          "description": "Question text. Mathematical expressions must use LaTeX enclosed in \\( ... \\) or $$ ... $$. Keep surrounding prose as plain text.",
+          "title": "Title",
+          "type": "string"
+        },
+        "options": {
+          "description": "Answer texts. Mathematical expressions must use delimited LaTeX as in title; no letter or number prefixes.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "feedback_steps": {
+          "description": "Ordered solution steps for incorrect answers, only when requested. Each step pairs spoken text with the formula displayed during speech.",
+          "items": {
+            "$ref": "#/$defs/FeedbackStep"
+          },
+          "title": "Feedback Steps",
+          "type": "array"
+        },
+        "correct_index": {
+          "description": "Zero-based index of the single correct option.",
+          "title": "Correct Index",
+          "type": "integer"
+        },
+        "points": {
+          "title": "Points",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "title",
+        "options",
+        "correct_index",
+        "points"
+      ],
+      "title": "GoogleFormQuestion",
       "type": "object"
     },
     "Graph": {
@@ -531,6 +615,60 @@
         "sample"
       ],
       "title": "Rectangles",
+      "type": "object"
+    },
+    "RegularPolygonDiagram": {
+      "additionalProperties": false,
+      "properties": {
+        "sides": {
+          "description": "Number of sides of the regular polygon.",
+          "maximum": 20,
+          "minimum": 3,
+          "title": "Sides",
+          "type": "integer"
+        },
+        "length": {
+          "description": "Numeric given measurement. For symbolic measurements set length to 1 and provide the complete expression in measurement_latex.",
+          "exclusiveMinimum": 0,
+          "title": "Length",
+          "type": "number"
+        },
+        "measurement_latex": {
+          "default": "",
+          "description": "Complete given symbolic measurement in LaTeX, without delimiters or assignment: preserve factors and parentheses exactly as in title, e.g. 2(x+y), never split it between length and unit. Empty for numeric measurements.",
+          "maxLength": 1000,
+          "title": "Measurement Latex",
+          "type": "string"
+        },
+        "measure": {
+          "description": "Whether length measures a side or the apothem.",
+          "enum": [
+            "side",
+            "apothem"
+          ],
+          "title": "Measure",
+          "type": "string"
+        },
+        "unit": {
+          "description": "Physical length unit only, e.g. cm or m; empty for unitless algebra. Never place variables or expressions here.",
+          "maxLength": 12,
+          "title": "Unit",
+          "type": "string"
+        },
+        "show_apothem": {
+          "description": "Draw a dashed apothem. Its numeric value appears only when measure is apothem.",
+          "title": "Show Apothem",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sides",
+        "length",
+        "measure",
+        "unit",
+        "show_apothem"
+      ],
+      "title": "RegularPolygonDiagram",
       "type": "object"
     },
     "Segment": {

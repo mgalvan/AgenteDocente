@@ -25,6 +25,8 @@ def artifact_content_errors(artifact) -> list[str]:
     def visit(value, path):
         if isinstance(value, dict):
             for key, child in value.items():
+                if key == "quiz_questions":
+                    continue  # Structured quiz math is rendered from explicit LaTeX delimiters.
                 if key in {"content", "title", "alt_text"} and isinstance(child, str):
                     if any(marker in child for marker in LATEX_MARKERS):
                         errors.append(f"{path}.{key}: LaTeX nel testo; usare formula o segments (DMA00).")

@@ -42,5 +42,9 @@
   {
     "TipoRichiesta": "gioco G01",
     "Direttive": "DAF_API_G01"
+  },
+  {
+    "TipoRichiesta": "modulo_google",
+    "Direttive": "DQM_API"
   }
 ]

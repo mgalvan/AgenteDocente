@@ -32,3 +32,18 @@ Dettagli dei renderer in RENDER_ENGINES.md, grafici in GRAPH_CONTRACT.md.
 geometry_2d: polygons contiene label e vertices ordinati x/y, almeno tre distinti
 e finiti; chiusura automatica. expression e gli altri array grafici vuoti.
 I renderer mantengono la scala geometrica. Nessuna migrazione dei vecchi JSON.
+
+Artefatto modulogoogle: kind modulogoogle, format gs, containers [], quiz_questions
+con title, options, correct_index (da zero) e points. Il download modulogoogle.gs
+crea un quiz Google Moduli con risposte corrette e punteggi tramite Apps Script.
+Eseguire creaModuloGoogle e autorizzare Google; i link appaiono nel registro.
+Per gli altri artefatti quiz_questions resta vuoto.
+
+modulogoogle esporta anche PDF e Word dalla stessa raccolta quiz_questions,
+con domande, opzioni e una sezione finale Soluzioni per il docente.
+GUI e cronologia mostrano anteprima e copia dello script con istruzioni di esecuzione.
+
+Quiz matematici: title e options possono contenere formule LaTeX delimitate da $$...$$.
+Il file GS incorpora PNG con domanda e opzioni numerate, senza hosting esterno.
+Le scelte Risposta 1, Risposta 2 ecc. mantengono correct_index e points.
+PDF e Word usano segmenti matematici ricavati dagli stessi contenuti.

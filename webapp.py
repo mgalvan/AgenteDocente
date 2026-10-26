@@ -8,7 +8,10 @@ import urllib.error
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse, unquote
+from urllib.parse import urlparse, unquote, parse_qs
+from http.cookies import SimpleCookie
+import secrets
+import html
 from game_catalog import games_from_directives, validate_game
 import sqlite3
 from directives_store import load_directives, replace_directives
@@ -60,6 +63,43 @@ def resolve_directives(codes: list[str], directives_by_code: dict[str, dict[str,
 
 
 def compose_request(data: dict[str, object]) -> dict[str, str]:
+    google_form_text = ""
+    if data.get("artifact") == "modulo google":
+        topic = str(data.get("google_form_topic", "")).strip()
+        bloom = str(data.get("google_form_bloom", ""))
+        bloom_levels = {item["Codice"]: item["Titolo"] for item in load_directives()
+                        if item["Gruppo"] == "DBL" and item["Codice"] != "DBL01"}
+        if not topic or bloom not in bloom_levels:
+            raise ValueError("Argomento e livello di Bloom del modulo Google sono obbligatori.")
+        counts = []
+        for key, minimum in (("google_form_questions", 1), ("google_form_answers", 2)):
+            value = data.get(key)
+            if isinstance(value, bool) or not str(value).isdigit() or int(value) < minimum:
+                raise ValueError("Inserisci un numero intero di domande (almeno 1) e risposte per domanda (almeno 2).")
+            counts.append(int(value))
+        google_form_text = (
+            f"Argomento del modulo Google: {topic}.\n"
+            f"Numero di domande: {counts[0]}.\n"
+            f"Numero di risposte per domanda: {counts[1]}.\n"
+            f"Livello di Bloom: {bloom} - {bloom_levels[bloom]}.\n"
+            "Prepara un quiz per Google Moduli con domande a risposta multipla, "
+            "una sola risposta corretta per domanda e indicazione della risposta corretta. "
+            "Restituisci un unico artifacts con kind modulogoogle, format gs, audience teacher, "
+            "containers vuoto e quiz_questions con esattamente il numero di domande e opzioni richieste. "
+            "Ogni domanda contiene title, options, correct_index (indice da zero), points (1). "
+            "Se serve la figura di un poligono regolare, compila diagrams con sides, length, measure (side o apothem), unit, show_apothem; non limitarti a descrivere il disegno. Usa solo misure date, senza rivelare la soluzione. "
+            "Scrivi le formule matematiche di title e options in LaTeX delimitato da $$ ... $$. "
+            "Mantieni il testo normale fuori dalle formule. Non usare segnaposto. "
+            "Lascia vuote le raccolte di risorse non utilizzate."
+        )
+    if data.get("artifact") == "modulo google" and data.get("google_form_feedback") is True:
+        google_form_text += (
+            " Per OGNI domanda compila feedback_steps con almeno un passaggio ordinato di risoluzione corretta. "
+            "Ogni record contiene text (spiegazione italiana da pronunciare, senza LaTeX) e formula "
+            "(passaggio analitico in LaTeX senza delimitatori, oppure stringa vuota se non necessario). "
+            "Spiega la procedura fino alla risposta corretta; una sola operazione logica per passaggio. "
+            "La formula deve corrispondere esattamente al testo pronunciato nello stesso record."
+        )
     if data.get("artifact") in ("Esercizi", "Verifica sommativa"):
         rows = data.get("rows", [])
         if not isinstance(rows, list):
@@ -113,6 +153,8 @@ def compose_request(data: dict[str, object]) -> dict[str, str]:
             codes, text = compose_exercises(data.get("rows", []), data.get("game_parameters", {}), directives)
             route_codes.extend(codes)
             game_text += "\n" + text
+    if artifact == "modulo google":
+        route_codes.append(str(data["google_form_bloom"]))
     exercise_codes = []
     for row in data.get("rows", []):
         if isinstance(row, dict):
@@ -124,6 +166,8 @@ def compose_request(data: dict[str, object]) -> dict[str, str]:
     school_type = str(data.get("school_type", "")).strip()
     school_address = str(data.get("school_address", "")).strip()
     ai_role = str(data.get("ai_role", "")).strip() or "Agisci come docente di matematica."
+    if google_form_text:
+        prompt += "\n" + google_form_text
     if game_text:
         prompt += "\n" + game_text
     if artifact == "Esercizi" or (artifact == "Giochi" and data.get("game_type") == "DGM01"):
@@ -152,6 +196,13 @@ def compose_request(data: dict[str, object]) -> dict[str, str]:
         lines = [line for line in lines if line != school_line]
         lines.insert(0, school_line)
     prompt = "\n".join([ai_role, *lines])
+    if artifact == "modulo google":
+        system_instruction += (
+            "\n\nPer questa richiesta usa l'artefatto modulogoogle previsto dallo schema attivo: "
+            "format gs, containers [], quiz_questions complete con title, options, correct_index e points. "
+            "Per disegnare poligoni regolari usa diagrams della domanda con sides, length, measure (side o apothem), unit, show_apothem. Una descrizione testuale non genera una figura. Per misure algebriche usa measurement_latex con la formula completa identica al testo, incluse parentesi e fattori, length=1 e unit vuoto se non vi sono unita fisiche. Non usare unit per variabili. "
+            "Queste istruzioni di formato sostituiscono eventuali direttive che richiedono PDF, DOCX o due documenti."
+        )
     return {"system_instruction": system_instruction, "prompt": prompt}
 
 
@@ -340,6 +391,18 @@ class WebAppHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=str(BASE_DIR), **kwargs)
 
     def do_GET(self) -> None:
+        if urlparse(self.path).path in ('/', '/index.html', '/history', '/history.html'):
+            from google_forms_direct import local_origin_redirect
+            canonical = local_origin_redirect(self.headers.get('Host', ''))
+            if canonical:
+                self.send_response(302)
+                self.send_header('Location', canonical + self.path)
+                self.send_header('Cache-Control', 'no-store')
+                self.send_header('Content-Length', '0')
+                self.end_headers()
+                return
+        if urlparse(self.path).path.startswith("/api/google/"):
+            self.google_route(); return
         path = urlparse(self.path).path
         if path == "/api/game-template":
             import DGM01_template
@@ -407,6 +470,8 @@ class WebAppHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self) -> None:
+        if urlparse(self.path).path.startswith("/api/google/"):
+            self.google_route(); return
         if urlparse(self.path).path in ("/api/verification-template", "/api/game-template"):
             import verification_template as template
             if urlparse(self.path).path == "/api/game-template":
@@ -469,6 +534,9 @@ class WebAppHandler(SimpleHTTPRequestHandler):
                         composed["validation_problems"].extend(image_messages)
                     if local_artifact:
                         composed["artifacts"].insert(0, local_artifact)
+                    if body.get("artifact") == "modulo google":
+                        from google_form_export import validate_requested_quiz
+                        validate_requested_quiz(composed["response"], body)
                     entry = save_prompt_history(composed["prompt"], load_chatbot(), composed["response"], composed["artifacts"], composed["validation_problems"], game_parameters=body.get("game_parameters") if local_artifact else None, request_data=body)
                     composed["history_id"] = entry["id"]
                 self.send_json({"ok": True, **composed})
@@ -522,6 +590,76 @@ class WebAppHandler(SimpleHTTPRequestHandler):
         except (urllib.error.URLError, TimeoutError) as error:
             self.send_json({"ok": False, "error": f"Comunicazione Gemini non riuscita: {error}"}, status=502)
 
+    def google_route(self):
+        import google_forms_direct as google
+        try:
+            _, redirect = google.configuration()
+            parsed = urlparse(redirect)
+            origin = parsed.scheme + "://" + parsed.netloc
+            if self.headers.get("Host", "").lower() != parsed.netloc.lower():
+                raise ValueError("Apri la webapp da " + origin + ". L'indirizzo deve coincidere con il ritorno OAuth configurato.")
+            cookies = SimpleCookie(self.headers.get("Cookie", ""))
+            identifier = cookies[google.COOKIE].value if google.COOKIE in cookies else None
+            identifier, item = google.session(identifier)
+            self._google_cookie = google.COOKIE + "=" + identifier + "; Path=/; HttpOnly; SameSite=Lax" + ("; Secure" if parsed.scheme == "https" else "")
+            path = urlparse(self.path).path
+            if self.command == "GET" and path == "/api/google/status":
+                self.send_json(google.status(item)); return
+            if self.command == "GET" and path == "/api/google/callback":
+                params = parse_qs(urlparse(self.path).query)
+                try:
+                    google.finish(item, params.get("state", [""])[0], params.get("code", [""])[0], params.get("error", [None])[0])
+                    message = "Account Google collegato. Puoi tornare alla webapp."
+                except ValueError as error:
+                    message = str(error)
+                except Exception:
+                    message = "Accesso Google non riuscito. Controlla utenti di test e URL di ritorno nella configurazione OAuth."
+                payload = ("<!doctype html><meta charset=utf-8><title>Collegamento Google</title><p>" + html.escape(message) + "</p><a href=" + ('\"' + html.escape(origin, quote=True) + '\"') + ">Torna alla webapp</a><script>if(window.opener){window.opener.postMessage({type:'google-connected'}," + json.dumps(origin) + ");window.close();}</script>").encode()
+                self.send_response(200); self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Cache-Control", "no-store"); self.send_header("Referrer-Policy", "no-referrer")
+                self.send_header("Content-Length", str(len(payload))); self.end_headers(); self.wfile.write(payload); return
+            if self.command != "POST":
+                self.send_error(404); return
+            if self.headers.get("Origin") != origin or not secrets.compare_digest(self.headers.get("X-CSRF-Token", ""), item['csrf']):
+                self.send_json({"error": "Sessione non valida. Ricarica la pagina."}, status=403); return
+            if path == "/api/google/connect":
+                self.send_json({"authorization_url": google.start(item)}); return
+            if path == "/api/google/disconnect":
+                google.disconnect(item); self.send_json({"ok": True}); return
+            if path == "/api/google/create":
+                length = int(self.headers.get("Content-Length", "0"))
+                if not 0 < length <= 10 * 1024 * 1024:
+                    raise ValueError("Dati del quiz non validi o troppo grandi.")
+                body = json.loads(self.rfile.read(length))
+                if not isinstance(body, dict) or not isinstance(body.get("response"), str):
+                    raise ValueError("La creazione richiede la risposta JSON completa.")
+                artifacts, _ = inspect_response(body['response'])
+                artifact = next((a for a in artifacts if a.get('artifact_id') == body.get('artifact_id')), None)
+                if not artifact or artifact.get('artifact_type') != 'modulogoogle':
+                    raise ValueError("Seleziona un artefatto Google Moduli valido.")
+                if not item['credentials']:
+                    raise ValueError("Collega prima Google.")
+                self.send_json({"ok": True, **google.create_form(item, artifact)}); return
+            self.send_error(404)
+        except (ValueError, OSError) as error:
+            self.send_json({"error": str(error)}, status=400)
+        except ImportError:
+            self.send_json({"error": "Installare le dipendenze aggiornate di requirements.txt sul server."}, status=503)
+        except Exception:
+            self.send_json({"error": "Connessione Google non riuscita. Riprova; se necessario scollega e ricollega l'account."}, status=502)
+
+    def send_head(self):
+        requested = Path(self.translate_path(self.path)).resolve()
+        try:
+            import google_forms_direct as google
+            private_file, _ = google.configuration()
+            protected = requested == private_file.resolve()
+        except ValueError:
+            protected = False
+        if protected or requested.name.lower().startswith(('client_secret', 'google_oauth_client', '.env')):
+            self.send_error(404); return None
+        return super().send_head()
+
     def send_catalogs(self) -> None:
         self.send_json(load_catalogs())
 
@@ -543,12 +681,18 @@ class WebAppHandler(SimpleHTTPRequestHandler):
         self.wfile.write(content)
 
     def end_headers(self) -> None:
-        if self.path.endswith((".html", "/")):
+        if getattr(self, "_google_cookie", None):
+            self.send_header("Set-Cookie", self._google_cookie)
+            self._google_cookie = None
+        if urlparse(self.path).path.endswith((".html", "/", ".js", ".css")):
             self.send_header("Cache-Control", "no-store, no-cache, must-revalidate")
         super().end_headers()
 
     def log_message(self, format: str, *args) -> None:
-        print(f"{self.address_string()} - {format % args}")
+        if urlparse(self.path).path.startswith("/api/google/"):
+            print(f"{self.address_string()} - {self.command} {urlparse(self.path).path}")
+        else:
+            print(f"{self.address_string()} - {format % args}")
 
 
 def run() -> None:

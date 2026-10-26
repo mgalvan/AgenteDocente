@@ -24,3 +24,6 @@ renderer_tools/node_modules/
 # File temporanei
 *.tmp
 *.bak
+# Credenziali Google OAuth
+google_oauth_client.json
+client_secret*.json
